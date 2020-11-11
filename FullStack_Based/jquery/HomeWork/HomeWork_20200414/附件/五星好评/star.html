@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            margin: 100px auto;
+            width: 400px;
+            height: 80px;
+            border: 1px solid #d7dad7;
+        }
+
+        .star-list {
+            float: left;
+            padding-left: 10px;
+            list-style: none;
+            margin: 33px 0;
+        }
+
+        .star-list li {
+            float: left;
+            width: 13px;
+            height: 13px;
+            cursor: pointer;
+            background-image: url(./star2.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .evaluate {
+            display: block;
+            float: left;
+            width: 40px;
+            height: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="starability-minified/starability-all.min.css"/>
+</head>
+
+<body>
+    <div class="content">
+        <form>
+			<fieldset class="starability-basic">
+			      <input type="radio" id="rate5-1" name="rating" value="5" />
+			      <label for="rate5-1" title="Amazing">5 stars</label>
+
+			      <input type="radio" id="rate4-1" name="rating" value="4" />
+			      <label for="rate4-1" title="Very good">4 stars</label>
+
+			      <input type="radio" id="rate3-1" name="rating" value="3" />
+			      <label for="rate3-1" title="Average">3 stars</label>
+
+			      <input type="radio" id="rate2-1" name="rating" value="2" />
+			      <label for="rate2-1" title="Not good">2 stars</label>
+
+			      <input type="radio" id="rate1-1" name="rating" value="1" />
+			      <label for="rate1-1" title="Terrible">1 star</label>
+                </fieldset>
+                <span class="evaluate"></span>
+			</form>
+        
+    </div>
+</body>
+</html>

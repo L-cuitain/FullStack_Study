@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //66.定义一个三位数，求各位数的总和是多少，在控制台输出
+
+        var num = Number(prompt("请输入一个三位数"));
+
+        var ge = num % 10;
+        var shi = num / 10 % 10;
+        var bai = num / 100 % 10;
+
+        var sum = ge+shi+bai;
+
+        alert(parseInt(sum));
+        
+
+
+        </script>
+</body>
+</html>
+

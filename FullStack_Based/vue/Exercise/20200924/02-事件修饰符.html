@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <a href="www.baidu.com" @click.prevent="handleClick">点我</a><br>
+        <a href="www.baidu.com" @click.prevent.once="handleClick">别点我</a>
+    </div>
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        let vm = Vue.createApp({
+            data(){
+                return{}
+            },
+
+            methods : {
+                handleClick(){
+                    console.log("kennys");
+                }
+            }   
+
+        }).mount('#app');
+    </script>
+</body>
+</html>

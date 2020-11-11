@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 78%;
+        background-color: #0ea9b1;
+    }
+
+    .sun {
+        width: 100px;
+        height: 100px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin: 60px 0 0 60px;
+    }
+
+
+    .sun::before,
+    .sun::after{
+        content: "";
+        display: block;
+        position: absolute;
+        top: 59px;
+        left: 59px;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #fff;
+        animation: Changesun 1s linear infinite;
+    }
+
+    @keyframes Changesun{
+        0%{
+            transform: scale(1);
+            opacity: 0.8;
+        }
+
+        100%{
+            transform: scale(1.5);
+            opacity: 0;
+        }
+    }
+
+
+
+
+    .sea{
+        position: relative;
+        top: 355px;
+        height: 247px;
+        overflow: hidden;
+    }
+
+    .sea img:nth-child(1){
+        position: absolute;
+        bottom: 7px;
+        animation: changeSII 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+
+    .sea img:nth-child(2){
+        position: absolute;
+        bottom: -3px;
+        animation: changeSI 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+
+    @keyframes changeSI{
+        0%{
+            transform: translate(0,0);
+        }
+
+        50%{
+            transform: translate(0,15px);
+        }
+
+        100%{
+            transform: translate(0,0);
+        }
+    }
+
+    @keyframes changeSII{
+        0%{
+            transform: translate(0,0);
+        }
+
+        50%{
+            transform: translate(0,-20px);
+        }
+
+        100%{
+            transform: translate(0,0);
+        }
+    }
+
+</style>
+
+<body>
+    <div class="sun"></div>
+
+    <div class="sea">
+        <img src="./img/1.png" alt="">
+        <img src="./img/2.png" alt="">
+    </div>
+</body>
+
+</html>

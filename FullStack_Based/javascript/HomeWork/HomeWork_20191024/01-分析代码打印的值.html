@@ -1,0 +1,31 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+ </head>
+
+ <body>
+   <script>
+     //1.下列代码控制台打印出的值分别是多少？
+     function f1() {
+       var user = '二狗子';
+       alert(this.user); // undefined
+       alert(this); // f1
+     }
+
+     f1();
+
+
+     //执行步骤:
+     //调用 f1方法
+     //在方法中 创建局部变量 user
+     //打印 this.user  因为并没有定义全局变量  以及  没有构造函数  所以 this.user 并没有被定义值  所以会打印 undefined
+     //直接打印 this  因为this在函数体内自动生成对象  所以会打印 window
+   </script>
+ </body>
+
+ </html>

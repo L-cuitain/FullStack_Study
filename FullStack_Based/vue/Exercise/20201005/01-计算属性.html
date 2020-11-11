@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="number" v-model.number="num1">
+        <span>+</span>
+        <input type="number" v-model.number="num2">
+        <span @click="handle">=</span>
+        <input type="text" v-model="result" disabled>
+    </div>
+
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        let vm = Vue.createApp({
+            data(){
+                return{
+                    num1 : '',
+                    num2 : ''
+                }
+            },
+            methods : {
+                handle(){
+                    return this.num1 + this.num2;
+                }
+            },
+            // computed 计算属性
+            // 计算属性时给予它们响应式依赖进行缓存
+            // computed 中 result 为属性
+            // compued 在相关依赖发生改变时才会重新取值  methods 在重新渲染时  函数会重新调用执行
+            computed : {
+                result : function(){
+                    return this.num1 + this.num2;
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

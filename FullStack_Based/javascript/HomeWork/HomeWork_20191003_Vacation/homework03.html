@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //23.输入一个三位整数，判其是不是降序数如:531是降序数 百位>十位>个位
+
+        var num = prompt("请输入一个三位数");
+        
+        var IntNum = parseInt(num);
+        var ge = IntNum % 10;
+        var shi = IntNum /10 % 10;
+        var bai = IntNum /100;
+
+        if(bai > shi && shi > ge){
+            alert("这个数是降序数");
+        }else{
+            alert("这个数不是降序数");
+        }
+        
+        </script>
+</body>
+</html>

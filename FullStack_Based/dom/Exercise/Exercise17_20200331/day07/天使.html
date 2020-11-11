@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/angel.gif" alt="">
+</body>
+<script>
+    //获取图片
+    let img = document.querySelector('img');
+
+    //创建鼠标移动事件
+    document.addEventListener('mousemove',function(e){
+        //获取鼠标xy坐标
+        let pX = e.pageX;
+        let pY = e.pageY;
+
+        //将图片的top left值更改
+        img.style.top = (pY-40) + 'px';
+        img.style.left = (pX-35) + 'px';
+    });
+</script>
+</html>

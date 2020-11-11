@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+
+</head>
+
+<body>
+  <img src="" alt="" id="im" />
+  <script>
+    // 获取图片
+    let oImg = document.querySelector('#im');
+
+    //创建 首位数字 index  末尾数字 indexx
+    let index = 0;
+    let indexx = 0;
+
+    // 创建周期定时器事件
+    let movePic = window.setInterval(move, 10);
+
+    function move() {
+
+      if(index == 22 && indexx == 6){
+        clearInterval(movePic);
+      }
+
+      //判断末尾数字是否为 59  如果为59 首位数字自增  末尾数字清零
+      if(indexx == 59){
+        index++;
+        indexx = 0;
+      }
+
+      //末尾数字自增
+      indexx++;
+
+      //设置 是否为个位数
+      index = String(index).length == 1 ? '0'+index : index;
+      indexx = indexx > 9 ? indexx : '0'+indexx;
+
+      //设置图片路径
+      oImg.src = `./meimei/${index}_${indexx}.jpg`;      
+      
+    }
+  </script>
+
+</body>
+
+</html>

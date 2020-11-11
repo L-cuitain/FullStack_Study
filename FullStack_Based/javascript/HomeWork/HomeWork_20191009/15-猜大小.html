@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// 需求:我们正在玩一个猜数字游戏。 游戏规则如下：
+// 我从 1 到 100选择一个数字。 你需要猜我选择了哪个数字。
+// 每次你猜错了，我会告诉你这个数字是大了还是小了, 如果你猜大了，输出”猜大了”；如果猜小了，输出”猜小了”；如果猜对了，则输出“恭喜你，猜对了”
+
+    //键盘录入一个整数
+    var num = parseInt(prompt("请输入一个整数"));
+
+    //创建随机数
+    var num1 = parseInt(Math.random()+50);
+
+    //弹窗随机数
+    alert(num1);
+    //判断 如果 键盘录入的数 大于 随机数
+    if(num > num1){
+        alert("猜大了");
+    }
+    //判断  如果 键盘录入的数  小于 随机数
+    if(num < num1){
+        alert("猜小了");
+    }
+    //判断  如果 键盘录入的数  等于 随机数
+    if(num == num1){
+        alert("恭喜你 , 猜对了");
+    }
+        
+        
+        </script>
+</body>
+</html>

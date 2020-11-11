@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //10. 获取当前时间，判断今年是否为闰年。两种方法判断 
+        // 1)判断今年是否为闰年；  能被400整除 或 被4整除但不能被100整除
+        // 2)判断本年2月是否为28天。闰年：2月有29天  平年：2月有28天
+
+        //用户录入年份
+        var year = Number(prompt("请输入当前年份"));
+        var month = Number(prompt("请输入当前月份"));
+        var day = Number(prompt("请输入当前日期"));
+
+        //调用函数
+        alert(getDay(year,month,day));
+
+        //创建函数  判断是否为闰年
+        function getDay(year, month, day) {
+
+            //判断今年为闰年
+            if (year % 400 == 0 || year % 4 == 0 && year % 100 != 0) {
+                return "今年为闰年";
+
+            }else {
+
+                //判断二月是否为28天
+                if (month == 2) {
+
+                    if (day == 29) {
+                        return "今年为闰年";
+                    }
+                    if (day <= 28) {
+                        return "今年不是闰年";
+                    }
+
+                }else{
+                    return "今年不是闰年";
+                }   
+            }
+        }
+    </script>
+</body>
+
+</html>

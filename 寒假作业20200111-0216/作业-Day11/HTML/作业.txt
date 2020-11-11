@@ -1,0 +1,59 @@
+1.伸缩布局 （总结所有的知识点 主轴、侧轴）
+
+答:
+伸缩布局概念:
+1.格式 display:flex
+2.给谁添加display:flex , 谁就是伸缩容器
+3.伸缩容器中的盒子,被称作伸缩项
+
+
+主轴方向:
+1.只要将一个元素变成伸缩容器 那里面的伸缩项会自动水平排版
+2.默认会按照主轴从左向右方向排版
+格式 flex-direction: 属性 (设置主轴方向)
+默认取值为 row(从左至右)
+row-reverse(从右至左)
+flex-direction: column(主轴修改为垂直方向)
+3.只要主轴变为了垂直方向, 那么侧轴就会自动变为水平方向
+
+
+伸缩项主轴对齐方式:
+
+justify-content: flex-start;
+设置伸缩容器中的伸缩项, 和伸缩容器主轴的起点对齐
+
+justify-content: flex-end;
+设置伸缩容器中的伸缩项, 和伸缩容器主轴的终点对齐
+
+justify-content: center;
+设置伸缩容器中的伸缩项居中
+
+justify-content: space-between;
+两端对齐, 第一个伸缩项会和主轴的起点对齐,最后一个伸缩项会和主轴的终点对齐,其它项目平分多余的间隙
+
+justify-content: space-around;
+环绕对齐, 给所有伸缩项的两遍都添加间隙
+
+
+伸缩项侧轴对齐方式:
+align-items: flex-start;
+侧轴的默认对齐方式: 和侧轴的起点对齐
+
+align-items: flex-end;
+和侧轴的终点对齐
+
+align-items: center;
+和侧轴的中点对齐
+
+align-items: baseline;
+按照所有伸缩项内容的基线对齐
+
+align-items: stretch;
+拉伸对齐
+
+
+
+
+
+
+2.代码题

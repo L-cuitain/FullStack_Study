@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //12.素质教育（把分数变成ABCDE),A是>=90的分数，B是80-90的分数，以此类推，千万不要写100个case哟,分数需要接收用户输入的
+
+        //用户输入数值
+        var grade = Number(prompt("请输入分数"));
+
+        //判断 grade 大于等于 90
+        if(grade >= 90){
+            alert("A");
+            //判断 grade 大于等于80  小于90
+        }else if(grade >= 80 && grade < 90){
+            alert("B");
+            //判断 grade 大于等于70  小于80
+        }else if(grade >= 70 && grade < 80){
+            alert("C");
+            //判断 grade 大于等于60  小于70
+        }else if(grade >= 60 && grade < 70){
+            alert("D");
+            //判断  grade 小于60
+        }else if(grade < 60){
+            alert("E");
+        }else{
+            alert("请输入范围内数值");
+        }
+        
+        
+        </script>
+</body>
+</html>

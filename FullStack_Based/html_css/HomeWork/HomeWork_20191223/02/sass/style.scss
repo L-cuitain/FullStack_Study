@@ -1,0 +1,471 @@
+//份数
+$copies : 20;
+
+//一份所占像素
+$each: 32;
+
+@media screen and (width: 320px) {
+    html {
+        font-size: (320px / $copies);
+    }
+}
+
+
+@media screen and (width: 375px) {
+    html {
+        font-size: (375px / $copies);
+    }
+}
+
+@media screen and (width: 414px) {
+    html {
+        font-size: (414px / $copies);
+    }
+}
+
+@media screen and (width: 768px) {
+    html {
+        font-size: (768px / $copies);
+    }
+}
+
+@media screen and (width: 1024px) {
+    html {
+        font-size: (1024px / $copies);
+    }
+}
+
+@media screen and (width: 1536px) {
+    html {
+        font-size: (1536px / $copies);
+    }
+}
+
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f4f1;
+}
+
+/* 头部 */
+header {
+    position: relative;
+    width: 100%;
+    height: (88rem / $each);
+    background-color: #ff9b25;
+}
+
+header i {
+    position: absolute;
+    top: (28rem / $each);
+    left: (20rem / $each);
+    width: (20rem / $each);
+    height: (32rem / $each);
+    background-image: url(../img/back_icon.png);
+    background-size: (20rem / $each) (32rem / $each);
+
+}
+
+header span {
+    font-size: (32rem / $each);
+    line-height: (88rem / $each);
+    margin-left: (56rem / $each);
+    color: #fff;
+}
+
+
+/* 主体 */
+main {
+    height: (1319rem / $each);
+    background-color: #f7f4f1;
+    padding: (20rem / $each);
+}
+
+/* 主体 标题 */
+.main-nav {
+    width: 100%;
+    height: (35rem / $each);
+    padding-bottom: (25rem / $each);
+}
+
+.nav-left {
+    float: left;
+    font-size: (32rem / $each);
+    color: #191919;
+}
+
+.nav-right {
+    float: right;
+    font-size: (32rem / $each);
+    color: #9f9f9e;
+}
+
+/* 主体 内容 */
+.main-content {
+    width: 100%;
+    height: (314rem / $each);
+    background-image: url(../img/SALE_1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-bottom: (30rem / $each);
+
+    .main-container {
+        height: (176rem / $each);
+        padding: (32rem / $each) (25rem / $each) (20rem / $each);
+
+        h2 {
+            margin: 0;
+            width: (300rem / $each);
+            height: (43rem / $each);
+            font-size: (43rem / $each);
+            color: #e7f4eb;
+            font-weight: initial;
+        }
+
+        .shortsale {
+            display: block;
+            width: (281rem / $each);
+            height: (23rem / $each);
+            padding-top: (17rem / $each);
+            font-size: (17rem / $each);
+            color: #afebc2;
+        }
+    }
+}
+
+.main-container-footer {
+    width: 100%;
+    height: (36rem / $each);
+    padding-top: (53rem / $each);
+
+    i {
+        float: left;
+        width: (22rem / $each);
+        height: (22rem / $each);
+
+        img {
+            width: (22rem / $each);
+            height: (22rem / $each);
+        }
+    }
+
+    .time {
+        float: left;
+        display: block;
+        width: (148rem / $each);
+        height: (19rem / $each);
+        padding: (10rem / $each) (2rem / $each) 0;
+        font-size: (19rem / $each);
+        color: #c5e7d0;
+    }
+
+    .to {
+        float: left;
+        display: block;
+        width: (25rem / $each);
+        height: (19rem / $each);
+        padding-top: (10rem / $each);
+        font-size: (19rem / $each);
+        color: #c5e7d0;
+    }
+
+    .ready {
+        float: right;
+        width: (94rem / $each);
+        height: (33rem / $each);
+        margin-top: (4rem / $each);
+        border-radius: (5rem / $each);
+        font-size: (22rem / $each);
+        text-align: center;
+        line-height: (33rem / $each);
+        color: #ade2be;
+        background-color: rgba($color: #000, $alpha: 0.5);
+    }
+}
+
+
+.main-link {
+    height: (60rem / $each);
+    margin: (12rem / $each) 0;
+
+    .main-link-left {
+        float: left;
+        width: 49%;
+        height: 80%;
+        border-right: 1px solid #f6f4f1;
+        text-align: center;
+        margin-top: (10rem / $each);
+
+        i {
+            width: (24rem / $each);
+            height: (24rem / $each);
+            padding-right: (10rem / $each);
+            line-height: 100%;
+
+            img {
+                width: (24rem / $each);
+                height: (24rem / $each);
+            }
+        }
+
+        span {
+            font-size: (25rem / $each);
+            color: #9d9d9d;
+        }
+    }
+
+    .main-link-right {
+        float: left;
+        width: 50%;
+        height: 100%;
+        text-align: center;
+        margin-top: (10rem / $each);
+
+        i {
+            width: (24rem / $each);
+            height: (24rem / $each);
+            padding-right: (10rem / $each);
+            line-height: 100%;
+
+            img {
+                width: (24rem / $each);
+                height: (24rem / $each);
+            }
+
+        }
+
+        span {
+            font-size: (25rem / $each);
+            color: #9d9d9d;
+        }
+    }
+}
+
+
+.main-coupon-finish {
+    width: 100%;
+    height: (221rem / $each);
+    background-image: url(../img/SALE_2.png);
+    background-size: 100% 100%;
+    border-radius: 7px;
+    margin-bottom: (28rem / $each);
+
+    .main-coupon-content {
+        position: relative;
+        float: left;
+        // width: 100%;
+        margin: (15rem / $each) (25rem / $each);
+
+
+    }
+}
+
+
+.money {
+    margin-top: 0;
+    margin-bottom: (50rem / $each);
+    font-size: (25rem / $each);
+    color: #e4bff1;
+
+
+    .RMB {
+        width: (22rem / $each);
+        height: (31rem / $each);
+        color: #f7f2f8;
+        font-size: (22rem / $each);
+        padding-right: (10rem / $each);
+    }
+
+    .count {
+        width: (72rem / $each);
+        height: (45rem / $each);
+        font-size: (55rem / $each);
+        color: #f7f2f8;
+        padding-right: (5rem / $each);
+    }
+}
+
+.get {
+    font-size: (23rem / $each);
+    color: #efe8f3;
+    margin: 0;
+    margin-bottom: (5rem / $each);
+}
+
+.time {
+    font-size: (23rem / $each);
+    color: #efe8f3;
+    margin: 0;
+
+
+    img {
+        width: (22rem / $each);
+        height: (22rem / $each);
+        padding-right: (10rem / $each);
+        padding-top: (5rem / $each);
+    }
+}
+
+.isfinish{
+    position: absolute;
+    top: (152rem / $each);
+    left: (430rem / $each);
+    float: right;
+    width: (94rem / $each);
+    height: (33rem / $each);
+    margin-top: (4rem / $each);
+    border-radius: (5rem / $each);
+    font-size: (22rem / $each);
+    text-align: center;
+    line-height: (33rem / $each);
+    color: #f2d8fb;
+    background-color: rgba($color: #000, $alpha: 0.5);
+}
+
+
+.main-coupon-doing{
+    width: 100%;
+    height: (313rem / $each);
+    background-image: url(../img/SALE_3.png);
+    background-size: 100% 100%;
+    border-radius: 7px;
+    margin-bottom: (28rem / $each);
+}
+
+.main-coupon-content-doing{
+    position: relative;
+    float: left;
+    // width: 100%;
+    margin: (15rem / $each) (25rem / $each);
+}
+
+
+.main-doing-link{
+    float: left;
+    width: 100%;
+    height: (60rem / $each);
+    margin: (12rem / $each) 0;
+
+    .main-doing-link-left {
+        float: left;
+        width: 32%;
+        height: 80%;
+        border-right: 1px solid #f6f4f1;
+        text-align: center;
+        margin-top: (10rem / $each);
+
+        i {
+            width: (24rem / $each);
+            height: (24rem / $each);
+            padding-right: (10rem / $each);
+            line-height: 100%;
+
+            img {
+                width: (24rem / $each);
+                height: (24rem / $each);
+            }
+        }
+
+        span {
+            font-size: (25rem / $each);
+            color: #9d9d9d;
+        }
+    }
+
+
+    .main-doing-link-center{
+        float: left;
+        width: 32%;
+        height: 80%;
+        border-right: 1px solid #f6f4f1;
+        text-align: center;
+        margin-top: (10rem / $each);
+
+        i {
+            width: (24rem / $each);
+            height: (24rem / $each);
+            padding-right: (10rem / $each);
+            line-height: 100%;
+
+            img {
+                width: (24rem / $each);
+                height: (24rem / $each);
+            }
+        }
+
+        span {
+            font-size: (25rem / $each);
+            color: #9d9d9d;
+        }
+    }
+
+
+    .main-doing-link-right {
+        float: left;
+        width: 32%;
+        height: 100%;
+        text-align: center;
+        margin-top: (10rem / $each);
+
+        i {
+            width: (24rem / $each);
+            height: (24rem / $each);
+            padding-right: (10rem / $each);
+            line-height: 100%;
+
+            img {
+                width: (24rem / $each);
+                height: (24rem / $each);
+            }
+
+        }
+
+        span {
+            font-size: (25rem / $each);
+            color: #9d9d9d;
+        }
+    }
+}
+
+
+/* 主体 内容 */
+.main-content-add{
+    height: (228rem / $each);
+    border: 2px dashed #dfdfdf;
+    text-align: center;
+    margin-bottom: (30rem / $each);
+    background-color: #fff;
+
+    img{
+        width: (107rem / $each);
+        height: (107rem / $each);
+        padding-top: (30rem / $each);
+        padding-bottom: (5rem / $each);
+    }
+
+    span{
+        display: block;
+        text-align: center;
+        font-size: (32rem / $each);
+        color: #b3b3b3;
+    }
+}
+
+
+/* 尾部 */
+footer{
+    height: (243rem / $each);
+    padding: (20rem / $each);
+
+    p{
+        margin: 0;
+        line-height: (37rem / $each);
+        font-size: (22rem / $each);
+        color: #b0afaf;
+        // text-align: center;
+    }
+}

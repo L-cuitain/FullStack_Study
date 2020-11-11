@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>实现5张图片每隔一秒轮流循环切换（到最后一张时在从第一张开始轮播）</title>
+		<script type="text/javascript">
+			
+			window.onload = function(){
+				window.setInterval(changeImg(),100)
+				
+			}
+			
+			//设置变量
+			var num = 1
+			
+			function changeImg(){
+				//获取图片对象
+				var img01 = document.getElementById("changeImg")
+				//如果num小于5  num++
+				if(num < 5){
+					num++;
+				}else{
+					num = 1;
+				}
+				//更改图片的路径
+				img01.src = "img/00"+ num +".jpg"
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+		<img src="img/001.jpg" id="changeImg" width="60%"/>
+	</body>
+</html>

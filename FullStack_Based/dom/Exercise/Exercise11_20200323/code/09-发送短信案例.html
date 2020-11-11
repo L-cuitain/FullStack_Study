@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div.timer {
+      margin: 100px auto;
+      width: 190px;
+      height: 260px;
+      background-image: url(1.png);
+    }
+
+    .time {
+      position: absolute;
+      left: 50%;
+      margin-left: -61px;
+      top: 300px;
+      width: 122px;
+      overflow: hidden;
+    }
+
+    .time span,
+    .time b {
+      float: left
+    }
+
+    .time span {
+      width: 32px;
+      height: 32px;
+      background-color: black;
+      color: #fff;
+      line-height: 32px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .time b {
+      margin: 0 4px;
+      line-height: 32px;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="timer">
+    <div class="time">
+      <!-- 小时 -->
+      <span class="hour">00</span>
+      <b>:</b>
+      <!-- 分钟 -->
+      <span class="min">00</span>
+      <b>:</b>
+      <!-- 秒 -->
+      <span class="second">00</span>
+    </div>
+  </div>
+
+  <script>
+    // 需求: 给活动设置一个 结束时间 给活动说明一个开始时间 看到活动随着时间的流逝进行倒计时
+
+    // 思路:
+    // 1.获取元素 (为了把得到的小时 分钟 秒 写到 网页中)
+    // 2.设定活动结束时间
+    // 3.声明定时器 (让时间不停的发生变化)
+    // 4.计算时间差 结束时间-当前时间  看看这个活动还能持续多长时间
+    // 5.把时间进行处理 变成小时 分钟 秒
+    // 6.显示小时 分钟 秒
+
+
+
+    // 步骤:
+    // 1.获取元素
+    let hour = document.querySelector(".hour");
+    let min = document.querySelector('.min');
+    let second = document.querySelector('.second');
+    // console.log(hour, min, second);
+    // 2.设置结束时间
+    let endTime = +new Date("2020-3-20 16:58:00");
+    // 3.声明一个定时器
+    let timer = setInterval(countDown, 1000);
+    function countDown() {
+      // 3.1 获取当前时间
+      let nowTime = +new Date();
+      // 3.2 用结束时间减去当前时间 获得活动剩余持续时间
+      let sumTime = (endTime - nowTime) / 1000;  // 秒
+      // console.log(sumTime);
+      // 3.3 处理这个时间(变成小时 分钟 秒)
+      let h = parseInt(sumTime / 60 / 60);
+      let m = parseInt(sumTime / 60 % 60);
+      let s = parseInt(sumTime % 60);
+      // console.log(h, m, s);
+      // 3.4 再次处理 看看是不是2位数 如果是 显示自己 如果不是 在数字前面补0
+      h = h > 9 ? h : '0' + h;
+      m = m > 9 ? m : '0' + m;
+      s = s > 9 ? s : '0' + s;
+      // 3.5 把数字不停的写道网页中去
+      hour.innerHTML = h;
+      min.innerHTML = m;
+      second.innerHTML = s;
+    }
+
+  </script>
+</body>
+
+</html>

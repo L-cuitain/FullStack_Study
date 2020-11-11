@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //10.定义一个三位数，求各位数的平方和是多少，在控制台输出。
+
+        //提示用户输入三位数
+        var num = Number(prompt("请输入3位数"));
+
+
+        //获取每一位数
+        var ge = num % 10;
+        var shi = parseInt(num / 10 % 10);
+        var bai = parseInt(num / 100 % 10);
+
+        //求出平方和
+        var sum = ge*ge*ge+shi*shi*shi+bai*bai*bai;
+
+        alert(sum);
+
+    
+        </script>
+</body>
+</html>

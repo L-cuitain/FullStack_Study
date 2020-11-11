@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+    <div></div>
+<body>
+    <script>
+        
+
+        function getColor() {
+            let str = '#';
+
+            let num = '123456789abcdef'.split('');
+            for(let i = 0 ; i < 6 ; i++){
+                let random = num[Math.floor(Math.random()*num.length)];
+                str += random;
+            console.log(i);
+        }
+            
+            return str;
+        }
+
+        let newColor = getColor();
+        console.log(newColor);
+
+        let dv = document.querySelector('div');
+        dv.style.backgroundColor = newColor;
+
+    </script>
+</body>
+
+</html>

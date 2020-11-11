@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            /* position: relative; */
+            /* overflow: hidden; */
+            width: 197px;
+            height: 170px;
+            margin: 100px auto;
+        }
+
+        /* ul {
+            position: absolute;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 100%;
+        }
+
+        ul:nth-child(1) {
+            top: 0px;
+        }
+
+        ul:nth-child(2) {
+            top: 110px;
+        }
+
+        ul:nth-child(3) {
+            top: 140px;
+        } */
+
+        ul{
+            height: 30px;
+            overflow: hidden;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul:nth-child(1){
+            height: 110px;
+        }
+
+        ul li {
+            height: 25px;
+            padding-left: 10px;
+            border-bottom: 1px solid #fff;
+            background-color: #f5f7f5;
+            font-size: 12px;
+            color: #272f30;
+            line-height: 26px;
+        }
+
+        .first {
+            height: 30px;
+            background-color: #00a1bb;
+            font-size: 13px;
+            color: #fff;
+            font-weight: bold;
+        }
+    </style>
+    <script src="./js/animate.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <ul>
+            <li class="first">我是一级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+        </ul>
+        <ul>
+            <li class="first">我是一级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+        </ul>
+        <ul>
+            <li class="first">我是一级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+            <li>二级导航</li>
+        </ul>
+    </div>
+</body>
+<script>
+    //获取 所有 ul
+    let aUl = document.querySelectorAll('.content ul');
+
+ 
+//我的思路:  判断修改  top值  
+    // var arr = [];
+
+    // for(let i = 0 ; i < aUl.length ; i++){
+    //     let getTop = aUl[i].offsetTop;
+    //     arr.push(getTop);
+    // }
+
+
+    // //遍历 ul
+    // for (let i = 1; i < aUl.length; i++) {
+
+    //     //创建oUl的点击事件
+    //     aUl[i].onclick = function () {            
+
+    //         if (aUl[i].offsetTop == arr[i]) {
+    //             animate(aUl[i], {
+    //                 top: (aUl[i].offsetTop - 80)
+    //             });
+    //         } else {
+    //             animate(aUl[i], {
+    //                 top: (arr[i])
+    //             });
+    //         }
+    //     }
+    // }
+
+    // aUl[0].onclick = function () {
+    //     getTops(aUl , arr);
+    // }
+
+
+    // //创建函数
+    // function getTops(aUl, arr) {
+    //     for (let i = aUl.length-1; i > 0; i--) {
+    //         if (aUl[i].offsetTop == arr[i]) {
+    //             animate(aUl[i], {
+    //                 top: (aUl[i].offsetTop - 80)
+    //             });
+    //         } else {
+    //             animate(aUl[i], {
+    //                 top: (arr[i])
+    //             });
+    //         }
+    //     }
+    // }
+
+//老师思路: 更改height值
+
+    //遍历所有 ul
+    for(let i = 0 ; i < aUl.length ; i++){
+        
+        //给ul 创建鼠标点击事件
+        aUl[i].onclick = function(){
+            //排他思想
+            for(let j = 0 ; j < aUl.length ; j++){
+                animate(aUl[j],{'height':30});
+            }
+
+            animate(aUl[i],{'height':110});
+        }
+    }
+
+</script>
+
+</html>

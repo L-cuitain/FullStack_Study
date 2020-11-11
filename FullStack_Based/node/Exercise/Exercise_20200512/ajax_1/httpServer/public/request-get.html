@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" name="username">
+        <input type="password" name="password">
+    </form>
+    <div class="box"></div>
+
+    <button>提交</button>
+
+    <script>
+        //获取按钮  添加点击事件
+        let oBtn = document.querySelector('button');
+        let userInput = document.querySelector('input[name="username"]');
+        let passInput = document.querySelector('input[name="password"]');
+
+        //创建点击事件
+        oBtn.onclick = () => {
+            //获取username的值  获取password的值
+            let username = userInput.value;
+            let password = passInput.value;
+
+            //实例化XMLHttpRequest
+            let xhr = new XMLHttpRequest();
+
+            //设置请求行
+            xhr.open('GET',`/getParam?username=${username}&password=${password}`);;
+            
+            //发送请求
+            xhr.send();
+
+            //监听并处理响应
+            xhr.onreadystatechange = () => {
+                //获取响应回来的数据
+                let data = JSON.parse(xhr.responseText);
+
+                document.querySelector('.box').innerHTML = `我是${data.username} 密码为${data.password}`;
+            }
+
+        }
+    </script>
+</body>
+</html>

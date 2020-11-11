@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //22.输入两个整数，放入到a与b变量中去， 如果a>=b就将a与b中的值进行交换，否则就不交换
+
+        var num1 = prompt("请输入第一位整数");
+        var num2 = prompt("请输入第二位整数");
+
+        if(num1 > num2){
+            var num = 0;
+            num = num1;
+            num1 = num2;
+            num2 = num;
+
+            document.write("第一位整数为: "+num1);
+            document.write("第二位整数为: "+num2);
+        }else{
+
+            document.write("第一位整数为: "+num1);
+            document.write("第二位整数为: "+num2);
+        }
+        
+        </script>
+</body>
+</html>

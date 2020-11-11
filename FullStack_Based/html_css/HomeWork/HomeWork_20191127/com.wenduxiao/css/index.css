@@ -1,0 +1,1202 @@
+/* 顶部部分 */
+.top-nav {
+    height: 120px;
+    background-color: #0054a7;
+}
+
+/* top左边部分 */
+.top-nav-left {
+    float: left;
+}
+
+.top-nav-left a {
+    float: left;
+    padding: 0 30px;
+    font-size: 12PX;
+    color: #e8f0f7;
+    line-height: 40PX;
+}
+
+.one {
+    width: 24px;
+    height: 42px;
+    background: #00366d;
+}
+
+/* top右边部分 */
+.top-nav-right {
+    float: right;
+    width: 456px;
+}
+
+.top-nav-right-WenZi a {
+    float: left;
+    height: 22px;
+    color: #e8f0f7;
+    font-size: 12px;
+    padding: 10px;
+    border-left: 1.5px solid black;
+    border-color: #044485;
+    padding: 10px
+}
+
+.top-nav-right-WenZi .three {
+    border-right: 1.5px solid black;
+    border-color: #044485;
+}
+
+.search-1 {
+    float: left;
+    margin-top: 50px;
+    margin-left: -346px;
+}
+
+.search-2 {
+    float: left;
+    margin-top: 28px;
+    width: 484px;
+    height: 36px;
+    margin-left: 180px;
+    border: 2px solid #0054a7
+}
+
+.search-2 span {
+    float: left;
+    width: 80px;
+    height: 36px;
+    background-color: #f6f6f6;
+    text-align: center;
+    line-height: 36px
+}
+
+.search-2 input {
+    float: left;
+    width: 308px;
+    height: 36px;
+    box-sizing: border-box;
+
+}
+
+.search-2 button {
+    float: left;
+    height: 36px;
+    width: 96px;
+    box-sizing: border-box;
+    background-color: #0054a7;
+    color: #f6f6f6;
+    border: none;
+}
+
+.search-1 {
+    margin-bottom: 10px
+}
+
+search-3 p {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
+
+.main-left-conter{
+    height:473px;
+    width:146px;
+    border: 1px solid;
+    float:left;
+    box-shadow:0 0 30px #cccccc
+}
+
+
+
+.main-left-tuopian{
+    float:left;
+    
+}
+/* .gai{
+    float:left;
+    margin-top:0px;
+} */
+.main-left-wenzi{
+    float:right
+}
+.main-left-tuopian img,
+.main-left-wenzi div{
+margin-top: 18px;
+font-size:13px
+}
+.main-left-tuopian img{
+    margin-left: 10px;
+    margin-top:14.99px
+}
+.main-left-wenzi div{
+    margin-right: 50px;
+}
+/* .main-centen{
+    float:left
+} */
+/* .main-centen-right{
+    float:right;
+    width:292px;
+    height:473px;
+    background-color:red
+} */
+
+/* 第二部分 */
+.main-centen{
+    float:left;
+    width:760px;
+    height:473px
+}
+.main-centen-bottom-bottom-png{
+    margin-left:19px;
+    /* border: 1px solid; */
+/* height: 150px; */
+margin-top:9px
+
+}
+
+.main-centen-bottom-png {
+    margin-left:20px;
+    margin-top:17px;
+}
+ span img{
+     float:left;
+    width:237px;
+    border:1px solid #eeeeee;
+    
+}
+.i{
+    display: block;
+    height:161px;
+    width:245px
+} 
+/* 第三部分 */
+/* .container{
+    text-align: center;
+} */
+.main-kuaile-wen1,
+.main-kuaile-wen2,
+.main-kuaile-wen3,
+.main-kuaile-wen4
+{   
+    float:left
+}
+.main-kuaile-wen1 .kun,
+.main-kuaile-wen2 .kun,
+.main-kuaile-wen3 .kun,
+.main-kuaile-wen4 .kun{
+text-align: center;
+}
+.main-kuaile-wen3,
+.main-kuaile-wen2,
+.main-kuaile-wen1{
+    margin-right:133px;
+    display: inline;
+}
+.main-kuaile{
+   height: 102px;
+   margin-top:23px
+}
+.guanggao{
+    height:120px
+}
+
+/* 雷 */
+.wendu{
+    height: 474px;
+}
+.wendu-right{
+    float: right;
+    width: 292px;
+}
+
+.wendu-right-1{
+   
+    height: 32px;
+    border: 1px solid #ededed;
+    box-sizing: border-box;
+}
+.wendu-right-1 span{
+    line-height: 32px;
+    margin: 0 4px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.wendu-right-2{
+    height: 112px;
+    border: 1px solid #ededed ;
+    box-sizing: border-box;
+}
+
+
+.wendu-right-2-left{
+    float: left;
+    width: 126px;
+    height: 112px;
+}
+
+.wendu-right-2-right{
+    float: right;
+    width: 126px;
+    height: 112px;
+}
+
+.wendu-right-2-left,
+.wendu-right-2-right{
+    font-size: 12px;
+    line-height: 20px;
+    margin-top: 16px;
+    margin-left: 8px;
+    margin-right: 10px;
+}
+
+.wendu-right-2-right span{
+    margin-top: 2px;
+}
+
+
+.wendu-right-3{
+    height: 84px;
+}
+.wendu-right-3-tp,
+.wendu-right-3-sz{
+    float: left;
+}
+.wendu-right-3-tp{
+line-height: 28px;
+}
+.wendu-right-3-sz{
+    margin-left: 14px;
+
+}
+.wendu-right-3-sz p{
+    color: #ff8a00;
+    padding-bottom: 6px;
+}
+.wendu-right-3-sz s{
+    color: #0054a7;
+
+}
+.wendu-right-3-sz{
+    padding-top: 4px;
+}
+
+.wendu-right-4{
+    height: 54px;
+}
+.wendu-right-4 a{
+    float: left;
+    width: 84px;
+    height: 38px;
+    background-color:  #ff8a00;
+    margin-right: 8px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    line-height: 38px;
+}
+.wendu-right-4 a:first-child{
+    background-image: url(../img/形状\ 54.png);
+    background-repeat: no-repeat;
+    background-position: 4px 8px;
+    background-size: 20px;
+
+}
+
+.wendu-right-5{
+    height: 22px;
+}
+
+.wendu-right-6{
+    height: 148px;
+    padding-top: 26px;
+}
+
+.wendu-right-6 a{
+    float: left;
+    width: 64px;
+    height: 64px;
+    background-color:#f1f1f1 ;
+    margin-right: 12px;
+
+}
+.wendu-right-6 a:nth-child(1),
+.wendu-right-6 a:nth-child(2),
+.wendu-right-6 a:nth-child(3),
+.wendu-right-6 a:nth-child(4){
+    margin-bottom: 12px;
+}
+
+
+.wendu-right-6 a:nth-child(4),
+.wendu-right-6 a:nth-child(8){
+    margin-right: 0px;
+}
+
+
+.wendu-right-6 img,
+.wendu-right-6 span{
+    float: left;
+    line-height: 64px;
+    text-align: center;
+}
+
+.wendu-right-6 img{
+    padding-left: 20px;
+    padding-top: 8px;
+}
+.wendu-right-6 span{
+    line-height: normal;
+    padding-left: 6px;
+    padding-top: 16px;
+}
+
+
+
+
+
+/* 考研板块下 */
+.examination {
+    float: left;
+    width: 100%;
+    height: 536px;
+}
+
+/* 考研板块下 头部 */
+.examination-title {
+    width: 100%;
+    height: 40px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+/* 考研板块下 头部 左 */
+.title-left {
+    float: left;
+    width: 474px;
+    height: 40px;
+    background-image: url(../img/line.png);
+    background-repeat: no-repeat;
+    font-size: 12px;
+}
+
+
+.title-left p {
+    float: right;
+    padding-top: 20px;
+    padding-right: 3px;
+    font-size: 14px;
+}
+
+/* 考研板块下 头部 中间 */
+.title-center {
+    float: left;
+    padding: 0 80px;
+}
+
+.title-center h1 {
+    float: left;
+    font-size: 36px;
+    padding-right: 7px;
+    color: #cc0000;
+}
+
+.title-center h2 {
+    float: left;
+    font-size: 36px;
+    padding-right: 7px;
+    color: #000000;
+}
+
+
+/* 考研板块下 头部 右 */
+.title-right {
+    float: left;
+    width: 484px;
+    height: 40px;
+    background-image: url(../img/line.png);
+    background-repeat: no-repeat;
+    font-size: 12px;
+}
+
+.title-right p {
+    float: left;
+    padding-top: 20px;
+    padding-right: 3px;
+    font-size: 14px;
+}
+
+
+/* 考研板块下 内容 */
+.subject {
+    float: left;
+    width: 100%;
+    height: 435px;
+}
+
+/* 考研板块下 内容 左 课程推荐 */
+.subject-left {
+    float: left;
+    width: 400px;
+    height: 436px;
+    border-bottom: 1px solid #f2f2f2;
+}
+
+
+.subject-left-title {
+    display: block;
+    width: 59px;
+    height: 14px;
+    font-family: SimSun;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #333333;
+    padding: 16px 0;
+}
+
+.subject-left h2 {
+    font-family: SimSun;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #333333;
+    padding: 10px 0;
+}
+
+/* 课程 购买 */
+.subject-left-buy {
+    width: 378px;
+    height: 34px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.subject-left-buy h1 {
+    float: left;
+    width: 93px;
+    height: 20px;
+    font-family: MicrosoftYaHei;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 34px;
+    letter-spacing: 0px;
+    color: #e6393b;
+}
+
+
+.subject-left-buy h3 {
+    float: left;
+    font-family: SimSun;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #666666;
+    padding-top: 7px;
+    padding-right: 25px;
+    line-height: 34px;
+}
+
+.subject-left-buy h4 {
+    float: left;
+    width: 40px;
+    height: 13px;
+    font-family: SimSun;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 34px;
+    letter-spacing: 0px;
+    color: #999999;
+    padding-top: 5px;
+}
+
+
+.subject-left-buy h5 {
+    float: left;
+    font-family: SimSun;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #333333;
+    line-height: 34px;
+    padding-top: 5px;
+    padding-right: 40px;
+}
+
+.free-listen {
+    float: left;
+    width: 101px;
+    height: 30px;
+    background-color: #3eb134;
+}
+
+.free-listen i {
+    width: 20px;
+    height: 17px;
+    line-height: 35px;
+    padding-left: 10px;
+
+}
+
+.free-listen span {
+    position: relative;
+    bottom: 2px;
+    width: 55px;
+    height: 14px;
+    font-family: SimSun;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 26px;
+    letter-spacing: 0px;
+    color: #ffffff;
+    line-height: 35px;
+}
+
+
+
+/* 课程购买列表 */
+.subject-left-buylist {
+    width: 400px;
+    height: 120px;
+    padding-top: 15px;
+
+}
+
+.subject-left-buylist div:first-child {
+    position: relative;
+    bottom: -6px;
+    float: left;
+    width: 3px;
+    height: 108px;
+}
+
+.subject-left-buylist div:nth-child(2) {
+    float: left;
+
+    width: 23px;
+    height: 120px;
+    padding: 0 5px;
+}
+
+.buy-list {
+    float: left;
+    position: relative;
+    bottom: 7px;
+    width: 345px;
+    height: 140px;
+}
+
+.buy-list li {
+    padding-bottom: 6px;
+    width: 375px;
+    height: 21px;
+}
+
+.subject-left-buylist li img {
+    width: 23px;
+    height: 23px;
+    padding: 0 5px;
+}
+
+
+.buy-list-much {
+    float: left;
+    width: 280px;
+    height: 23px;
+    font-family: ArialMT;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 26px;
+    letter-spacing: 0px;
+    color: #333333;
+    padding-right: 25px;
+}
+
+.buy-list-cheep {
+    float: left;
+    width: 280px;
+    height: 23px;
+    font-family: ArialMT;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 26px;
+    letter-spacing: 0px;
+    color: #333333;
+    padding-right: 40px;
+}
+
+
+.subject-left-buylist li h3 {
+    float: left;
+    width: 47px;
+    height: 23px;
+    font-family: SimSun;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 26px;
+    letter-spacing: 0px;
+    color: #999999;
+}
+
+/* 考研板块下 内容 左 免费试听 */
+.subject-left-freelisten {
+    float: left;
+    width: 320px;
+    height: 435px;
+    padding-left: 20px;
+    border: 1px solid #f2f2f2;
+}
+
+.subject-left-freelisten h2 {
+    font-family: SimSun;
+    font-size: 18px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #333333;
+    padding: 10px 0;
+}
+
+
+/* 考研板块下 内容 中 经济师考试 */
+.subject-left-teacher {
+    width: 281px;
+    height: 34px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f6f6f6;
+}
+
+.subject-left-teacher h1 {
+    float: left;
+    width: 93px;
+    height: 20px;
+    font-family: MicrosoftYaHei;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 34px;
+    letter-spacing: 0px;
+    color: #666666;
+}
+
+.subject-left-teacher h3 {
+    float: left;
+    font-family: SimSun;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #666666;
+    padding-top: 7px;
+    padding-right: 25px;
+    line-height: 34px;
+}
+
+
+.subject-left-teacher h4 {
+    float: left;
+    width: 40px;
+    height: 13px;
+    font-family: SimSun;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    line-height: 34px;
+    letter-spacing: 0px;
+    color: #999999;
+    padding-top: 5px;
+}
+
+
+.subject-left-teacher h5 {
+    float: left;
+    font-family: SimSun;
+    font-size: 12px;
+    font-weight: normal;
+    letter-spacing: 0px;
+    color: #333333;
+    line-height: 34px;
+    padding-top: 5px;
+    padding-right: 25px;
+}
+
+.listen-count {
+    float: left;
+    padding-top: 15px;
+    width: 50px;
+    height: 20px;
+}
+
+.listen-count img {
+    float: left;
+    width: 12px;
+    height: 12px;
+    padding-right: 4px;
+}
+
+.listen-count span {
+    position: relative;
+    bottom: 1px;
+    width: 28px;
+    height: 12px;
+    font-family: SimSun;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    letter-spacing: 0px;
+    color: #666666;
+}
+
+
+.subject-left-test{
+    width: 300px;
+    height: 120px;
+    padding-top: 15px;
+}
+
+.subject-left-test div:first-child{
+    position: relative;
+    bottom: -6px;
+    float: left;
+    width: 3px;
+    height: 108px;
+    padding-right: 7px;
+}
+
+.test-list{
+    float: left;
+    position: relative;
+    bottom: 7px;
+    width: 281px;
+    height: 140px;
+}
+
+.test-list li{
+    padding-bottom: 6px;
+    width: 281px;
+    height: 21px;
+}
+
+
+/* 考研板块下 内容 中 答疑精选 */
+.subject-center-answer{
+    float: left;
+    width: 190px;
+    height: 435px;
+    border: 1px solid #f6f6f6;
+}
+
+.test-teacher-top{
+    float: left;
+    width: 190px;
+    height: 50px;
+}
+
+
+.subject-center-test{
+    float: left;
+    display: block;
+    width: 59px;
+    height: 14px;
+    font-family: SimSun;
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    line-height: 20px;
+    letter-spacing: 0px;
+    color: #333333;
+    padding: 16px 15px;
+}
+
+.subject-center-testImg{
+    float: right;
+    padding: 16px 10px;
+}
+
+.test-teacher-user{
+    float: left;
+    width: 50px;
+    height: 70px;
+}
+
+
+.test-teacher{
+    float: left;
+    width: 190px;
+    height: 70px;
+    padding-bottom: 20px;
+}
+
+.test-teacher-list{
+    float: left;
+    width: 50px;
+    height: 70px;
+    padding-left: 15px;
+    text-align: center;
+}
+
+.test-teacher span{
+    font-family: SimSun;
+	font-size: 12px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+
+
+.test-teacher-center{
+    width: 50px;
+    height: 70px;
+}
+
+.test-teacher-center{
+    float: left;
+    width: 10px;
+    height: 10px;
+    padding: 21px 15px 0;
+}
+
+.test-teacher-title{
+    float: left;
+    width: 72px;
+    height: 55px;
+}
+
+.test-teacher-title h1{
+    font-family: SimSun;
+	font-size: 14px;
+	font-weight: normal;
+	font-stretch: normal;
+	letter-spacing: 0px;
+	color: #5093d5;
+}
+
+.test-teacher-title span{
+    font-family: ArialMT;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	color: #999999;
+}
+
+/* 考研板块下 内容 右 考试资料 */
+.subject-right-testData{
+    float: left;
+    width: 286px;
+    height: 437px;
+
+}
+
+
+.right-testDate-top{
+    float: left;
+    width: 280px;
+    height: 30px;
+    margin: 16px 0 0 15px;
+}
+
+
+.right-testDate-top li{
+    float: left;
+    line-height: 30px;
+    
+}
+
+.top-frist{
+	font-family: SimSun;
+	font-size: 14px;
+	font-weight: bold;
+	font-stretch: normal;
+	line-height: 20px;
+	letter-spacing: 0px;
+    color: #333333;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #e4e4e4;
+}
+
+.top-last{
+    padding-left: 15px;
+    font-family: SimSun;
+	font-size: 14px;
+	font-weight: normal;
+	letter-spacing: 0px;
+    color: #999999;
+    padding-bottom: 10px;
+    border-bottom: 4px solid #f6f6f6;
+}
+
+
+.right-testDate-listUp{
+    float: left;
+    width: 280px;
+    height: 75px;
+    padding: 30px 0 11px 15px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.right-testDate-listUp h1{
+    font-size: 20px;
+    font-weight: lighter;
+    padding-bottom: 7px;
+}
+
+
+.right-testDate-listUp p{
+    font-size: 12px;
+    color: #afafaf;
+    line-height: 21px;
+}
+
+.right-testDate-listDown{
+    float: left;
+    width: 280px;
+    height: 75px;
+    padding: 10px 0 15px 15px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+
+.right-testDate-listDown h1{
+    font-size: 20px;
+    font-weight: lighter;
+    padding-bottom: 7px;
+}
+
+
+.right-testDate-listDown p{
+    width: 283px;
+    font-size: 12px;
+    color: #afafaf;
+    line-height: 21px;
+}
+
+
+.right-student-answer{
+    float: left;
+    width: 340px;
+    height: 120px;
+    padding-top: 15px;
+}
+
+.right-student-answer div{
+    float: left;
+    width: 10px;
+    padding: 10px 7px 0 15px;
+}
+
+.right-student-answer ul{
+    padding-top: 4px;
+}
+
+
+
+
+
+
+.bottom{
+    float: left;
+    width: 100%;
+    height: 183px;
+}
+
+
+
+
+.foot-box {
+    height: 202px;
+    background-color: #f7f7f7;
+}
+
+.foot-xydh {
+    float: left;
+    height: 123px;
+    width: 233px;
+}
+
+.foot-xxbz {
+    float: left;
+    width: 257px;
+    height: 123px;
+}
+
+.foot-zffs {
+    float: left;
+    width: 201px;
+    height: 103px;
+}
+
+
+.foot-shfw {
+    float: left;
+    width: 227px;
+    height: 121px;
+}
+
+.foot-xxkxsd {
+    float: left;
+    width: 302px;
+    height: 121px;
+}
+
+
+
+.foot-shfw dt,
+.foot-zffs dt,
+.foot-xxbz dt,
+.foot-xydh dt {
+    margin-top: 26px;
+    font-weight: 800;
+    margin-bottom: 14px;
+
+}
+
+.foot-shfw dd,
+.foot-zffs dd,
+.foot-xxbz dd,
+.foot-xydh dd {
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+
+
+.foot-xxkxsd dt {
+    margin-top: 26px;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+
+.foot-xxkxsd dd {
+    width: 302px;
+    height: 95px;
+}
+
+
+.foot-xxkxsd a {
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-right: 14px;
+}
+
+
+
+.foot-twobigbox {
+    height: 90px;
+    background-color: #f7f7f7;
+}
+
+.foot-twobigbox-one {
+    float: left;
+    width: 1200px;
+    height: 55px;
+    border: 1px dashed #acacac;
+}
+
+.foot-twoonebox {
+    position: absolute;
+    top: 6px;
+    line-height: 53px;
+    width: 62px;
+    height: 44px;
+    border-right: 1px dashed #acacac;
+    margin-top: 6px;
+}
+
+
+.foot-twoonebox-one {
+    position: absolute;
+    top: 12px;
+    left: 13px;
+    width: 33px;
+    height: 28px;
+    display: block;
+}
+
+.foot-twotwobox {
+    position: absolute;
+    top: 6px;
+    float: left;
+    left: 85px;
+    float: left;
+    height: 28px;
+    width: 1102px;
+    color: #999999;
+
+}
+
+.foot-twotwobox a,
+.foot-twotwobox i {
+    color: #999999;
+}
+
+.foot-threebox {
+    height: 44px;
+    background-color: #f7f7f7;
+}
+
+.foot-lj {
+    float: left;
+    margin-left: 197px;
+}
+
+.foot-lj span {
+    margin: 0 5px;
+}
+
+.foot-lj a {
+    color: #666666;
+    font-size: 15px;
+}
+
+.foot-fourbox {
+    height: 85px;
+    background-color: #f7f7f7;
+}
+
+.foot-fourbigbox {
+    height: 52px;
+}
+
+.foot-threefour,
+.foot-twofour,
+.foot-onefour {
+    font-size: 12px;
+    margin-bottom: 8px;
+    color: #999999;
+}
+
+.foot-twofour {
+    margin-left: 125px;
+}
+
+
+.foot-onefour {
+    margin-left: 264px;
+}
+
+.foot-threefour {
+    margin-left: 81px;
+}
+
+.foot-fivebox {
+    height: 165px;
+    background-color: #f7f7f7;
+}
+
+.foot-fivebox-tupian {
+
+    height: 63px;
+    margin-left: 235px;
+}

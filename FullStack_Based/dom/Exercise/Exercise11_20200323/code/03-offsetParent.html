@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .outer {
+      /*  */
+      /* position: fixed; */
+      width: 400px;
+      height: 400px;
+      background-color: orange;
+      margin-left: 100px;
+      margin-top: 100px;
+      overflow: hidden;
+    }
+
+    .inner {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      background-color: olivedrab;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="inner"></div>
+  </div>
+
+  <script>
+    // 获取inner元素的定位父级
+
+    let inner = document.querySelector(".inner");
+    console.log(inner.offsetParent);
+
+    console.log(document.body.offsetParent);
+  </script>
+</body>
+
+</html>

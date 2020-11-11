@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//全选  全不选  反选
+			function selectAll(obj){
+				if(obj == 0){
+					//获取 所有 th 中的input checkbox属性   修改checked属性true
+					$("th input[type=checkbox]").prop("checked",true)
+				}else if(obj == 1){
+					//获取  所有th 中的input  checkbox属性   修改checked属性为false
+					$("th input[type=checkbox]").prop("checked",false)
+				}else if(obj == 2){
+					//获取  所有th 中的input  checkbox属性  遍历    将被选中的checked改成未选中
+					$("th input[type=checkbox]").each(function(){
+						$(this).prop("checked",!$(this).prop("checked"))
+					})
+				}
+			}
+			//删除选中
+			function delSelect(){
+				//进行if判断 如果被选中  就将整行删掉
+				if($("th input[type=checkbox]:checked")){
+					$("th input[type=checkbox]:checked").parent().parent().remove()
+				}
+			}
+	</script>
+	<body>
+		全选、反选、全不选、删除选中行
+		<table cellspacing="0" border="1" width="100%">
+			<tr>
+				<th>
+					<input type="button" value="全选" onclick="selectAll(0)"/>
+					<input type="button" value="全不选" onclick="selectAll(1)"/>
+					<input type="button" value="反选" onclick="selectAll(2)"/>
+					<br/>
+					<input type="button" value="删除选中" onclick="delSelect()"/>
+				</th>
+				<th>序号</th>
+				<th>用户名</th>
+				<th>密码</th>
+				<th>性别</th>
+			</tr>
+			<tr>
+				<th>
+					<input type="checkbox"/>
+				</th>
+				<th>1</th>
+				<th>zhangsan</th>
+				<th>123123123</th>
+				<th>男</th>
+			</tr>
+			<tr>
+				<th><input type="checkbox"/></th>
+				<th>2</th>
+				<th>lisi</th>
+				<th>321321</th>
+				<th>女</th>
+			</tr>
+			<tr>
+				<th><input type="checkbox"/></th>
+				<th>3</th>
+				<th>王五</th>
+				<th>321321</th>
+				<th>女</th>
+			</tr>
+		</table>
+	</body>
+</html>
+

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //组件注册注意事项
+        //不能写多个根元素
+        
+        //如果使用驼峰式命名组件  在使用组件的时候  只能在字符串模板中使用驼峰方式使用组件
+        //但在普通的标签模板中  必须使用短横线的方式使用组件
+        
+        //如果组件的名称是一个单词  全部小写
+        //如果组件的名称是多个单词  全部小写 并用短横线隔开
+        //如果使用驼峰命名组件  只能在字符串模板中使用该组件
+        let vm = Vue.createApp({});
+        vm.component()
+    </script>
+</body>
+</html>

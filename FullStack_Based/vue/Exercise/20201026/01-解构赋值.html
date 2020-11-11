@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //解构赋值
+
+        
+        //模式匹配
+        let arr = [1,2,3];
+        let [a,b,c] = arr;
+        console.log(a);
+
+        //提取json数据
+        let jsonData = {
+            id : 42,
+            status : "ok",
+            data : [201, 4102]
+        };
+
+        let {id ,status , data} = jsonData;
+        console.log(id,status,data);
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+
+    <script>
+        let oBtn = document.querySelector('button');
+
+        oBtn.onclick = function () {
+            //实例化 XMLHttpRequest对象
+            let xhr = new XMLHttpRequest();
+            //设置请求方式 和 请求地址
+            xhr.open('GET', '/simple');
+            //发送请求
+            xhr.send();
+            //设置状态
+            xhr.onreadystatechange = () => {
+                document.body.innerHTML = xhr.responseText;
+            }
+        }
+    </script>
+</body>
+
+</html>

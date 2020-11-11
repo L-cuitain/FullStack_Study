@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建promise异步函数
+        let p = new Promise(function(resolve,reject){
+            //resolve 成功后的响应传递
+            //reject 失败后的响应传递
+            //创建变量
+            let flag = false;
+            if(flag){
+                resolve('成功的结果');
+            }else{
+                reject('失败的结果');
+            }
+        })
+
+        p.then(function(data){
+            console.log(data);
+        },function(error){
+            console.log(error);
+        })
+    </script>
+</body>
+</html>

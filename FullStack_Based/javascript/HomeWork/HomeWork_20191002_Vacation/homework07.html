@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //17.利用JavaScript完成如下功能：用户输入日期，(例如：周一)，如果是周一，则‘去郊游’；如果是周日，则‘去动物园喽’，如果是
+        // 周一到周五的任意一天，则‘去上班，加油’，否则‘请输入正确的日期！！！！’
+        
+        var date = prompt("请输入日期");
+        
+        if(date == "周一"){
+            alert("去郊游");
+        }else if(date == "周日"){
+            alert("去动物园楼");
+        }else if(date == "周二" || date == "周三" || date == "周四" || date == "周五" || date == "周六"){
+            alert("去上班，加油");
+        }else{
+            alert("请输入正确的日期！！！！");
+        }
+
+        </script>
+</body>
+</html>
+
+

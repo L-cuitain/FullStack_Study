@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    //10. 写一个函数，求斐波那契数列fibonacci中的第n个数是多少？？1  1  2  3  5   8  13  21 
+        //分析:
+            //将用户录入的值 传入方法中
+            //创建变量 用来循环求斐波那契数列
+            //最后将 和值 返回
+            //调用方法  获取返回值  打印
+
+
+    //步骤:
+    //创建用户录入
+    var num = prompt("请输入数字");
+
+    //调用方法  并打印
+    document.write(fibonacci(num));
+    
+    //创建方法  将 用户录入的值 传入方法中
+    function fibonacci(num){
+        //创建变量num1  初始值为1
+        var num1 = 1;
+        //创建变量num2  初始值为2
+        var num2 = 1;
+        //创建变量 sum  初始值为0
+        var sum = 0;    
+
+        //循环遍历 到 num
+        for(var i = 3 ; i <= num ; i++){
+            //将 num1 和 num2的和 赋值给sum
+            sum = num1 + num2;
+            //将 num1 的值 换成 num2 的值
+            num1 = num2;
+            //将sum 的值  赋值给 num2
+            num2 = sum;
+   
+        }
+        //返回字符串
+        return "第"+num+"个数为"+sum+" ";
+    }
+    
+    
+    </script>
+</body>
+</html>

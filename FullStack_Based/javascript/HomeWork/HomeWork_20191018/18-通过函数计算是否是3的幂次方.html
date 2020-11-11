@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //18.给定一个整数，写一个函数来判断它是否是 3 的幂次方
+
+        //分析:
+        //创建方法  将用户录入的值传到方法中
+        //如果这个数能被3整除  就不停执行 这个值 除等于 3
+        //直到 这个数 最后得 1  终止循环
+        //判断 这个数 最后是否为1
+        //是则 返回这个数是3的幂次方
+
+
+
+        //步骤:
+        //用户输入整数
+        var num = Number(prompt("请输入一个整数"));
+
+        //调用方法
+        alert(getNum(num));
+         
+        //创建方法
+        function getNum(num){
+
+            var flag = true;
+
+            //判断参数是否是3的幂次方
+            while(flag){
+
+                //先判断 这个数是否能被3整除
+                if(num % 3 != 0){
+                    //不能则返回
+                    return "这个数不是3的幂次方";
+                }else{
+
+                    //每次循环 num 都除等于 3
+                    num /= 3;
+
+                    //判断 num 是否为 1
+                    if(num != 1){
+                        
+                        //继续循环
+                        continue;
+
+                        //否则 循环终止
+                    }else{
+                        flag = false;
+                    }
+                }
+            }
+
+            //最后判断 num 是否等于 1
+            if(num == 1){
+                    //返回
+                    return "这个数是3的幂次方"
+                }else{
+                    return "这个数不是3的幂次方"
+                }
+        }
+
+
+        
+        
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建原型  构造函数
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //使用原型对象 创建方法
+        Person.prototype.say = function(){
+            console.log('123');
+        }
+
+        //创建实例化对象
+        let p1 = new Person('zs',12);
+        let p2 = new Person('cs',16);
+
+        console.log(p1.say() === p2.say());
+
+    </script>
+</body>
+</html>

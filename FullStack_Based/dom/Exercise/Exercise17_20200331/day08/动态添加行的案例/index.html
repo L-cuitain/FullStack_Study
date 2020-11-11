@@ -1,0 +1,153 @@
+
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="index.css"/>
+</head>
+
+<body>
+<div class="wrap">
+  <div>
+    <input type="button" value="添加数据" id="j_btnAddData" class="btnAdd"/>
+  </div>
+  <table>
+    <thead>
+    <tr>
+      <th>课程名称</th>
+      <th>所属学院</th>
+      <th>已学会</th>
+    </tr>
+    </thead>
+    <tbody id="j_tb">
+    <tr>
+      <td>JavaScript</td>
+      <td>传智播客-前端与移动开发学院</td>
+      <td><a href="javascrip:;" class="get">GET</a></td>
+    </tr>
+    <tr>
+      <td>css</td>
+      <td>传智播客-前端与移动开发学院</td>
+      <td><a href="javascrip:;" class="get">GET</a></td>
+    </tr>
+    <tr>
+      <td>html</td>
+      <td>传智播客-前端与移动开发学院</td>
+      <td><a href="javascrip:;" class="get">GET</a></td>
+    </tr>
+    <tr>
+      <td>jQuery</td>
+      <td>传智播客-前端与移动开发学院</td>
+      <td><a href="javascrip:;" class="get">GET</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div id="j_mask" class="mask"></div><!--遮挡的div-->
+<div id="j_formAdd" class="form-add">
+  <div class="form-add-title">
+    <span>添加数据</span>
+
+    <div id="j_hideFormAdd">x</div>
+  </div>
+  <div class="form-item">
+    <label class="lb" for="j_txtLesson">课程名称：</label>
+    <input class="txt" type="text" id="j_txtLesson" placeholder="请输入课程名称">
+  </div>
+  <div class="form-item">
+    <label class="lb" for="j_txtBelSch">所属学院：</label>
+    <input class="txt" type="text" id="j_txtBelSch" placeholder="传智播客-前端与移动开发学院">
+  </div>
+  <div class="form-submit">
+    <input type="button" value="添加" id="j_btnAdd">
+  </div>
+</div>
+
+
+</body>  <script>
+  //获取 列表
+  let oTb = document.querySelector('#j_tb');
+
+  //获取 添加数据按钮
+  let oBtn = document.querySelector('#j_btnAddData');
+
+  //获取遮挡的div
+  let oMask = document.querySelector('#j_mask');
+  let oFromAdd = document.querySelector('#j_formAdd');
+
+  //获取 x 号
+  let oHideFromAdd = document.querySelector("#j_hideFormAdd");
+
+  //获取 添加按钮
+  let oBtnAdd = document.querySelector('#j_btnAdd');
+
+  //注册事件
+  //显示 添加列表
+  oBtn.addEventListener('click', function () {
+    oMask.style.display = 'block';
+    oFromAdd.style.display = 'block';
+  });
+
+  // x 号点击事件
+  oHideFromAdd.addEventListener('click', function () {
+    oMask.style.display = 'none';
+    oFromAdd.style.display = 'none';
+  });
+
+
+  //添加按钮的点击事件
+  oBtnAdd.addEventListener('click', function () {
+
+    //获取 课程名称
+    let oLessonName = document.querySelector('#j_txtLesson');
+
+    //获取 所属学院
+    let oBelSch = document.querySelector('#j_txtBelSch');
+
+    if (oLessonName.value == "" || oBelSch.value == "") {
+      
+      console.log(oLessonName.value);
+      
+
+      //清空文本框内容
+      oLessonName.value = "";
+      oBelSch.value = "";
+
+      //将添加表单隐藏
+      oMask.style.display = 'none';
+      oFromAdd.style.display = 'none';
+
+    } else {
+      //创建新的tr
+      let tr = document.createElement('tr');
+
+      tr.innerHTML = `<td>${oLessonName.value}</td>
+        <td>${oBelSch.value}</td>
+        <td><a href="javascrip:;" class="get">GET</a></td>`;
+
+      //将 tr添加到 列表中
+      oTb.appendChild(tr);
+
+      //清空文本框内容
+      oLessonName.value = "";
+      oBelSch.value = "";
+
+      //将添加表单隐藏
+      oMask.style.display = 'none';
+      oFromAdd.style.display = 'none';
+    }
+  });
+
+
+  //运用事件委托 获取 GET 并删除 tr
+  oTb.addEventListener('click',function(e){
+
+    if(e.target.nodeName = 'A'){
+       oTb.removeChild(e.target.parentElement.parentElement);
+    }
+    
+  });
+</script>
+</html>
+

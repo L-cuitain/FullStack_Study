@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //8.我们正在玩一个猜数字游戏。 游戏规则如下：
+        // 我从 1 到 100选择一个数字，你需要猜我选择了哪个数字，根据用户输入的数字进行比较，用户有三个输入的机会
+        // 每次你猜错了，我会告诉你这个数字是大了还是小了,如果你猜大了，输出”猜大了”；并且需要用户再次重新输入，如果猜小了，输出”猜小了”；并且需要用户再次重新输入，如果猜对了，则输出“恭喜你，猜对了”
+        
+
+       //分析:
+       // 从1到100选择一个数字
+       //创建计数器 初始值为1
+       //创建while死循环
+       //while循环中让用户输入数字
+       //判断选择的数字和用户输入的数字 是否 大于 或 小于 或 等于
+       //如果等于就结束循环
+       //判断后 计数器自增  如果计数器等于3  就结束循环
+       //如果不等于3  就继续循环
+
+
+       
+        //选择的数字
+        var guess = 30;
+
+        //计数器  初始值为1
+        var count = 1;
+        
+        //创建死循环
+        while(true){
+
+            //让用户键盘输入
+            var num = Number(prompt("请输入1到100以内的数字"));
+
+            //判断用户输入的数字 是否大于 选择的数字
+            if(num > guess){
+                alert("猜大了");
+            }
+            //判断用户输入的数字  是否小于  选择的数字
+            if(num < guess){
+                alert("猜小了");
+            }
+            //判断用户输入的数字  是否等于  选择的数字
+            if(num == guess){
+                alert("猜对了");
+                //结束循环
+                break;
+            }
+
+            //如果计数器等于3
+            if(i == 3){
+                //结束循环
+                alert("你没机会了");
+                break;
+            }
+            //计数器自增
+            count++;
+        }
+        
+        </script>
+</body>
+</html>

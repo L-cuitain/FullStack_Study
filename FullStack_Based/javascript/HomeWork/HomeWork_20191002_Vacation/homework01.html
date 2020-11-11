@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//11.商场推出幸运抽奖活动，抽奖规则如下：
+// (1)用户输入一个四位数字(1000-9999的数字),作为顾客的会员卡号
+// (2)该会员卡号(四位数字)各位数字之和大于20，则为幸运客户
+// (3)打印格式：
+//    请输入4位会员卡号：3569
+//    会员卡号3569各位之和：23
+//    会员卡号3569是幸运客户
+
+//    请输入4位会员卡号：1234
+//    会员卡号3569各位之和：10
+//    会员卡号3569不是幸运客户
+
+var num = prompt("请输入一个四位数字");
+var count = 0;
+
+for(var i = 0 ; i < num.length ; i++){
+
+    count += parseInt(num[i]);
+}
+
+alert("会员卡号"+num+"各位之和: "+count);
+if(count >= 20){
+    alert("会员卡号"+num+"是幸运用户");
+}else{
+    alert("会员卡号"+num+"不是幸运用户");
+}
+
+        
+        </script>
+</body>
+</html>
+
+

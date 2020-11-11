@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 书写模板 -->
+    <div id="app">
+        {{user}}
+    </div>
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //书写数据
+        let vm = Vue.createApp({
+            data(){
+                return {
+                    user : 'the son'
+                }
+            },
+
+            method(){}
+        }).mount('#app');
+
+        //挂载
+        // vm.mount('#app');
+
+        //Proxy
+        console.log(vm);
+        console.log(vm.$data);
+    </script>
+</body>
+</html>

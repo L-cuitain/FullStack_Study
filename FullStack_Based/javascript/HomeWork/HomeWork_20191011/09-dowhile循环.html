@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+//人工和谐文字系统以上线
+
+        //9.使用do-while循环：输出询问“我*你，*给我吧？”，选择“你**我吗？(y/n):"，如果输入为y则打印”我们****“，若输入为n,则继续询问 
+
+        //分析:
+        //dowhile循环用户输入
+        //根据返回的字符串判断是否终止循环
+
+
+
+
+        //创建初始表达式       
+        var b = true;
+
+        //创建do while 循环
+    do{
+        alert("我*你，*给我吧？");
+        //用户输入 y 或 n 
+        var flag = prompt("你**我吗？(y/n)");
+        
+        //如果是y
+        if(flag == "y"){
+            //弹窗显示
+            alert("我们****");
+            //b改为false
+            b = false;
+        }else{
+            //b改为true
+            b = true;
+        }
+        //循环 b 当 b 为 false 所终止
+    }while(b)        
+        
+        
+        </script>
+</body>
+</html>

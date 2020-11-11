@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //12.用户定义一个数字，数字的范围在 1-9999之间，
+        // 然后输入的数字是 3，则前面补全 3个0，使之成为”0003”
+        // 如果输入的数字是25，则前面补全2个0,  使之成为”0025”
+        // 如果输入的数字是146，则前面补全1个0，使之成为”0146”
+        // 如果输入的数字是1235，则不用补全。
+        // 最后将结果打印出来。
+
+        var num = prompt("请输入一个范围在1-9999之间的数字");
+        
+        if(num.length == 1){
+            num = "000"+num
+        }else if(num.length == 2){
+            num = "00"+num
+        }else if(num.length == 3){
+            num = "0"+num
+        }
+        alert(num);
+        
+        </script>
+</body>
+</html>

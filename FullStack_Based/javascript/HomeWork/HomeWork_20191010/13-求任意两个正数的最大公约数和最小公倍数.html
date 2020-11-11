@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //14. 求任意2个正数的最大公约数和最小公倍数。
+
+        var a = Number(prompt("请输入正数a"));
+        var b = Number(prompt("请输入正数b"));
+
+        //求出两个数a b 的最大最小值
+        var max = a > b ? a : b ;
+        var min = a < b ? a : b ;
+
+        //最大公约数
+        for(var i = max ; i <= a * b ; i++){
+            if(i % a == 0 && i % b == 0){
+                alert("最大公约数为: "+i);
+                break;
+            }
+        }
+
+        //最小公倍数
+        for(var i = min ; i > 0 ; i--){
+            if(a % i == 0 && b % i == 0){
+                alert("最小公倍数为: "+i);
+                break;
+            }
+        }
+
+
+
+        
+        
+        </script>
+</body>
+</html>

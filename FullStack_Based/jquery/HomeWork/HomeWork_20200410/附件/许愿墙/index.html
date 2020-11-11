@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header>
+    <div class="send"></div>
+  </header>
+  <!-- 主体内容体 -->
+  <main>
+    <!-- 这个是许愿签的模板 -->
+    <div class="list">
+      <div class="list-top">
+        <span>拉拉</span>
+        <span>No.00001</span>
+      </div>
+      <div class="list-center">
+        大家今天要好好把后台布局完成大家今天要好好把后台布局完成大家今天要好好把后台布局完成
+      </div>
+      <div class="list-bottom">
+        <span>今天08:30</span>
+        <span></span>
+      </div>
+    </div>
+  </main>
+  <!-- 遮罩层 -->
+  <div class="mask">
+    <div class="box">
+      <div class="mask-title">
+        <span>许下你的愿望</span>
+        <span class="fr close"></span>
+      </div>
+      <div class="mask-content">
+        <div class="mask-nickname">
+          <h3>昵称:</h3>
+          <input type="text">
+        </div>
+        <div class="mask-wish">
+          <h3>愿望:(您还可以输入 <i>50</i> 个字)</h3>
+          <textarea name="" id="text-wish" cols="30" rows="10" maxlength="50"></textarea>
+        </div>
+        <div class="release">
+          <img src="./img/send-btn.png" alt="" class="fr">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  //功能一: 创建许愿签
+  //我要许愿标签创建鼠标点击事件
+  $('.send').on('click', function () {
+    //功能七: 显示遮罩层
+    $('.mask').show();
+  })
+
+
+  //功能二: 随机标签位置
+  //创建随机数top left
+  let topR;
+  let leftR;
+  //遍历许愿签
+  $('main>.list').each(function () {
+    //生成随机数
+    topR = Math.ceil(Math.random() * 550);
+    leftR = Math.ceil(Math.random() * 1300);
+    //添加样式
+    $(this).css({
+      'top': topR,
+      'left': leftR,
+    })
+  })
+
+
+  //为X号创建鼠标点击事件
+  $('.close').on('click', function () {
+    //功能八: 点击X号 隐藏遮罩层
+    $('.mask').hide();
+  })
+
+  //功能九: 输入内容  文字不断减少
+  $('#text-wish').on('input', function () {
+    //更改可输入文字
+    $('.mask-wish>h3').html(`愿望:(您还可以输入 <i>${50-$(this).val().length}</i> 个字)`);
+  })
+
+  //功能十: 判断发布内容是否达到要求
+  //创建发布按钮的鼠标点击事件
+  $('.release').on('click', function () {
+    //判断发布内容
+    if ($('.mask-nickname>input').val().trim() != '' || $('#text-wish').val().trim() != '') {
+      //添加许愿签
+      let wish = $(`<div class="list"></div>`);
+      wish.append(`<div class="list-top">
+        <span>${$('.mask-nickname>input').val()}</span>
+        <span>No.${getIndex()}</span>
+      </div>
+      <div class="list-center">
+        ${$('#text-wish').val()}
+      </div>
+      <div class="list-bottom">
+        <span>${getDate()}</span>
+        <span></span>
+      </div>`);
+
+      //main中添加元素
+      $('main').append(wish);
+
+      //生成随机数
+      topR = Math.ceil(Math.random() * 550);
+      leftR = Math.ceil(Math.random() * 1300);
+
+      //设置样式
+      wish.css({
+        'top': topR,
+        'left': leftR,
+      })
+    }
+
+    //清空输入框  重置文字字数
+    $('.mask-nickname>input').val('');
+    $('#text-wish').val('');
+    $('.mask-wish>h3').html(`愿望:(您还可以输入 <i>50</i> 个字)`);
+    //隐藏遮罩层
+    $('.mask').hide();
+  })
+
+
+  //功能四: 移动到X号时改变样式
+  //功能五: 点击X号 许愿签消失
+  $('main').on({
+    'mouseenter': function () {
+      $(this).css({
+        'background-position-x': -43,
+      });
+    },
+    'mouseleave': function () {
+      $(this).css({
+        'background-position-x': 0,
+      });
+    },
+    'click': function () {
+      $(this).parents('.list').remove();
+    }
+  }, '.list-bottom>span')
+
+
+  //功能六: 点击某个许愿签 会在最上面
+  $('main').on('click', '.list', function () {
+    console.log(111);
+    $(this).css('z-index', 2).siblings().css('z-index', 1);
+  })
+
+
+  //获取标签数
+  function getIndex() {
+    let index = $('.list').length + 1;
+
+    if (index < 10) {
+      return '0000' + index;
+    } else if (index >= 10 && index < 100) {
+      return '000' + index;
+    } else if (index >= 100 && index < 1000) {
+      return '00' + index;
+    } else if (index >= 1000 && index < 10000) {
+      return '0' + index;
+    } else if (index >= 10000 && index < 100000) {
+      return index;
+    }
+  }
+
+  //功能三: 设置时间
+  function getDate() {
+    //获取date对象
+    let date = new Date();
+
+    //判断时间的长度
+    let hour = date.getHours() > 9 ? date.getHours() : '0' + date.getHours();
+    let min = date.getMinutes() > 9 ? date.getMinutes() : '0' + date.getMinutes();
+
+    //返回时间
+    return '今天' + hour + ':' + min;
+  }
+</script>
+
+</html>

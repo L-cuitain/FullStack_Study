@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //8. 录入两个整数a和b,若a+b大于100,则输出a+b大于100的部分,否则输出两数之和.
+
+        //提示用户输入
+        var a = Number(prompt("请用户输入a的值"));
+        var b = Number(prompt("请用户输入b的值"));
+
+        //创建变量 储存 a+b的值
+        var num = a+b;
+
+        //判断a+b是否大于 100
+        if(num > 100){
+
+            var newNum = num-100;
+            alert(newNum);
+        }else{
+            alert(num);
+        }
+        
+        </script>
+</body>
+</html>

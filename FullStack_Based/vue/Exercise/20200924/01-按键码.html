@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <div id="app">
+       <div>
+           <label for="username">用户名</label> <input id="username" type="text" v-model="username" @keyup.delete="clear"><br>
+           <label for="password">密码</label>   <input id="password" type="password" v-model="password" @keyup.delete="clear">
+       </div>
+   </div>
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        let vm = Vue.createApp({
+            data(){
+                return{
+                    username : '',
+                    password : ''
+                }
+            },
+
+            methods : {
+                clear(){
+                    this.username = '';
+                    this.password = '';
+                }
+            }
+
+        }).mount('#app');
+    </script>
+</body>
+</html>

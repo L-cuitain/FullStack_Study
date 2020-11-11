@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <gg></gg>
+        <ee></ee>
+    </div>
+
+
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        let vm = Vue.createApp({});
+
+        //创建 mitt
+        const emitter = mitt()
+
+        vm.component('gg', {
+            data() {},
+            methods: {
+                handleClick() {
+                    emitter.emit('foo', {
+                        a: '传改善'
+                    })
+                }
+            },
+            template: `
+            <div class="gg">
+                <h3 @click="handleClick">兄弟组件GG</h3>
+            </div>
+            `
+        });
+
+        vm.component('ee', {
+            data() {
+                return {
+                    //创建变量 返回emitter获取的值
+                    msg: '',
+                }
+            },
+            //声明周期函数  DOM已经渲染 可以使用第三方插件 
+            methods: {
+                handleCl() {
+                    emitter.on('foo', (result) => {
+                        this.msg = result.a
+                    })
+                }
+            },
+            template: `
+            <div class="ee">
+                <h3 @click="handleCl">兄弟组件EE得到了{{msg}}</h3>
+            </div>
+            `
+        });
+
+        vm.mount("#app");
+    </script>
+</body>
+
+</html>

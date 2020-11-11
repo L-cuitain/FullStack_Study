@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //16. 录入一个整数,判断它能否被3,5,7整除,并输出以下信息
+        // (1)能同时被3,5,7整除
+        // (2)能被其中两个数整除(要指出那两个数)
+        // (3)只能被其中一个数整除(指出那一个)
+        // (4)不能被3,5,7任一个整除
+        
+        var num = prompt("请输入一个整数");
+
+        if(parseInt(num) % 3 == 0 && parseInt(num) % 5 == 0 && parseInt(num) % 7 == 0){
+            alert("能同时被3,5,7整除");
+        }else if(parseInt(num) % 3 == 0 && parseInt(num) % 5 == 0){
+            alert("能被其中两个数 3 , 5整除")
+        }else if(parseInt(num) % 5 == 0 && parseInt(num) % 7 == 0){
+            alert("能被其中两个数 5 , 7整除")
+        }else if(parseInt(num) % 3 == 0 && parseInt(num) % 7 == 0){
+            alert("能被其中两个数 3 , 7整除")
+        }else if(parseInt(num) % 3 == 0){
+            alert("只能被其中一个数 3 整除")
+        }else if(parseInt(num) % 5 == 0){
+            alert("只能被其中一个数 5 整除")
+        }else if(parseInt(num) % 7 == 0){
+            alert("只能被其中一个数 7 整除")
+        }else{
+            alert("不能被3,5,7任一个整除")
+        }
+
+        </script>
+
+</body>
+</html>

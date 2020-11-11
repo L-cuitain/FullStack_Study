@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .preview_img {
+      position: relative;
+      height: 398px;
+      width: 398px;
+      margin-left: 10px;
+      margin-top: 200px;
+      border: 1px solid #ccc;
+    }
+
+    .mask {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300px;
+      height: 300px;
+      background: #FEDE4F;
+      opacity: .5;
+      border: 1px solid #ccc;
+      cursor: move;
+    }
+
+    .big {
+      display: none;
+      position: absolute;
+      left: 410px;
+      top: 0;
+      width: 500px;
+      height: 500px;
+      background-color: pink;
+      z-index: 999;
+      border: 1px solid #ccc;
+      overflow: hidden;
+    }
+
+    .big img {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="preview_wrap fl">
+    <div class="preview_img">
+      <img src="image/s3.png" alt="">
+      <div class="mask"></div>
+      <div class="big">
+        <img src="image/big.jpg" alt="" class="bigImg">
+      </div>
+    </div>
+  </div>
+  <script>
+    // 1.当页面载入之后,开始写js
+    // 获取元素
+    let preview_img = document.querySelector(".preview_img");
+    let mask = document.querySelector('.mask');
+    let big = document.querySelector('.big');
+    // 鼠标经过preview_img的时候 让mask遮挡层和big显示
+    preview_img.addEventListener("mouseover", function () {
+      mask.style.display = "block";
+      big.style.display = "block";
+    })
+    // 鼠标移出preview_img的是 让mask遮挡层和big隐藏
+    preview_img.addEventListener('mouseout', function () {
+      mask.style.display = "none";
+      big.style.display = "none";
+    })
+
+    //创建鼠标移动事件
+    preview_img.addEventListener('mousemove',function(e){
+      //获取鼠标的坐标
+      let mouseX = e.pageX - this.offsetLeft;
+      let mouseY = e.pageY - this.offsetTop;
+
+      //获取小图的坐标  居中
+      let maskX = mouseX - (mask.offsetWidth / 2);
+      let maskY = mouseY - (mask.offsetHeight / 2);
+
+      //获取图片最大坐标
+      let distance = this.offsetWidth - mask.offsetWidth;
+
+      //判断是否达到最大最小 坐标
+      if(maskX >= distance){
+        maskX = distance;
+      }else if(maskX <= 0){
+        maskX = 0;
+      }
+
+      if(maskY >= distance){
+        maskY = distance;
+      }else if(maskY <= 0){
+        maskY = 0;
+      }
+
+      //将坐标赋值给mask
+      mask.style.top = maskY + 'px';
+      mask.style.left = maskX + 'px';
+
+
+      //获取大图
+      let bigImg = document.querySelector('.bigImg');
+
+      //获取大图最大移动距离
+      let maxBig = big.offsetWidth - bigImg.offsetWidth;
+
+      //计算大图移动距离
+      let maskBigX = maskX * maxBig / distance;
+      let maskBigY = maskY * maxBig / distance;
+
+      //赋值给图片
+      bigImg.style.top = maskBigY + 'px';
+      bigImg.style.left = maskBigX + 'px';
+    });
+  </script>
+</body>
+
+</html>

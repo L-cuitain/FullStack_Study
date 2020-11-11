@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //实例成员: 在构造函数内部通过this添加的成员
+        //区别: 实例成员只能通过构造函数实例化的对象访问
+        //      不能通过构造函数访问
+        function Animal(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        let obj = new Animal('zs',14);
+        console.log(obj.name);
+        console.log(Animal.age);
+
+
+        //静态成员: 在构造函数上添加的成员
+        //区别: 静态成员可以通过构造函数访问
+        //      不能通过实例化的对象访问
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Person.say = '132';
+        let obj1 = new Person('zs',17);
+
+        console.log(obj1.say);
+        console.log(Person.say);
+
+        
+    </script>
+</body>
+</html>

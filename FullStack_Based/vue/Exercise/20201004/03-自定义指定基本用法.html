@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <input type="text" v-autofocus>
+    </div>
+
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        let vm = Vue.createApp({});
+        
+        //自定义指令:
+        //1.全局自定义指令
+        // vm.directive('指令名称',{
+        //     mounted(el){
+        //         //功能
+        //     }
+        // })
+        
+
+        //指令是当页面加载时 发生
+        vm.directive("autofocus",{
+            mounted(el){
+                //el 代表使用指令的元素
+                console.log(el);
+                //让元素获取焦点
+                el.focus();
+                //设置默认值
+                el.value = '123421';
+                el.style.backgroundColor = "blue";
+            }
+        })
+        //2.局部自定义指令
+        vm.mount('#app');
+    </script>
+</body>
+</html>

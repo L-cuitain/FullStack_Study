@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建 原型 (构造函数)
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //使用 原型对象 创建方法
+        Person.prototype.say = function(){
+            console.log('123');
+        }
+
+        //对象原型  __photo__
+        //作用: 象的查找机制提供一个方向  
+        //对象的__photo__非标准
+        //原型(构造函数)的原型对象(prototype)是标准
+        var ls = new Person('ls',22);
+        console.log(ls.__photo__ == Person.prototype);
+
+        
+    </script>
+</body>
+</html>

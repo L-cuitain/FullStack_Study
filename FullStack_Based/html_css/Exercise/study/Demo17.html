@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//创建变量  为获取id
+			var num = 1
+			
+			//当页面准备就绪后
+			$().ready(function(){
+				//给添加 赋予事件
+				$("#addId").click(function(){
+					//获取姓名  和  年龄  框
+					var name = $("#nameId").val()
+					var age = $("#ageId").val()
+					var id = num++
+					
+					//编写tr  并把tr 存入tbody中
+					var tr = "<tr><td>"+id+"</td> <td class=NameClass>"+name+"</td> <td>"+age+"</td> <td><input type='button' id='' value='删除'></td></tr>"
+					
+					//将 js 的 tr 转换为  jq
+					var tr_jq = $(tr)
+					//追加
+					$("tbody").append(tr_jq)
+					//优化
+					$("#nameId").val("")
+					$("#ageId").val("")
+					
+					
+					//删除
+					tr_jq.find("input[value='删除']").click(function(){
+						//获取   tr 并删除这一行
+						$(this).parent().parent().remove()
+					})
+				})
+				
+				//搜索
+				//创建搜索点击事件
+				$("searchId").click(function(){
+					//获取搜索框内容
+					var uName = $("#uName").val()
+					
+					//清空历史颜色
+					$(this).parent().css("background-color","aliceblue")
+					
+					//优化
+					if(uName == ""){
+						alert("搜索框内容为空")
+						return false;
+					}
+					
+					//遍历名字
+					$(".NameClass").each(function(){
+						
+						//创建tName 获取姓名集合
+						var tName = $(this).text()
+						//if判断  如果  搜索框其中一个字与列表中相同时  变换颜色
+						if(uName.indexOf(tName) > -1){
+							$(this).parent().css("background-color","#00BFFF")
+						}
+					})
+				})
+				
+			})
+			
+			
+		</script>
+	
+	</head>
+	<body>
+		<button onclick="doSort()">排序</button>
+		<br>
+		<input id="uName" type="text" style="width: 300px" placeholder="请输入你要搜索的姓名...">
+		<button id="searchId">搜索</button>
+		<br>
+		<br>
+		<span>姓名:</span><input type="text" id="nameId">
+		<span>年龄:</span><input type="text" id="ageId">
+		<input type="button" id="addId" value="添加">
+		<br><br>
+		<table id="tab1" border="1" width="500">
+			<thead>
+				<tr>
+					<td>ID</td>
+					<td>姓名</td>
+					<td>年龄</td>
+					<td>操作</td>
+				</tr>
+			</thead>
+			<tbody>
+ 
+			</tbody>
+		</table>
+	</body>
+</html>

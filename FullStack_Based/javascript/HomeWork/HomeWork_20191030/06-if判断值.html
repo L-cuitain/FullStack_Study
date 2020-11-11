@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //6. 利用JavaScript完成如下功能：判断如果a>60，则b=1；如果a>70，则b=2；如果a>80，则b=3；如果a>90，则b=4 ,在页面弹出对应b的值
+
+        //用户输入a的值
+        var a = Number(prompt("请输入a的值"));
+        
+        //调用方法 
+        var b = getB(a);
+
+        //打印b
+        alert(b);
+        
+
+        //创建方法  方法内判断a的值
+        function getB(a){
+            
+            if (a >= 60 && a < 70) {
+                return 1;
+        }else if(a >= 70 && a < 80){
+                return 2;
+        }else if(a >= 80 && a < 90){
+                return 3;
+        }else if(a >= 90 && a < 100){
+                return 4;
+        }   
+    }
+        
+    </script>
+</body>
+
+</html>

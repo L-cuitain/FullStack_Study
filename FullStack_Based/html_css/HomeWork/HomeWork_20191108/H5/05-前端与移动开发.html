@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        background-color: #f6f6f6;
+    }
+
+    div {
+        margin: 0;
+    }
+
+    .theBody {
+        width: 744px;
+        height: 598px;
+        margin: 0 auto;
+        background-color: #ffffff;
+    }
+
+    .theUnderBody {
+        width: 694px;
+        height: 80px;
+    }
+
+
+    .top-address{
+           
+           width: 210px;
+           height: 40px;
+           margin-top: 20px;
+           margin-left: 5px;
+           border: 1px solid #dfdfdf;
+           text-align: center;
+           line-height: 40px;
+    }
+
+    .class-on{
+        width:230px;
+        height: 150px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+    .class-on ul{
+        padding-left: 20px;
+        list-style-type:none;
+    }
+
+    .class-on ul li{
+        font-size: 15px;
+        padding-bottom: 14px;
+    }
+
+    .class-under{
+        width:230px;
+        height: 150px;
+        margin-right: 20px;
+        margin-top: 20px;
+    }
+
+    .class-under ul{
+        padding-left: 20px;
+        list-style-type:none;
+    }
+
+    .class-under ul li{
+        font-size: 15px;
+        padding-bottom: 14px;
+    }
+
+
+    .top-address span{
+        padding-right: 14px;
+    }
+
+    .on-body {
+        width: 515px;
+        height: 116px;
+        /* margin-left: 28px; */
+        margin-top: 190px;
+        background-color: #ffffff;
+    }
+
+    .leftBody {
+        float: left;
+        width: 515px;
+        height: 422px;
+        background-color: #ffffff;
+    }
+
+    .rightBody {
+        float: right;
+        width: 227px;
+        height: 423px;
+        background-color: #ffffff;
+    }
+
+
+    .under-body {
+
+        width: 515px;
+        height: 116px;
+        background-color: #ffffff;
+    }
+
+
+    .theTitle {
+        width: 744px;
+        height: 75px;
+        background-color: #b35058;
+
+    }
+
+    .top-left {
+        float: left;
+        padding-left: 25px;
+        padding-top: 25px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #fffdf9;
+    }
+
+    .top-right {
+        float: right;
+        width: 360px;
+        height: 75px;
+    }
+
+    .top-right .school {
+        display: inline-block;
+        margin-top: 20px;
+        width: 100px;
+        height: 31px;
+        text-align: center;
+        padding-top: 10px;
+        margin-left: 11px;
+        background-color: #c27379;
+        font-size: 15px;
+        color: #fdf6ef;
+    }
+
+    .left-one {
+        float: left;
+        width: 406px;
+        height: 144px;
+        margin-left: 28px;
+        padding-top: 45px;
+        padding-left: 80px;
+        border-bottom: 1px solid #ececec;
+        border-right: 1px solid #ededed;
+        background-color: #ffffff;
+    }
+
+    .left-two {
+        float: left;
+        width: 207px;
+        height: 115px;
+        margin-left: 28px;
+        border-bottom: 1px solid #ededed;
+        background-color: #ffffff;
+    }
+
+    .left-three {
+        float: left;
+        width: 207px;
+        height: 115px;
+        margin-left: 28px;
+        border-bottom: 1px solid #ededed;
+        background-color: #ffffff;
+    }
+
+
+    .left-four {
+        float: right;
+        width: 260px;
+        height: 114px;
+        border-bottom: 1px solid #ededed;
+        border-right: 1px solid #ededed;
+        background-color: #ffffff;
+    }
+
+
+    .left-one-font {
+        float: right;
+        width: 297px;
+        height: 60px;
+        margin-top: 20px;
+    }
+
+    .left-two-image {
+        float: left;
+        padding-top: 42px;
+        padding-left: 15px;
+    }
+
+    .left-three-image {
+        float: left;
+        padding-top: 30px;
+        padding-left: 15px;
+    }
+
+    .left-four-image {
+        width: 155px;
+        height: 19px;
+        margin-top: 68px;
+        margin-left: 53px;
+        text-align: right;
+        color: #f0e9e2;
+        background-color: #b35058;
+    }
+
+
+    .center-one {
+        float: right;
+        width: 260px;
+        height: 114px;
+        border-bottom: 1px solid #ededed;
+        border-right: 1px solid #ededed;
+        background-color: #ffffff;
+    }
+
+
+    .center-one-image {
+        width: 157px;
+        height: 15px;
+        padding-top: 39px;
+        padding-left: 30px;
+    }
+
+
+    .font-center-one {
+        float: right;
+        padding-right: 92px;
+        padding-top: 10px;
+    }
+
+    .left-two-font {
+        float: right;
+        padding-top: 63px;
+        padding-right: 54px;
+    }
+
+    .left-three-font {
+        float: right;
+        padding-top: 50px;
+        padding-right: 50px;
+    }
+
+
+    .left-four-font {
+        float: right;
+        padding-top: 39px;
+        padding-right: 95px;
+    }
+
+    .font-one {
+        font-size: 20px;
+        font-weight: bold;
+        color: #b4526b;
+    }
+
+    #font-change{
+        color: #db2836;
+    }
+</style>
+
+<body>
+    <!-- 整体部分区域 -->
+    <div class="theBody">
+
+        <!-- 头部区域 -->
+        <div class="theTitle">
+
+            <!-- 头部左边部分 -->
+            <div class="top-left">
+                前端与移动开发
+            </div> 
+
+            <!-- 头部右边部分 -->
+            <div class="top-right">
+
+                <div class="school">
+                    进入学院
+                </div>
+                <div class="school">
+                    学习社区
+                </div>
+                <div class="school">
+                    申请试听
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 身体部分 -->
+        <div class="leftBody">
+            <!-- 身体最顶端部分 -->
+            <div class="left-one">
+                <img src="./images/web_icon.jpg">
+                <div class="left-one-font">
+                    <span class="font-one">大前端改变世界</span><br>
+                    <span class="font-one">我们改变前端</span>
+                </div>
+            </div>
+
+
+
+            <!-- 身体中间部分 -->
+            <div class="on-body">
+
+                <div class="left-two">
+
+                    <div class="left-two-image">
+                        <img src="./images/icon2.png">
+                    </div>
+                    <div class="left-two-font">
+                        <span class="font-two">课程大纲</span>
+                    </div>
+                </div>
+
+
+                <div class="center-one">
+
+                    <div class="center-one-image">
+                        <img src="./images/icon3.png" alt="">
+                    </div>
+                    <div class="center-one-font">
+                        <span class="font-center-one">就业前景</span>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+
+
+            <!-- 身体下面部分 -->
+            <div class="under-body">
+                <div class="left-three">
+
+                    <div class="left-three-image">
+                        <img src="./images/icon1.png" alt="">
+                    </div>
+                    <div class="left-three-font">
+                        <span class="font-three">师资力量</span>
+                    </div>
+                </div>
+
+                <div class="left-four">
+                    <div class="left-four-font">
+                        <span class="font-four">免费视频下载</span>
+                    </div>
+                    <div class="left-four-image">
+                        100%
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- 身体右边部分 -->
+        <div class="rightBody">
+            <div class="top-address">
+                <span>北京校区</span>
+                <img src="./images/kczxdown.png" width="10px" height="10px">
+            </div>
+
+            <div class="class-on">
+                <ul>
+                    <li>基础班  2019-10-22  已开班</li>
+                    <li>基础班  2019-11-09  报名中</li>
+                    <li>基础班  2019-11-26  报名中</li>
+                    <li id="font-change">基础班  2019-12-16  报名中</li>
+                </ul>
+            </div>
+
+            <div class="class-under">
+                    <ul>
+                        <li>就业班  2019-11-13  报名中</li>
+                        <li>就业班  2019-11-26  报名中</li>
+                        <li>就业班  2019-12-01  报名中</li>
+                        <li>就业班  2019-12-19  报名中</li>
+                    </ul>
+                </div>
+        </div>
+
+        <!-- 身体下部分 -->
+        <div class="theUnderBody">
+            <img src="./images/technologyadweb.jpg" width="750px" height="80px">
+        </div>
+</body>
+
+</html>

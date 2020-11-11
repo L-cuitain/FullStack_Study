@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <button @click="handleRun">跑</button>
+        <button @click="handleStop">停</button>
+        <h3>{{msg}}</h3>
+    </div>
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //创建vm
+        let vm = Vue.createApp({
+            data() {
+                return {
+                    msg: "稳住 , 我们能赢!!!",
+                    setTimeId: null
+                }
+            },
+            methods: {
+                //创建跑的事件
+                handleRun() {
+                    //判断是否存在定时器   如果存在则先返回   防止多次点击按钮创建多个定时器
+                    if(this.setTimeId !== null)  return;
+                    //创建定时器
+                    this.setTimeId = setInterval(() => {
+                        //获取字符串中第一个字符
+                        let start = this.msg.slice(0, 1);
+                        //获取字符串中后面的字符
+                        let end = this.msg.slice(1);
+
+                        //拼接字符串
+                        this.msg = end + start;
+                    }, 500)
+                },
+
+                //创建停的事件
+                handleStop() {
+                    //清除定时器
+                    clearInterval(this.setTimeId);
+                    //重置定时器
+                    this.setTimeId == null;
+                }
+            }
+        })
+
+
+        //控制器挂载
+        vm.mount('#app');
+    </script>
+</body>
+
+</html>

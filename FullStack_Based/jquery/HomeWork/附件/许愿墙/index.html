@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/index.css">
+  <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <!-- 头部 -->
+  <header>
+    <div class="send"></div>
+  </header>
+  <!-- 主体内容体 -->
+  <main>
+    <!-- 这个是许愿签的模板 -->
+    <div class="list">
+      <div class="list-top">
+        <span>拉拉</span>
+        <span>No.00001</span>
+      </div>
+      <div class="list-center">
+        大家今天要好好把后台布局完成大家今天要好好把后台布局完成大家今天要好好把后台布局完成
+      </div>
+      <div class="list-bottom">
+        <span>今天08:30</span>
+        <span></span>
+      </div>
+    </div>
+  </main>
+  <!-- 遮罩层 -->
+  <div class="mask">
+    <div class="box">
+      <div class="mask-title">
+        <span>许下你的愿望</span>
+        <span class="fr close"></span>
+      </div>
+      <div class="mask-content">
+        <div class="mask-nickname">
+          <h3>昵称:</h3>
+          <input type="text">
+        </div>
+        <div class="mask-wish">
+          <h3>愿望:(您还可以输入 <i>50</i> 个字)</h3>
+          <textarea name="" id="text-wish" cols="30" rows="10" maxlength="50"></textarea>
+        </div>
+        <div class="release">
+          <img src="./img/send-btn.png" alt="" class="fr">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+<script>
+  // - 功能7：点击”我要许愿“，就会显示遮罩层
+  $('.send').on('click', function () {
+    $('.mask').show();
+  })
+
+  // - 功能8：点击”遮罩层“右上角的"X",这个遮罩层就会隐藏
+  $('.close').on('click', function () {
+    $('.mask').hide();
+  })
+
+  let count = 0;
+
+  // - 功能1：根据页面中给定的数据，创建许愿签到页面中，(许愿签的模板已经在页面中给定)
+  $('.release').on('click', function () {
+
+    let username = $('input[type=text]').val();
+    let wish = $('#text-wish').val();
+
+    count++;
+    if(count < 10){
+      count = '00000'+count;
+    }else if(count > 9 && count < 100){
+      count = '0000'+count;
+    }else if(count >= 100 && count < 1000){
+      count = '000'+count;
+    }else if(count >= 1000 && count < 10000){
+      count = '00'+count;
+    }
+
+    //判断获取内容  如果内容有空字符串 或者 没写  弹窗
+    if (username.trim() != '' || wish.trim() != '') {
+      //添加新标签 到main中
+      $('main').append(`<div class="list">
+      <div class="list-top">
+        <span>${username}</span>
+        <span>No.${count}</span>
+      </div>
+      <div class="list-center">
+        ${wish}
+      </div>
+      <div class="list-bottom">
+        <span>今天${getDate()}</span>
+        <span></span>
+      </div>
+    </div>`);
+    }
+
+
+    $('input[type=text]').val('');
+    $('#text-wish').val('');
+    $('.mask').hide();
+    $('.mask-wish>h3>i').text('50');
+  })
+
+
+  // - 功能9：在遮罩层的第二个输入框，不断的输入内容，上面的"50"这个文字在随着内容的输入在不断的减少，最大长度是50
+  $('#text-wish').on('input', function () {
+    //创建变量 count  获取文本框里面的长度
+    let count = $(this).val().length;
+
+    //获取当前可以输入多少数字
+    let code = 50 - count;
+
+    $('.mask-wish>h3>i').text(code);
+  })
+
+  // - 功能2：每个许愿签的位置是随机产生的
+
+
+  //创建方法 获取许愿签的个数
+  function getCount() {
+    let count = $('main>.list').length+1;
+
+    //if 判断 count 几位数
+    if (count < 10) {
+      return `0000${count}`;
+    } else if (count >= 10 && count < 100) {
+      return `000${count}`;
+    } else if (count >= 10 && count < 100) {
+      return `00${count}`;
+    } else if (count >= 100 && count < 1000) {
+      return `0${count}`;
+    } else if (count >= 1000 && count < 10000) {
+      return `${count}`;
+    }
+  }
+
+  // - 功能3：每个许愿签上面的时间(时和分)是和系统当前的时间一样的
+  //创建函数 获取当前时间
+  function getDate() {
+    //创建日期对象
+    let date = new Date();
+
+    //获取小时
+    let hour = date.getHours();
+
+    //获取分钟
+    let min = date.getMinutes();
+
+    hour = hour > 9 ? hour : '0' + hour;
+    min = min > 9 ? min : '0' + min;
+
+    return `${hour}:${min}`;
+  }
+
+  // - 功能4：鼠标移动到每个许愿签上面的"X"的时候，这个”X“的背景图的位置在改变(这个小X是一个精灵图)，鼠标离开恢复原样子
+  $('main').on({
+    'mouseenter':function(){
+      $(this).css('backgroundPositionX','-45px')
+    },
+    'mouseleave':function(){
+      $(this).css('backgroundPositionX','0')
+    }
+  },'.list-bottom>span:last-child')
+
+
+  // - 功能5: 当鼠标点击每个许愿签上面的"X"的时候，当前这个许愿签就会从页面中消失
+
+
+  // - 功能6：当许愿签堆叠在一起的时候，点击某个许愿签，当前这个许愿签就会在最上面，覆盖住别的许愿签
+
+  //   注意:当我通过"我要许愿"添加的许愿签，上面的功能都还是没有问题的，点击许愿签上面的"x"的功能还能用
+</script>
+
+</html>

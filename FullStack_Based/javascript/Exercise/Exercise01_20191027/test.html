@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        var arr = [];
+
+         for(var i = 0 ; i < 7 ; i++){
+             var jury = parseInt(prompt("请第"+i+"位评委输入分数"))
+             arr.push(jury);    
+        }
+
+        alert("这位选手的平均分为: "+getAvg(arr));
+
+        function getAvg(arr){
+
+            var max = arr[0];
+            var min = arr[0];
+            var sum = 0;
+
+            for(var i = 0 ; i < arr.length ; i++){
+                max = max > arr[i] ? max : arr[i];
+                min = min < arr[i] ? min : arr[i];
+                sum += arr[i];
+            }
+
+            var avg = parseInt((sum-max-min) / arr.length-2);
+
+            return avg;
+        }
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

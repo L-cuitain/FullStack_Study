@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .current{
+            color: aqua;
+        }
+
+        .change{
+            color: beige;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <fruit-list :list="list">
+            <template v-slot="slotProps">
+                <strong v-if="slotProps.info.id == 3" class="current">{{slotProps.info.name}}</strong>
+                <span v-else class="change">{{slotProps.info.name}}</span>
+            </template>
+        </fruit-list>
+    </div>
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //创建实例
+        let vm = Vue.createApp({
+            data(){
+                return {
+                    list : [{
+                            id : 1,
+                            name : 'apple',
+                        },
+                        {
+                            id : 2,
+                            name : 'orange'
+                        },
+                        {
+                            id : 3,
+                            name : 'lemon'
+                        }]
+                }
+            }
+        });
+
+        //创建组件
+        vm.component('fruit-list',{
+            props : ["list"],
+            template : `
+                <ul>
+                    <li v-for="(item,index) in list">
+                        <slot :info="item">{{item.name}}</slot>
+                    </li>
+                </ul>
+            `
+        });
+
+        vm.mount('#app');
+    </script>
+</body>
+</html>

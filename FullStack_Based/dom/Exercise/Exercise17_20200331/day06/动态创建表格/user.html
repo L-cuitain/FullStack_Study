@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+  <button>动态创建表格</button>
+
+  <div id="box1">
+    <!-- 放表格 -->
+  </div>
+  <script>
+    // 后端的数据
+    var heads = ['姓名', '年龄', '性别', '学号', '薪资', '城市', '操作'];
+    var datas = [{
+        name: '欧阳霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '上海'
+      },
+      {
+        name: '令狐霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '诸葛霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '南京'
+      },
+      {
+        name: '西门霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '深圳'
+      },
+      {
+        name: '上官霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '欧阳霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '上海'
+      },
+      {
+        name: '令狐霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '诸葛霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '南京'
+      },
+      {
+        name: '西门霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '深圳'
+      },
+      {
+        name: '上官霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+    ];
+
+
+    //获取 按钮
+    let oBtn = document.querySelector('button');
+
+    //获取 div
+    let oDv = document.querySelector('#box1');
+
+    //创建表格
+    var table = document.createElement('table');
+
+
+
+    //创建鼠标点击事件
+    oBtn.addEventListener('click', function () {
+
+      //创建tr
+      let tr = document.createElement('tr');
+
+      //遍历heads
+      for (let i = 0; i < heads.length; i++) {
+
+        //tr中添加内容
+        tr.innerHTML += `<th>${heads[i]}</th>`;
+
+      }
+
+      table.appendChild(tr);
+
+
+      for (let j = 0; j < datas.length; j++) {
+
+        //创建tr
+        let trs = document.createElement('tr');
+
+        trs.innerHTML = `<td>${datas[j].name}</td>
+        <td>${datas[j].age}</td>
+        <td>${datas[j].gender}</td>
+        <td>${datas[j].stuId}</td>
+        <td>${datas[j].salary}</td>
+        <td>${datas[j].city}</td>
+        <td><a href='#' class='del'>删除</a></td>`;
+
+        // trs.style.backgroundColor = '#fff';
+        trs.id = j + 1;
+
+        table.appendChild(trs);
+
+      }
+
+      //在div中添加表格
+      oDv.appendChild(table);
+
+      //获取所有删除标签
+      let dels = table.querySelectorAll('.del');
+
+      //创建计数器
+      let delCount = 0;
+
+      for(let k = 0 ; k < dels.length ; k++){
+        
+        //为删除标签创建鼠标点击事件
+        dels[k].onclick = function(){
+          if(delCount == dels.length-1){
+             delCount = 0;
+             dels[k].parentNode.parentNode.parentNode.style.display = 'none';
+          }
+
+          dels[k].parentNode.parentNode.style.display = 'none';
+
+          delCount++;
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

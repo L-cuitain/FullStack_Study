@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>title</title>
+
+</head>
+
+<body>
+  <img src="" alt="" id="im" />
+  <script>
+    // 获取图片
+    let oImg = document.querySelector('#im');
+
+    //先调用一次函数
+    fn();
+
+    //创建周期定时器
+    let timer = setInterval(fn,1000);
+
+    function fn(){
+      //创建date日期对象
+      let date = new Date();
+
+      //获取当前分钟 和 秒
+      let mintinue = date.getMinutes();
+      let seconds = date.getSeconds();
+
+      //判断时间
+      mintinue = mintinue > 9 ? mintinue : '0'+mintinue;
+      seconds = seconds > 9 ? seconds : '0'+seconds;
+
+      //将图片的路径更改
+      oImg.src = `${mintinue}_${seconds}`;
+      
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //6. 录入一个5位数,判断 该五位数是否为回文数。（判断第一位和第五位是否一样，第二位和第四位是否一样）
+
+        //提示用户输入
+        var num = prompt("请输入5位数");
+        
+        //判断第一位和第五位是否一样，第二位和第四位是否一样
+        if(num[0] == num[4] || num[1] == num[3]){
+            alert("该五位数为回文数");
+        }else{
+            alert("该五位数不是回文数");
+        }
+
+        </script>
+</body>
+</html>

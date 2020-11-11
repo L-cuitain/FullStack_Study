@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    body,
+    div {
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .theBody {
+        width: 100%;
+        height: 100%;
+        background-color: #f3f5f7;
+    }
+
+    .theFirstTitle {
+        width: 1534px;
+        height: 126px;
+        border: 1px solid cadetblue;
+    }
+
+    .fistTitle-image {
+        float: left;
+        width: 250px;
+        height: 54px;
+        margin-top: 37px;
+        margin-left: 80px;
+    }
+
+
+    .fistTitle-left-font {
+        float: left;
+        width: 330px;
+        height: 37px;
+        margin-top: 37px;
+    }
+
+    .fistTitle-left-font ul {
+        padding-left: 20px;
+        list-style-type: none;
+    }
+
+    .fistTitle-left-font li {
+        float: left;
+        padding-left: 56px;
+    }
+
+    .fistTitle-left-search {
+        float: left;
+        width: 490px;
+        height: 56px;
+        margin-top: 28px;
+        padding-top: 10px;
+        margin-left: 110px;
+    }
+
+    .fistTitle-right-user {
+        float: right;
+        width: 230px;
+        height: 40px;
+        margin-top: 37px;
+        margin-right: 30px;
+        padding-top: 1px;
+        font-size: 13px;
+    }
+
+    .fistTitle-right-user span{
+        padding-right: 10px;
+    }
+
+
+    .thePlateUp {
+        margin: 0 auto;
+        width: 1349px;
+        height: 746px;
+        margin-top: 42px;
+
+    }
+
+    .thePlateDown {
+        margin: 0 auto;
+        width: 1349px;
+        height: 746px;
+        margin-top: 63px;
+
+    }
+
+
+    .plate-title {
+        width: 1347px;
+        height: 50px;
+
+    }
+
+    .plate-title-left {
+        float: left;
+        font-size: 23px;
+        color: #8b717c;
+    }
+
+    .plate-title-right {
+        float: right;
+        font-size: 15px;
+        padding-top: 10px;
+    }
+
+    .theSmallPlate-top {
+        float: left;
+        width: 247px;
+        height: 335px;
+        margin-right: 26px;
+        background-color: #ffffff;
+    }
+
+    .theSmallPlate-top-last {
+        float: left;
+        width: 247px;
+        height: 335px;
+        background-color: #ffffff;
+    }
+
+
+    .theSmallPlate-bottom {
+        float: left;
+        width: 247px;
+        height: 335px;
+        margin-right: 26px;
+        margin-top: 20px;
+        background-color: #ffffff;
+    }
+
+    .theSmallPlate-bottom-last {
+        float: left;
+        width: 247px;
+        height: 335px;
+        margin-top: 20px;
+        background-color: #ffffff;
+    }
+
+
+    .theSmallPlate-top-div-one {
+        margin: 0 auto;
+        width: 220px;
+        height: 55px;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .theSmallPlate-top-div-two {
+        margin-left: 15px;
+        width: 144px;
+        height: 21px;
+
+    }
+
+    .theSmallPlate-top-font-one {
+        color: #ff853b;
+        font-size: 14px;
+    }
+
+    .theSmallPlate-top-font-two {
+        color: #a19ca5;
+        font-size: 14px;
+    }
+
+
+    .theBigImage {
+        width: 1534px;
+        height: 520px;
+        background-image: url("./images/bg01.jpg");
+    }
+
+    .ul-classify {
+        width: 237px;
+        height: 520px;
+        margin-left: 91px;
+    }
+
+    .ul-classify ul {
+        width: 197px;
+        height: 480px;
+        margin-top: 0px;
+        list-style-type: none;
+        padding-top: 40px;
+        background-color: rgba(255, 255, 255, 0.3);
+    }
+
+
+    .ul-classify ul li {
+        color: #eff8fd;
+        padding-bottom: 28px;
+    }
+
+    .ul-classify ul span {
+        padding-left: 90px;
+    }
+
+
+    .theTitle {
+        margin: 0 auto;
+        width: 1350px;
+        height: 76px;
+        margin-top: 14px;
+        border: 1px solid black;
+    }
+
+    .theLeft {
+        float: left;
+        width: 70px;
+        height: 23px;
+        padding-top: 30px;
+        padding-left: 38px;
+    }
+
+    .theRight {
+        float: right;
+        width: 71px;
+        height: 31px;
+        padding-top: 28px;
+        margin-right: 35px;
+
+    }
+
+
+
+    .theCenter {
+        float: left;
+        width: 1038px;
+        height: 23px;
+        padding-top: 29px;
+        padding-left: 45px;
+    }
+
+
+    .theCenter span {
+        padding-left: 20px;
+    }
+
+
+    .font-left {
+        color: #71c7ff;
+        font-weight: bold;
+    }
+
+    .font-right {
+        color: #71c7ff;
+        font-size: 14px;
+    }
+
+
+    .theBottomAbout {
+        width: 1534px;
+        height: 426px;
+        margin-top: 54px;
+        background-color: #ffffff;
+    }
+
+
+    .theBottom-left {
+        float: left;
+        width: 545px;
+        height: 240px;
+        padding-left: 81px;
+        padding-top: 34px;
+    }
+
+    .theBottom-right {
+        float: right;
+        width: 690px;
+        height: 200px;
+        padding-top: 43px;
+        margin-left: 45px;
+    }
+
+
+    .theBottom-left-font-one {
+        color: #7c7c7c;
+        font-size: 14px;
+        margin-top: 40px;
+        margin-bottom: 16px;
+    }
+
+
+    .theBottom-left-font-two {
+        color: #7c7c7c;
+        font-size: 14px;
+        margin-bottom: 28px;
+    }
+
+
+    .theBottom-right-ul {
+        float: left;
+        width: 120px;
+        height: 162px;
+        padding: 0px;
+        padding-left: 20px;
+        padding-right: 82px;
+    }
+
+
+    .theBottom-right-title-li {
+        font-size: 15px;
+        padding-bottom: 15px;
+        list-style-type: none;
+    }
+
+
+    .theBottom-right-content-li {
+        color: #95a3ae;
+        font-size: 10px;
+        padding-bottom: 10px;
+        list-style-type: none;
+    }
+
+
+</style>
+
+<body>
+    <!-- 页面整体 -->
+    <div class="theBody">
+
+
+
+        <!-- 标题导航栏 -->
+        <div class="theFirstTitle">
+
+            <div class="fistTitle-image">
+                <img src="./images/logo.png">
+            </div>
+
+
+            <div class="fistTitle-left-font">
+                <ul>
+                    <li>首页</li>
+                    <li>课程</li>
+                    <li>职业规划</li>
+                </ul>
+            </div>
+
+            <div class="fistTitle-left-search">
+
+                <img src="./images/Snipaste_2019-11-11_21-24-42.png" width="460px" height="54px">
+
+            </div>
+
+
+
+            <div class="fistTitle-right-user">
+
+                <span>个人中心</span>
+                <span><img src="./images/Snipaste_2019-11-11_21-23-58.png" width="40px" height="30px"></span>
+                <span><img src="./images/Snipaste_2019-11-11_21-24-31.png" width="40px" height="40px"></span>
+                <span>李德华</span>
+            </div>
+
+        </div>
+
+
+
+        <!-- 轮播图 -->
+        <div class="theBigImage">
+
+            <div class="ul-classify">
+                <ul>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                    <li>前端开发<span>></span></li>
+                </ul>
+            </div>
+
+        </div>
+
+
+
+        <!-- 行式列表 -->
+        <div class="theTitle">
+
+            <!-- 左边部分 -->
+            <div class="theLeft">
+                <span class="font-left">
+                    精品推荐
+                </span>
+            </div>
+
+            <!-- 中间部分 -->
+            <div class="theCenter">
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+                <span class="center-style">|</span>
+                <span class="center-style">JQuery</span>
+            </div>
+
+
+
+            <!-- 右边部分 -->
+            <div class="theRight">
+                <span class="font-right">修改兴趣</span>
+            </div>
+        </div>
+
+
+
+        <!-- 板块主题上 -->
+        <div class="thePlateUp">
+            <!-- 首行推荐 -->
+            <div class="plate-title">
+                <div class="plate-title-left">
+                    精品推荐
+                </div>
+                <div class="plate-title-right">
+                    查看全部
+                </div>
+            </div>
+
+            <!-- 板块 -->
+            <div class="theSmallPlate-top">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-top">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-top">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-top">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-top-last">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom-last">
+                <img src="./images/banner6.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!-- 板块主题下  -->
+        <div class="thePlateDown">
+            <!-- 首行推荐 -->
+            <div class="plate-title">
+                <div class="plate-title-left">
+                    精品推荐
+                </div>
+                <div class="plate-title-right">
+                    查看全部
+                </div>
+            </div>
+
+            <!-- 板块 -->
+            <div class="theSmallPlate-top">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-top">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-top">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-top">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-top-last">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+
+            <div class="theSmallPlate-bottom-last">
+                <img src="./images/banner5.png" width="247px" height="190px">
+                <div class="theSmallPlate-top-div-one">Think PHP 5.0 博客系统实战项目演练</div>
+                <div class="theSmallPlate-top-div-two">
+                    <span class="theSmallPlate-top-font-one">高级</span>
+                    <span class="theSmallPlate-top-font-two">· 1125人在学习</span>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 底部版权栏 -->
+        <div class="theBottomAbout">
+            <!-- 底部版权栏左边 -->
+            <div class="theBottom-left">
+                <div><img src="./images/logo.png" width="246px" height="54px"></div>
+                <div class="theBottom-left-font-one">学成在线致力于普及中国最好的教育它与中国一流大学和机构合作提供的在线课程。</div>
+                <div class="theBottom-left-font-two">&copy 2017年XTCG Inc.保留所有权利。-泸ICP备15025210号</div>
+                <div><input type="button" value="下载APP"></div>
+            </div>
+            <!-- 底部版权栏右边 -->
+            <div class="theBottom-right">
+
+                <div class="theBottom-right-ul">
+                    <ul>
+                        <li class="theBottom-right-title-li">
+                            关于学成网
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            关于
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            管理团队
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            工作机会
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            客户服务
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            帮助
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="theBottom-right-ul">
+                    <ul>
+                        <li class="theBottom-right-title-li">
+                            关于学成网
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            关于
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            管理团队
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            工作机会
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            客户服务
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            帮助
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="theBottom-right-ul">
+                    <ul>
+                        <li class="theBottom-right-title-li">
+                            关于学成网
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            关于
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            管理团队
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            工作机会
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            客户服务
+                        </li>
+                        <li class="theBottom-right-content-li">
+                            帮助
+                        </li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
+</html>

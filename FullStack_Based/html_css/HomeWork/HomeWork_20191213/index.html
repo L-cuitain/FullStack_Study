@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+
+    .top-img {
+       width: 100%;
+
+    }
+
+    .top-img a{
+        flex: 1;
+    }
+
+    .top-img img {
+        width: 100%;
+        display: block;
+    }
+
+    .main-list{
+        padding: 5px;
+    }
+
+    .list {
+        display: flex;
+        height: 90px;
+        
+        border-radius: 5px;
+        margin-bottom: 5px;
+    }
+
+    .list:nth-child(1){
+        background-color: #ff697a;
+    }
+
+    .list:nth-child(2){
+        background-color: #3d98ff;
+    }
+
+    .list:nth-child(3){
+        background-color: #44c522;
+    }
+
+    .list:nth-child(4){
+        background-color: #fc9720;
+    }
+
+    .list-left{
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+    }
+
+    .list-right{
+        display: flex;
+        flex: 2;
+        flex-wrap: wrap;
+    }
+
+    .list-left a{
+        width: 100%;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        font-size: 14px;
+        color: #ffffea;
+        border-bottom: 1px solid #fff;
+        box-sizing: border-box;
+    }
+
+    .list-right a{
+        width: 50%;
+        height: 45px;
+        text-align: center;
+        line-height: 45px;
+        font-size: 14px;
+        color: #ffffea;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        box-sizing: border-box;
+    }
+
+
+    .main-extra{
+        display: flex;
+    }
+
+    .main-extra a{
+        flex: 2;
+        box-sizing: border-box;
+    }
+
+    .main-extra a img{
+        width: 100%;
+    }
+
+
+    .bottom-nav{
+        display: flex;
+        height: 44px;
+        border-top: 1px solid #c2c2c2;
+        border-bottom: 1px solid #c2c2c2;
+        justify-content: space-around;
+        
+    }
+
+    .bottom-nav a{
+        float: 1;
+        width: 100%;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 12px;
+        color: #000;
+    }
+
+    .bottom-link{
+        width: 100%;
+        height: 17.6px;
+        margin: 12px 0;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .bottom-link a{
+        font-size: 12px;
+        color: #000;
+    }
+
+    .bottom-copyright{
+        color: #a2a2a2;
+        text-align: center;
+        font-size: 12px;
+        margin-bottom: 12px;
+    }
+
+</style>
+
+<body>
+    <div class="top-img">
+        <a href="#"><img src="./images/banner.jpg" alt=""></a>
+    </div>
+    <div class="main-list">
+        <div class="list">
+            <div class="list-left"></div>
+            <div class="list-right">
+                <a href="#">海外酒店</a>
+                <a href="#">团购</a>
+                <a href="#">特惠酒店</a>
+                <a href="#">客栈公寓</a>
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="list-left"></div>
+            <div class="list-right">
+                <a href="#">火车票</a>
+                <a href="#">汽车票船票</a>
+                <a href="#">国际机票</a>
+                <a href="#">自驾汽车</a>
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="list-left"></div>
+            <div class="list-right">
+                <a href="#">攻略身边</a>
+                <a href="#">邮轮</a>
+                <a href="#">周末游</a>
+                <a href="#">保险签证</a>
+            </div>
+        </div>
+
+        <div class="list">
+            <div class="list-left">
+                <a href="#">门票玩乐</a>
+                <a href="#">礼品卡</a>
+            </div>
+            <div class="list-right">
+                <a href="#">美食</a>
+                <a href="#">全球购</a>
+                <a href="#">出境WIFI</a>
+                <a href="#">更多</a>
+            </div>
+        </div>
+
+        <div class="main-extra">
+            <a href="#">
+                <img src="./images/extra_1.png" alt="">
+            </a>
+            <a href="#">
+                <img src="./images/extra_2.png" alt="">
+            </a>
+        </div>
+    </div>
+
+
+    <div class="bottom-nav">
+        <a href="#">电话预定</a>
+        <a href="#">下载客户端</a>
+        <a href="#">我的</a>
+    </div>
+
+    <p class="bottom-link">
+        <a href="#">网站地图</a>
+        &nbsp;|&nbsp;
+        <a href="#">ENGLISH</a>
+        &nbsp;|&nbsp;
+        <a href="#">电脑版</a>
+    </p>
+
+    <p class="bottom-copyright">
+        &copy;2015 携程旅行
+    </p>
+</body>
+
+</html>

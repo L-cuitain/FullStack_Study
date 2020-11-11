@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/user.css">
+</head>
+
+<body>
+  <button>动态创建表格</button>
+
+  <div id="box1">
+    <!-- 放表格 -->
+  </div>
+  <script>
+    // 后端的数据
+    var heads = ['姓名', '年龄', '性别', '学号', '薪资', '城市', '操作'];
+    var datas = [{
+        name: '欧阳霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '上海'
+      },
+      {
+        name: '令狐霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '诸葛霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '南京'
+      },
+      {
+        name: '西门霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '深圳'
+      },
+      {
+        name: '上官霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '欧阳霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '上海'
+      },
+      {
+        name: '令狐霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+      {
+        name: '诸葛霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '南京'
+      },
+      {
+        name: '西门霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '深圳'
+      },
+      {
+        name: '上官霸天',
+        age: 19,
+        gender: '男',
+        stuId: '1001',
+        salary: '20000',
+        city: '北京'
+      },
+    ];
+
+
+    //获取 按钮
+    let oBtn = document.querySelector('button');
+
+    //获取 div
+    let oDv = document.querySelector('#box1');
+
+    //给按钮 添加鼠标点击事件
+    oBtn.onclick = function () {
+
+      //创建表格
+      let oTable = document.createElement('table');
+
+      //创建tr
+      let oTr = document.createElement('tr');
+
+      //遍历heads
+      for (let i = 0; i < heads.length; i++) {
+
+        //创建th
+        let oTh = document.createElement('th');
+
+        oTh.innerText = heads[i];
+
+        oTr.appendChild(oTh);
+      }
+
+      oTable.appendChild(oTr);
+
+      //遍历 datas
+      for (let j = 0; j < datas.length; j++) {
+
+        //创建 tr
+        let oTrs = document.createElement('tr');
+
+        oTrs.innerHTML = `<td>${datas[j].name}</td>
+          <td>${datas[j].age}</td>
+          <td>${datas[j].gender}</td>
+          <td>${datas[j].stuId}</td>
+          <td>${datas[j].salary}</td>
+          <td>${datas[j].city}</td>
+          <td><a href="#" class="deleteTr">删除</a></td>`;
+
+        oTrs.setAttribute('class', 'list');
+
+        oTrs.style.backgroundColor = "#fff";
+
+        oTable.appendChild(oTrs);
+      }
+
+      //将表格添加到div中
+      oDv.appendChild(oTable);
+
+      //获取表格 每一行
+      let aTrs = document.querySelectorAll('.list');
+
+      //遍历行
+      for (let i = 0; i < aTrs.length; i++) {
+
+        //为每一行设置鼠标移入事件
+        aTrs[i].onmouseover = function () {
+          //添加颜色
+          aTrs[i].style.backgroundColor = '#ffce00';
+        }
+
+        //为每一行设置鼠标移出事件
+        aTrs[i].onmouseout = function () {
+          //添加颜色
+          aTrs[i].style.backgroundColor = '#fff';
+        }
+      }
+
+
+      //获取删除标签
+      let aDeleteTr = document.querySelectorAll('.deleteTr');
+
+      //遍历删除标签
+      for (let i = 0; i < aDeleteTr.length; i++) {
+
+        //为删除标签添加鼠标点击事件
+        aDeleteTr[i].onclick = function () {
+
+          //判断 如果索引 为最后一个删除标签
+          if (i == aDeleteTr.length-1) {
+            //将table删除
+            oDv.removeChild(oTable);
+          }else{
+            //删除一行tr
+            oTable.removeChild(aDeleteTr[i].parentElement.parentElement);
+          }
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>

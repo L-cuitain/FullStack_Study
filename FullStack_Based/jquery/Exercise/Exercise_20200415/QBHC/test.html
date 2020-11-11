@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: aqua;
+            overflow: hidden;
+        }
+
+        #myCanvas {
+            border: 1px solid #019ef9;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="myCanvas" width="3180" height="930"></canvas>
+
+    <script>
+        var ctx = document.querySelector('#myCanvas').getContext('2d');
+
+        //新建路径
+        ctx.beginPath();
+
+        drawnv(0, 0, 158, 862, 1340, 3180, 'rgb(1, 158, 249)', 'rgba(0,0,0,0.5)')
+
+        //startX X轴起始值
+        //startY Y轴起始值
+        //width X轴第一次移动距离
+        //height Y轴第一次移动距离
+        //courseX 过程中需要移动的距离
+        //stopX X轴终止时的距离
+        function drawnv(startX, startY, width, height, courseX, stopX, strokeStyle, fillStyle) {
+            //使用moveTo设置起始值
+            ctx.moveTo(startX, startY);
+            //移动指定坐标
+            ctx.lineTo(startX, height);
+            ctx.lineTo(width, height);
+            ctx.lineTo(width + 60, height + 60);
+            ctx.lineTo(courseX - 45, height + 60);
+            ctx.lineTo(courseX + 15, height);
+            ctx.lineTo(stopX, height);
+            ctx.lineTo(stopX, startY);
+            ctx.lineTo(width, startY);
+            // ctx.clip();
+            //关闭路径
+            ctx.closePath();
+
+            ctx.lineWidth = 3;
+
+            //描边颜色
+            ctx.strokeStyle = strokeStyle;
+            //描边
+            ctx.stroke();
+
+            //填充颜色
+            ctx.fillStyle = fillStyle;
+            //填充
+            ctx.fill();
+        }
+    </script>
+</body>
+
+</html>

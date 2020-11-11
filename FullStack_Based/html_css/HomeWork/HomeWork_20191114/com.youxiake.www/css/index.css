@@ -1,0 +1,423 @@
+body {
+  background-color: #1f1f1f;
+}
+
+/* 顶部导航栏 */
+.top-nav {
+  position: absolute;
+  width: 100%;
+  height: 29px;
+  background-color: #2b2b2b;
+}
+
+.top-nav div a {
+  color: #cccccc;
+}
+
+.top-nav div a:hover {
+  text-decoration: none;
+  color: #ff9d00;
+}
+
+
+/* 顶部导航栏左边 */
+.top-nav-left {
+  position: relative;
+  left: 160px;
+  float: left;
+  width: 198px;
+  height: 28px;
+}
+
+
+.top-nav-left div {
+  float: left;
+  width: 25px;
+  height: 13px;
+  margin: 0px 10px;
+  font-size: 12px;
+  line-height: 28px;
+}
+
+
+/* 顶部导航栏右边 */
+.top-nav-right {
+  position: relative;
+  right: 160px;
+  float: right;
+  width: 450px;
+  height: 28px;
+}
+
+.top-nav-right div {
+  float: left;
+  font-size: 12px;
+}
+
+.top-nav-right div:nth-child(-n+2) {
+  width: 50px;
+  height: 28px;
+  margin: 0 10px;
+  line-height: 28px;
+}
+
+.top-nav-right div:nth-child(3) {
+  width: 75.5px;
+  height: 12px;
+  padding: 7px 4px 7px 5px;
+}
+
+.top-nav-right div:nth-child(3) a {
+  width: 64.5px;
+  height: 12px;
+}
+
+
+.top-nav-right div:nth-child(3):hover {
+
+  background-color: #fff;
+}
+
+.top-nav-right div:nth-child(3) a:hover {
+
+  color: #555555;
+}
+
+
+.my-yxk ul{
+  position: relative;
+  display:none;
+  top: 6px;
+  right: 4.8px;
+  width: 84px;
+  height: 150px;
+  background-color: #ffffff;
+}
+
+.my-yxk ul li{
+  width: 85px;
+  height: 30px;
+  text-align: center;
+}
+
+.my-yxk ul li:hover{
+    background-color: #fdd000;
+}
+
+
+.top-nav-right div:nth-child(3):hover ul{
+    display: block;
+}
+
+
+
+.top-nav-right div:nth-child(4) {
+  width: 65px;
+  height: 28px;
+  padding-left: 10px;
+  margin-right: 10px;
+  line-height: 28px;
+}
+
+
+.top-nav-right div i {
+  color: #fdd000;
+  font-size: 17px;
+  padding-top: 2px;
+}
+
+.top-nav-right .iconfont:nth-child(n+2) {
+  width: 19px;
+  height: 28px;
+  margin: 0 10px;
+  font-size: 21px;
+  line-height: 28px;
+}
+
+.top-nav-right div:nth-child(7) span {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  padding-right: 10px;
+}
+
+.top-nav-right div span:nth-child(2) .img-wx {
+  position: relative;
+  display: none;
+  right: 60px;
+  top: 10px;
+  border: 5px solid #fff;
+}
+
+.top-nav-right div .wx-span:after {
+  content: "";
+  display: none;
+  position: relative;
+  top: -173px;
+  left: 7px;
+  width: 10px;
+  height: 10px;
+  border-top: 5px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.top-nav-right div:hover span:nth-child(2) .img-wx {
+  display: block;
+}
+
+.top-nav-right div:hover span:nth-child(2):after {
+  display: inline;
+}
+
+
+
+.top-nav-right div:nth-child(5) span {
+  position: absolute;
+  width: 151px;
+  height: 160px;
+}
+
+
+.img-xcx {
+  position: relative;
+  right: 65px;
+  display: none;
+  width: 151px;
+  height: 160px;
+}
+
+.top-nav-right div:hover .img-xcx {
+  display: block;
+}
+
+
+.top-nav-right div span:first-child {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+}
+
+.weixin-img {
+  position: relative;
+  display: none;
+  border: 10px;
+  top: 6px;
+  right: 30px;
+}
+
+.top-nav-right div .weixin-span:after {
+  content: "";
+  position: relative;
+  display: none;
+  top: -154px;
+  left: 29px;
+  width: 10px;
+  height: 10px;
+  border-top: 5px solid transparent;
+  border-bottom: 10px solid #fff;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.top-nav-right div:hover .weixin-span .weixin-img {
+  display: block;
+}
+
+.top-nav-right div:hover .weixin-span:after {
+  display: inline;
+}
+
+
+/* 搜索栏 */
+.search{
+  position: relative;
+  top: 29px;
+  width: 100%;
+  height: 120px;
+  background-color: #333333;
+}
+
+
+/* 左边logo */
+.search-left-logo{
+  float: left;
+  position: relative;
+  left: 162px;
+  width: 260px;
+  height: 50px;
+  margin-top: 35px;
+  margin-left: 18px;
+}
+
+
+/* 右边栏 */
+.search-right{
+  float: right;
+  position: relative;
+  right: 168px;
+  width: 800px;
+  height: 80px;
+  
+}
+
+
+.search-right-title{
+  float: left;
+  width: 80px;
+  height: 20px;
+  padding-top: 10px;
+  margin-top: 42px;  
+}
+
+.search-right-title a{
+  font-size: 16px;
+  color: #fdd000;
+}
+
+
+.search-right-title ul{
+  width: 66px;
+  height: 360px;
+  display: none;
+  background-color: #ffffff;
+}
+
+.search-right-title ul li{
+  width: 66px;
+  height: 20px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+
+.search-right-title:hover ul{
+  display: block;
+}
+
+
+.search-right-title ul li:hover{
+  background-color: #ebc203;
+}
+
+
+.search-right-title span{
+   padding-left: 7px;
+}
+
+
+.search-right-area{
+  float: left;
+  position: relative;
+  right: 10px;
+  width: 560px;
+  height: 36px;
+  margin-top: 40px;
+  margin-left: 10px;
+  border: 2px solid #fdd000;
+}
+
+
+.search-many{
+  float: left;
+  width: 42px;
+  height: 15px;
+  padding: 12px 0px 12px 10px;
+  margin-right: 13px;
+}
+
+.search-many a{
+  color: #afaaaa;
+  font-size: 14px;
+}
+
+
+.search-many span{
+   margin-left: 5px;
+}
+
+
+.search-many ul{
+  position: relative;
+  top: 10px;
+  left: -12px;
+  width: 80px;
+  height: 240px;
+  display: none;
+  background-color: #ffffff;
+}
+
+.search-many ul li{
+  width: 80px;
+  height: 20px;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.search-many:hover ul{
+  display: block;
+}
+
+
+.search-many ul li:hover{
+  background-color: #ebc203;
+}
+
+
+.search-button{
+  float: right;
+  width: 130px;
+  height: 36px;
+  background-color: #fdd000;
+  text-align: center;
+  color: #333333;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 36px;
+}
+
+
+
+.search-server{
+  float: left;
+  position: relative;
+  left: 10px;
+  width: 124px;
+  height: 34px;
+  margin-top: 41px;
+}
+
+.search-server span:first-child{
+  width: 124px;
+  height: 12px;
+  font-size: 12px;
+  color: #d2d2d2;
+  margin-bottom: 10px;
+}
+
+.search-server span:last-child{
+  position: relative;
+  top: 7px;
+  width: 124px;
+  height: 16.8px;
+  color: #ffcc00;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.search-server-img{
+  float: right;
+  position: relative;
+  width: 73px;
+  height: 77px;
+  top: 47px;
+  left: 728px;
+}
+
+
+.search-many-area{
+  float: left;
+  width: 360px;
+  height: 36px; 
+}

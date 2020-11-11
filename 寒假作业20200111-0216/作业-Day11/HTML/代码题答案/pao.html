@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    
+        body,html{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+
+        div{
+            position: relative;
+            margin: 0 auto;
+            margin-top: 50px;
+            width: 250px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 5px;
+            background-color: #003166;
+        }
+
+
+        .up{
+            position: absolute;
+            top: 1px;
+            width: 100%;
+            transition: all 0.5s; 
+        }
+
+        .down{
+            position: absolute;
+            bottom: -9px;
+            width: 100%;
+            transition: all 0.5s;
+        }
+
+        div:hover .up{
+            transform: translateY(-230px);
+        }
+
+        div:hover .down{
+            transform: translateY(200px);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div>
+        <img src="./images/paopao.png" alt="" class="up">
+        <img src="./images/paopao.png" alt="" class="down">
+    </div>
+</body>
+</html>

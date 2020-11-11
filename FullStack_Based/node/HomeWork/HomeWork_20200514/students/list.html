@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>学员信息</title>
+	<link rel="stylesheet" href="./css/list.css">
+</head>
+
+<body>
+	<table>
+		<caption>学员信息</caption>
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>性别</th>
+			<th>邮箱地址</th>
+			<th>爱好</th>
+			<th>所属学院</th>
+			<th>入学时间</th>
+		</tr>
+	</table>
+
+	<script src="./lib/jquery-3.4.1.min.js"></script>
+	<script src="./lib/template-web.js"></script>
+	<script type="text/template" id="message">
+		<tr>
+			<td>{{username}}</td>
+			<td>{{age}}</td>
+			<td>{{sex}}</td>
+			<td>{{email}}</td>
+			<td>{{hobby}}</td>
+			<td>{{school}}</td>
+			<td>{{date}}</td>
+		</tr>
+	</script>
+	<script src="./js/student_list.js"></script>
+</body>
+
+</html>

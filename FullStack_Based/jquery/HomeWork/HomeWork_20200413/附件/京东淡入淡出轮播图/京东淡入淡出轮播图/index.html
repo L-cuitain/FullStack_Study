@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>轮播图</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .slider {
+      height: 340px;
+      width: 790px;
+      margin: 100px auto;
+      position: relative;
+    }
+
+    .slider ul li {
+      position: absolute;
+      display: none;
+    }
+
+    .arrow {
+      display: none;
+    }
+
+    .arrow-left,
+    .arrow-right {
+      font-family: "SimSun", "宋体";
+      width: 30px;
+      height: 60px;
+      background-color: rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 50%;
+      margin-top: -30px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 60px;
+      color: #fff;
+      font-weight: 700;
+      font-size: 30px;
+    }
+
+    .arrow-left:hover,
+    .arrow-right:hover {
+      background-color: rgba(0, 0, 0, .5);
+    }
+
+    .arrow-left {
+      left: 0;
+    }
+
+    .arrow-right {
+      right: 0;
+    }
+
+    .slider ol {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      transform: translate(-50%);
+    }
+
+    .slider ol li {
+      float: left;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      margin-right: 10px;
+      background-color: #fff;
+    }
+
+    .slider ol li.current {
+      background-color: red;
+    }
+  </style>
+  <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <div class="slider">
+    <ul>
+      <li><a href="#"><img src="./img/jd1.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/jd2.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/jd3.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/jd4.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/jd5.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/jd6.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/jd7.jpg" alt=""></a></li>
+      <li><a href="#"><img src="./img/jd8.jpg" alt=""></a></li>
+    </ul>
+    <!--箭头-->
+    <div class="arrow">
+      <span class="arrow-left">&lt;</span>
+      <span class="arrow-right">&gt;</span>
+    </div>
+    <!-- 小圆点 -->
+    <ol>
+
+    </ol>
+  </div>
+</body>
+<script>
+  $('.slider>ul>li:first-child').css('display', 'block');
+
+
+  //左右箭头显示隐藏
+  $('.slider').hover(function () {
+    $('.arrow').toggle();
+  })
+
+  //创建鼠标移入事件  清除定时器
+  $('.slider').on({
+    'mouseenter': function () {
+      clearInterval(timer);
+
+      timer = null;
+    },
+    'mouseleave': function () {
+      timer = setInterval(function () {
+        $('.arrow-right').click();
+      }, 2000)
+    }
+  })
+
+
+  //创建计数器 获取当前图片的索引
+  let count = 0;
+
+  //创建变量cricle 获取当前图片的小圆点
+  let cricle = 0;
+
+
+  //创建右箭头的点击事件
+  $('.arrow-right').on('click', function () {
+    //计数器自增
+    count++;
+
+    //判断如果计数器超过图片的索引 重置计数器
+    if (count > $('.slider>ul>li').length - 1) {
+      count = 0;
+    }
+
+    //设置轮播图淡入动画
+    $('.slider li').eq(count).fadeIn(1000).siblings().fadeOut();
+
+    //小圆点增加
+    cricle++;
+
+    //判断小圆点是否超过最大值
+    if (cricle > $('ol li').length - 1) {
+      cricle = 0;
+    }
+
+    //更改li的样式
+    $('ol>li').eq(cricle).addClass('current').siblings().removeClass('current');
+  })
+
+
+  //创建左箭头的点击事件
+  $('.arrow-left').on('click', function () {
+    //计数器自减
+    count--;
+
+    //判断如果计数器超过图片的索引  重置计数器
+    if (count < 0) {
+      count = $('.slider>ul>li').length - 1;
+    }
+
+    //设置轮播图淡入动画
+    $('.slider li').eq(count).fadeIn(1000).siblings().fadeOut();
+
+
+    //判断小圆点是否超过最大值
+    if (cricle < 0) {
+      cricle = $('ol li').length - 1;
+      console.log(cricle);
+    }
+
+    //小圆点增加
+    cricle--;
+
+    //更改li的样式
+    $('ol>li').eq(cricle).addClass('current').siblings().removeClass('current');
+  })
+
+
+  //获取小圆点
+  //遍历图片个数
+  $('.slider li').each(function (i) {
+    //ol中添加小圆点
+    $('ol').append('<li></li>');
+  })
+
+  //为ol中第一个li添加current类
+  $('ol li:first-child').addClass('current');
+
+  //为小圆点添加鼠标点击事件
+  $('ol').on('click', 'li', function () {
+    //获取li的索引
+    let index = $(this).index();
+
+    //更改li的样式
+    $(this).addClass('current').siblings().removeClass('current');
+
+    count = index;
+    cricle = index;
+
+    //添加图片淡入动画
+    $('.slider li').eq(index).fadeIn(1000).siblings().fadeOut();
+
+  })
+
+  //创建定时器
+  let timer = setInterval(function () {
+    $('.arrow-right').click();
+  }, 2000)
+</script>
+
+</html>

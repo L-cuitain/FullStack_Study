@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //18.	利用JavaScript编写程序：通过用户输入的时间来判断哪个时间段，
+// 请输入 24 小时制的时间，0-24 如果超出“时间输入有误”，如果时间是0点到6点，在控制台输出，现在时间为凌晨"+s+'点，
+// 如果时间是7-12，在控制台输出，"现在时间为上午"+s+'点'
+// 如果时间是12-22，在控制台输出，现在时间为下午"+(s-12)+'点'
+// 如果时间是22-24，在控制台输出，"现在时间为深夜"+(s-12)+'点')
+
+      var time = prompt("请输入 24 小时制的时间");
+      
+      var IntTime = parseInt(time);
+
+      if(IntTime >= 0 && IntTime <= 6){
+        alert("现在时间为凌晨"+IntTime+"点");
+      }else if(IntTime >= 7 && IntTime < 12){
+        alert("现在时间为上午"+IntTime+"点");
+      }else if(IntTime >= 12 && IntTime < 22){
+        var now = IntTime-12
+        alert("现在时间为下午"+now+"点");
+      }else if(IntTime >= 22 && IntTime <= 24){
+        var now = IntTime-12
+        alert("现在时间为深夜"+now+"点");
+      }
+
+
+        </script>
+</body>
+</html>
+
+

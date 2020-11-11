@@ -1,0 +1,141 @@
+<!DOCTYPE>
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>无标题文档</title>
+  <link rel="stylesheet" href="index.css">
+  <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <div class="Xcontent">
+    <ul class="Xcontent01">
+      <div class="Xcontent06"><img src="images/X1.png"></div>
+      <ol class="Xcontent08">
+        <div class="Xcontent07"><img src="images/X1.png"></div>
+        <div class="Xcontent09"><img src="images/X7.png"></div>
+        <div class="Xcontent10"><img src="images/X8.png"></div>
+        <div class="Xcontent11"><img src="images/X9.png"></div>
+        <div class="Xcontent12"><img src="images/X10.png"></div>
+      </ol>
+      <ol class="Xcontent13">
+        <div class="Xcontent14"><a href="#">
+            <p>新物品</p>
+          </a></div>
+        <div class="Xcontent15"><img src="images/X11.png"></div>
+        <div class="Xcontent16">
+          <p>充电5分钟，温暖2小时</p>
+        </div>
+        <div class="Xcontent17">
+          <p class="Xcontent18">售价</p>
+          <p class="Xcontent19">￥<span>69.00</span></p>
+          <div class="Xcontent20">
+            <p class="Xcontent21">促销</p>
+            <img src="images/X12.png">
+            <p class="Xcontent22">领610元新年礼券，满再赠好礼</p>
+          </div>
+          <div class="Xcontent23">
+            <p class="Xcontent24">服务</p>
+            <p class="Xcontent25">30天无忧退货&nbsp;&nbsp;&nbsp;&nbsp; 48小时快速退款 &nbsp;&nbsp;&nbsp;&nbsp; 满88元免邮</p>
+          </div>
+
+        </div>
+        <div class="Xcontent26">
+          <p class="Xcontent27">颜色</p>
+          <div class="Xcontent28"><img src="images/X14.png"></div>
+          <div class="Xcontent29"><img src="images/X1.png"></div>
+        </div>
+        <div class="Xcontent30">
+          <p class="Xcontent31">数量</p>
+          <div class="Xcontent32"><img src="images/X15.png"></div>
+          <form>
+            <input class="input" value="1">
+          </form>
+          <div class="Xcontent33"><img src="images/16.png"></div>
+
+        </div>
+        <div class="Xcontent34"><a href="#"><img src="images/X17.png"></a></div>
+        <div class="Xcontent35"><a href="#"><img src="images/X18.png"></a></div>
+
+      </ol>
+    </ul>
+  </div>
+</body>
+<script>
+
+  //创建变量count
+  var count = 1;
+
+
+  //功能一:
+  //获取ol中的子元素 创建鼠标移入事件
+  $('.Xcontent08>div').mouseenter(function () {
+    //改变边框样式
+    $(this).css('border', '1px solid red');
+
+    //获取鼠标移入图片的路径
+    var img = $(this).children().attr('src');
+    //将大图路径更换
+    $('.Xcontent06>img').attr('src', img);
+  })
+
+  //创建鼠标移出事件
+  $('.Xcontent08>div').mouseleave(function () {
+    //改变边框样式
+    $(this).css('border', '1px solid #e8e8e8');
+  })
+
+
+
+  //创建鼠标点击事件
+  $('body').click(function (e) {
+    //获取鼠标点击元素
+    let target = $(e.target);
+
+    //功能二:
+    //判断元素是否为颜色图片
+    if (target.is('.Xcontent28>img')) {
+      //改变边框样式
+      $('.Xcontent29').css('border', '1px solid #e8e8e8');
+      $('.Xcontent28').css('border', '1px solid red');
+
+      //获取鼠标移入图片的路径
+      var img = $(this).children().attr('src');
+      //将大图路径更换
+      $('.Xcontent06>img').attr('src', img);
+    } else if (target.is('.Xcontent29>img')) {
+      //改变边框样式
+      $('.Xcontent28').css('border', '1px solid #e8e8e8');
+      $('.Xcontent29').css('border', '1px solid red');
+
+      //获取鼠标移入图片的路径
+      var img = $(this).children().attr('src');
+      //将大图路径更换
+      $('.Xcontent06>img').attr('src', img);
+    } else {
+      //改变边框样式
+      $('.Xcontent28').css('border', '1px solid #e8e8e8');
+      $('.Xcontent29').css('border', '1px solid #e8e8e8');
+    }
+
+
+    //功能三:
+
+    //判断元素是否为加减图片
+    if (target.is('.Xcontent32>img')) {
+      count--;
+    } else if (target.is('.Xcontent33>img')) {
+      count++;
+    }
+    //判断count是否小于等于0
+    if (count <= 0) {
+      //更改为默认值
+      count = 1;
+    }
+    //更换input的value值
+    $('input').val(count);
+  })
+</script>
+
+</html>

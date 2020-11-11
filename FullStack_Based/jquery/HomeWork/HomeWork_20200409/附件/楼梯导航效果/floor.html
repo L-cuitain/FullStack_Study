@@ -1,0 +1,109 @@
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="index.css">
+	<script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+	<div class="top">
+		<img src="img/top1.png" alt="" />
+	</div>
+	<div class="louceng">
+		<!-- 楼层1 -->
+		<div class="jd jia">
+			<img src="img/jia.png" alt="" />
+		</div>
+		<!-- 楼层2 -->
+		<div class="jd dian">
+			<img src="img/dian.png" alt="" />
+		</div>
+		<!-- 楼层3 -->
+		<div class="jd fu">
+			<img src="img/fu.png" alt="" />
+		</div>
+		<!-- 楼层4 -->
+		<div class="jd mei">
+			<img src="img/mei.png" alt="" />
+		</div>
+	</div>
+	<div class="bottom">
+		<img src="img/bottom.png" alt="" />
+	</div>
+	<!-- 侧边栏 -->
+	<div class="subnav">
+		<ul>
+			<li>家电通讯</li>
+			<li>电脑数码</li>
+			<li>服饰精品</li>
+			<li>美容珠宝</li>
+		</ul>           
+		<div class="back">返回</div>
+
+	</div>
+
+</body>
+<script>
+	//获取楼层距离
+	let jia = $('.jia').offset().top;
+	let dian = $('.dian').offset().top;
+	let fu = $('.fu').offset().top;
+	let mei = $('.mei').offset().top;
+
+	//创建页面滑动事件
+	$(document).on('scroll',function(){
+		//判断到楼层1 显示侧边栏
+		if($(this).scrollTop() >= jia){
+			$('.subnav').show();
+		}else{
+			$('.subnav').hide();
+		}
+
+		//判断如果到那个楼层  那么这个楼层对应的侧边栏显示
+		if($(this).scrollTop() >= jia-10){
+
+			//改变样式
+			$('.subnav>ul>li').eq(0).addClass('current').siblings().removeClass('current');	
+		}
+
+		if($(this).scrollTop() >= dian-10){
+
+			//改变样式
+			$('.subnav>ul>li').eq(1).addClass('current').siblings().removeClass('current');
+		}
+
+		if($(this).scrollTop() >= fu-10){
+			//改变样式
+			$('.subnav>ul>li').eq(2).addClass('current').siblings().removeClass('current');
+		}
+
+		if($(this).scrollTop() >= mei-10){
+			//改变样式
+			$('.subnav>ul>li').eq(3).addClass('current').siblings().removeClass('current');
+		}
+	})
+
+
+	//
+	$('.subnav>ul').on('click','li',function(){
+		//获取侧边栏 每一块的索引
+		let index = $(this).index();
+
+		//
+		let top = $('.louceng>div').eq(index).offset().top;
+		
+		//页面的滚动距离 为 top
+		$(document).scrollTop(top);
+	})
+
+
+	
+
+
+</script>
+
+</html>

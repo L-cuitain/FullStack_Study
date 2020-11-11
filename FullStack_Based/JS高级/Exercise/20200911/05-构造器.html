@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //构造器 constructor
+        //创建 对象 (构造函数)
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //创建 原型对象的方法
+        Person.prototype.say = function(){
+            console.log(123);
+        }
+
+        let p1 = new Person('zs',18);
+
+        //prototype 存在构造器 constructor 值是构造函数Person
+        //__proto__ 也有构造器  constructor 值是 构造器Person
+        console.log(p1.__proto__);
+    </script>
+</body>
+</html>

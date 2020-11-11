@@ -1,0 +1,275 @@
+$background-left: url(../img/spirte.png);
+$background-right: url(../img/1.png);
+
+
+@mixin left($text:"图书", $getwidth: 44px, $color:#93d46f) {
+    position: absolute;
+    left: 35px;
+    visibility: hidden;
+    content: $text;
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    line-height: 35px;
+    width: $getwidth;
+    height: 35px;
+    background-color: $color;
+}
+
+@mixin right($text:"购物车", $getwidth: 44px) {
+    position: absolute;
+    left: -80px;
+    visibility: hidden;
+    content: $text;
+    display: block;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 35px;
+    width: $getwidth;
+    height: 35px;
+    background-color: #4f4f4f;
+}
+
+
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 列表左 */
+.nav-left {
+    float: left;
+    width: 35px;
+    height: 175px;
+    background-color: #fafafa;
+
+    li {
+        position: relative;
+        width: 35px;
+        height: 35px;
+        background-image: $background-left;
+        background-repeat: no-repeat;
+    }
+}
+
+
+
+/* li中精灵图位置1 */
+.nav-left li:nth-child(1) {
+    background-position: -4px 0px;
+}
+
+/* 伪元素 */
+.nav-left li:nth-child(1)::after {
+    @include left();
+}
+
+
+/* li中精灵图位置2 */
+.nav-left li:nth-child(2) {
+    background-position: -3px -484px;
+}
+
+/* 伪元素 */
+.nav-left li:nth-child(2)::after {
+    @include left("服装", 44px, #ff857f);
+}
+
+
+/* li中精灵图位置3 */
+.nav-left li:nth-child(3) {
+    background-position: -3px -524px;
+}
+
+/* 伪元素 */
+.nav-left li:nth-child(3)::after {
+    @include left("日用百货", 60px, #f97f67);
+}
+
+/* li中精灵图位置4 */
+.nav-left li:nth-child(4) {
+    background-position: -3px -243px;
+}
+
+/* 伪元素 */
+.nav-left li:nth-child(4)::after {
+    @include left("孕婴童", 50px, #72d599);
+}
+
+/* li中精灵图位置5 */
+.nav-left li:nth-child(5) {
+    color: #fff;
+    background-color: #f97f67;
+    background-position: -42px -563px;
+}
+
+/* 伪元素 */
+.nav-left li:nth-child(5)::after {
+    @include left("猜你喜欢", 60px, #f97f67);
+}
+
+/* 鼠标触摸显示1 */
+.nav-left li:nth-child(1):hover {
+    background-color: #93d46f;
+    background-position: -44px 0px;
+}
+
+.nav-left li:nth-child(1):hover::after {
+    visibility: visible;
+}
+
+/* 鼠标触摸显示 2*/
+.nav-left li:nth-child(2):hover {
+    background-color: #ff857f;
+    background-position: -44px -484px;
+}
+
+.nav-left li:nth-child(2):hover::after {
+    visibility: visible;
+}
+
+/* 鼠标触摸显示3 */
+.nav-left li:nth-child(3):hover {
+    background-color: #f97f67;
+    background-position: -44px -524px;
+}
+
+.nav-left li:nth-child(3):hover::after {
+    visibility: visible;
+}
+
+/* 鼠标触摸显示4 */
+.nav-left li:nth-child(4):hover {
+    background-color: #72d599;
+    background-position: -42px -243px;
+}
+
+.nav-left li:nth-child(4):hover::after {
+    visibility: visible;
+}
+
+.nav-left li:nth-child(5):hover::after {
+    visibility: visible;
+}
+
+
+
+/* 列表右 */
+.nav-right {
+    float: right;
+    width: 32px;
+    height: 175px;
+
+    li {
+        position: relative;
+        width: 32px;
+        height: 35px;
+        background-image: $background-right;
+        background-repeat: no-repeat;
+    }
+}
+
+/* li中精灵图位置2 */
+.nav-right li:nth-child(2) {
+    background-position: 0px -36px;
+}
+
+/* li中精灵图位置3 */
+.nav-right li:nth-child(3) {
+    background-position: 0px -70px;
+}
+
+/* li中精灵图位置4 */
+.nav-right li:nth-child(4) {
+    background-position: 0px -103px;
+}
+
+/* li中精灵图位置5 */
+.nav-right li:nth-child(5) {
+    background-position: 0px -210px;
+}
+
+
+.count {
+    position: absolute;
+    top: -1px;
+    left: 12px;
+    width: 20px;
+    height: 14px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: red;
+    color: #fff;
+}
+
+
+/* 鼠标触碰 */
+.nav-right li:nth-child(1):hover {
+    background-position: -40px 0px;
+}
+
+
+.nav-right li:nth-child(2):hover {
+    background-position: -40px -36px;
+}
+
+.nav-right li:nth-child(3):hover {
+    background-position: -40px -70px;
+}
+
+.nav-right li:nth-child(4):hover {
+    background-position: -40px -103px;
+}
+
+.nav-right li:nth-child(5):hover {
+    background-position: -40px -210px;
+}
+
+
+/* 伪元素 */
+.nav-right li:nth-child(1)::after {
+    @include right("购物车", 80px);
+}
+
+.nav-right li:nth-child(2)::after {
+    @include right("我的收藏", 80px);
+}
+
+.nav-right li:nth-child(3)::after {
+    @include right("我的浏览", 80px);
+}
+
+.nav-right li:nth-child(4)::after {
+    @include right("我的银铃铛", 80px);
+}
+
+.nav-right li:nth-child(5)::after {
+    @include right("咨询小当家", 80px);
+}
+
+
+/*  伪元素显示 */
+.nav-right li:nth-child(1):hover::after {
+    visibility: visible;
+}
+
+.nav-right li:nth-child(2):hover::after {
+    visibility: visible;
+}
+
+.nav-right li:nth-child(3):hover::after {
+    visibility: visible;
+}
+
+.nav-right li:nth-child(4):hover::after {
+    visibility: visible;
+}
+
+.nav-right li:nth-child(5):hover::after {
+    visibility: visible;
+}

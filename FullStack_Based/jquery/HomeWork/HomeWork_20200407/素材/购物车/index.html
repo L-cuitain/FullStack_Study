@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <!-- 引入初始化 -->
+  <link rel="stylesheet" href="css/base.css">
+  <!-- 引入购物车样式 -->
+  <link rel="stylesheet" href="css/index.css">
+
+  <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <div class="car">
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" id="all">全选
+          </th>
+          <th>
+            商品
+          </th>
+          <th>
+            单价
+          </th>
+          <th>
+            商品数量
+          </th>
+          <th>
+            小计
+          </th>
+          <th>
+            操作
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>
+            <img src="uploads/01.jpg">
+            <p>牛奶</p>
+          </td>
+          <td>
+            20￥
+          </td>
+          <td>
+            <div class="count-c clearfix">
+              <a href="javascript:" class="reduce">-</a>
+              <input type="text" value="1">
+              <a href="javascript:" class="add">+</a>
+            </div>
+          </td>
+          <td>
+            20￥
+          </td>
+          <td>
+            <a href="javascript:" class="del">删除</a>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>
+            <img src="uploads/01.jpg">
+            <p>牛奶</p>
+          </td>
+          <td>
+            20￥
+          </td>
+          <td>
+            <div class="count-c clearfix">
+              <a href="javascript:" class="reduce">-</a>
+              <input type="text" readonly value="2">
+              <a href="javascript:" class="add">+</a>
+            </div>
+          </td>
+          <td>
+            40￥
+          </td>
+          <td>
+            <a href="javascript:" class="del">删除</a>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>
+            <img src="uploads/01.jpg">
+            <p>牛奶</p>
+          </td>
+          <td>
+            20￥
+          </td>
+          <td>
+            <div class="count-c clearfix">
+              <a href="javascript:" class="reduce">-</a>
+              <input type="text" readonly value="2">
+              <a href="javascript:" class="add">+</a>
+            </div>
+          </td>
+          <td>
+            40￥
+          </td>
+          <td>
+            <a href="javascript:" class="del">删除</a>
+          </td>
+
+        </tr>
+        <tr>
+          <td>
+            <input type="checkbox">
+          </td>
+          <td>
+            <img src="uploads/01.jpg">
+            <p>牛奶</p>
+          </td>
+          <td>
+            20￥
+          </td>
+          <td>
+            <div class="count-c clearfix">
+              <a href="javascript:" class="reduce">-</a>
+              <input type="text" readonly value="2">
+              <a href="javascript:" class="add">+</a>
+            </div>
+          </td>
+          <td>
+            40￥
+          </td>
+          <td>
+            <a href="javascript:" class="del">删除</a>
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>
+    <div class="controls clearfix">
+      <a href="javascript:" class="del-all">删除所选商品</a>
+      <a href="javascript:" class="clear">清理购物车</a>
+      <a href="javascript:" class="pay">去结算</a>
+      <p>
+        已经选中<span id="totalCount">0</span>件商品;总价：<span id="totalPrice" class="total-price">0￥</span>
+      </p>
+    </div>
+  </div>
+  <div class="box">
+    购物车空空如也
+  </div>
+
+
+</body>
+<script>
+  //设置布尔值
+  var flag = false;
+
+  //创建计数器
+  var count = 0;
+
+  //创建选中商品计数器
+  var totalCount = 0;
+
+
+  //功能一:
+  //全选按钮点击事件:
+  $('#all').click(function () {
+
+    if (flag == false) {
+      //所有input单选框变成选中状态
+      $("input[type='checkbox']").prop('checked', true);
+      //改变布尔值
+      flag = true;
+    } else {
+      //所有input单选框变成取消选中状态
+      $("input[type='checkbox']").prop('checked', false);
+      //改变布尔值
+      flag = false;
+    }
+  });
+
+
+
+  //功能二:
+  //创建单选框点击事件
+  $("input[type='checkbox']").click(function () {
+
+    //设置布尔值
+    let fg = true;
+
+    let arr = $("input[type='checkbox']");
+    
+    for(let i = 1 ; i < arr.length ; i++){
+
+      if(!arr[i].checked){
+        console.log(arr[i].checked);
+        
+         fg = false;
+      }
+    }
+    
+    if (fg == true) {
+      $('#all').prop('checked', true);
+    }else{
+      $('#all').prop('checked', false);
+    }
+  })
+
+
+
+  $('tbody>tr').click(function (e) {
+
+    //选中商品增加
+    // totalCount++;
+
+    //更改选中商品个数
+    // $('#totalCount').text(totalCount);
+
+    //获取点中元素
+    let target = $(e.target);
+
+    //功能三:
+    //判断元素是否为+号
+    if (target.is('.add')) {
+
+      //获取当前索引
+      let index = $(this).index();
+
+      //当前单选框选中
+      $("input[type='checkbox']").eq(index + 1).prop('checked', true);
+
+      //获取商品数量
+      let productCount = $(".count-c>input[type='text']").eq(index).val();
+
+      //数量增加
+      productCount++;
+      //商品数量增加
+      $(".count-c>input[type='text']").eq(index).val(productCount);
+
+      //获取小计
+      let price = 20 * productCount + '￥';
+
+      //更改小计价格
+      $(this).find('td').eq(4).text(price);
+
+    } else if (target.is('.reduce')) {
+
+      //获取当前索引
+      let index = $(this).index();
+
+      //当前单选框选中
+      $("input[type='checkbox']").eq(index + 1).prop('checked', true);
+
+      //获取商品数量
+      let productCount = $(".count-c>input[type='text']").eq(index).val();
+
+      //数量增加
+      productCount--;
+
+      //判断count是否小于等于0
+      if (productCount <= 0) {
+        //更改为默认值
+        productCount = 1;
+      }
+
+      //获取小计
+      let price = 20 * productCount + '￥';
+
+      //更改小计价格
+      $(this).find('td').eq(4).text(price);
+
+      //商品数量减少
+      $(".count-c>input[type='text']").eq(index).val(productCount);
+    }
+  })
+</script>
+
+</html>

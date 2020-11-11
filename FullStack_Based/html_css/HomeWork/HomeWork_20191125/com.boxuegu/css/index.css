@@ -1,0 +1,385 @@
+/* 头部 */
+.topnav{
+    width: 100%;
+    height: 30px;
+}
+
+.topnav span{
+    line-height: 30px;
+    color: #b3b3b3;
+    font-size: 12px;
+}
+
+
+/* 标题 */
+.topnav-title{
+    width: 100%;
+    height: 80px;
+    background-color: #2e3340;
+}
+
+
+.title-logo{
+    float: left;
+    width: 146px;
+    height: 48px;
+    padding: 15px 0;
+}
+
+.title-logo img{
+    width: 146px;
+    height: 48px;
+}
+
+
+.title-list{
+    float: left;
+    width: 319px;
+    height: 80px;
+    padding-left: 60px;
+}
+
+.title-list li{
+    float: left;
+    line-height: 80px;
+    margin-right: 17px;
+}
+
+.title-list li a{
+    font-size: 15px;
+    font-weight: inherit;
+    color: #9cabb4;
+}
+
+.title-list li a:hover{
+    color: #fff;
+}
+
+
+/* 指向 */
+.found{
+    float: left;
+    width: 100%;
+    height: 57px;
+    background-color: #f6f6f6;
+}
+
+
+.found ul{
+    width: 336px;
+    height: 57px; 
+}
+
+.found ul li{
+    float: left;
+    line-height: 57px;
+    font-size: 12px;
+    padding-right: 8px;
+}
+
+
+/* 首页图片 */
+.title-img{
+    float: left;
+    width: 100%;
+    height: 180px;
+    padding-bottom: 20px;
+    background-color: #f6f6f6;
+}
+
+.title-img img{
+    width: 1226px;
+    height: 180px;
+}
+
+
+/* 学习列表 */
+.study-title{
+    float: left;
+    width: 100%;
+    height: 605px;
+    background-color: #f6f6f6;
+}
+
+.study-title .container{
+    background-color: #fff;
+}
+
+
+.study-title-list{
+    width: 900px;
+    height: 376px;
+    margin:88px 0 33px 45px;
+    border-left: 1px solid black;
+}
+
+.study-title-list h2{
+    padding: 10px 0px 34px 20px;
+    font-weight: initial;
+    font-size: 18px;
+}
+
+.study-list-videos{
+    float: left;
+    width: 850px;
+    height: 255px;
+    padding-left: 20px;
+}
+
+.study-list-videos li{
+    float: left;
+    width: 266px;
+    height: 255px;
+    margin-right: 10px;
+    background-color: #f6f6f6;
+}
+
+.study-list-videos li h3{
+    padding:17px 0 16px 10px;
+    font-size: 14px;
+    font-weight: inherit;
+}
+
+.study-notes{
+    width: 246px;
+    height: 20px;
+    padding: 0 10px;
+}
+
+.study-download{
+    float: left;
+    color: #a9afaf;
+    font-size: 12px;
+}
+
+.study-count{
+    float: right;
+    color: #888888;
+    font-size: 12px;
+}
+
+
+/* 学习列表底部 */
+.study-bottom{
+    width: 1226px;
+    height: 25px;
+    padding-bottom: 30px;
+}
+
+.study-bottom h3{
+    position: relative;
+    left: 42%;
+    float: left;
+    width: 110px;
+    padding-right: 3px;
+    font-size: 12px;
+    color: #a6a9ad;
+    font-weight: inherit;
+}
+
+.study-bottom a{
+    position: relative;
+    left: 42%;
+    width: 71px;
+    color: black;
+}
+
+
+/* 版权 */
+.copyright{
+    float: left;
+    width: 100%;
+    height: 228px;
+    padding-bottom: 33px;
+    background-color: #2e3340;
+}
+
+.copyright-help-left{
+    float: left;
+    width: 881px;
+    height: 194px;
+    border-right: 1px solid #454f68;
+    margin-top: 34px;
+}
+
+.copyright-help-left ul{
+    float: left;
+    width: 70px;
+    height: 194px;
+    padding-right: 75px;
+}
+
+.help-title-first{
+    width: 70px;
+    height: 18px;
+    font-size: 15px;
+    color: #fff;
+    padding-bottom: 15px;
+}
+
+
+.help-title-last{
+    width: 80px;
+    height: 15px;
+    padding-top: 13px;
+}
+
+.help-title-last a{
+    font-size: 12px;
+    color: #8a94a6;
+}
+
+
+/* 增加距离 */
+.help-getpadding{
+    float: left;
+    width: 80px;
+    height: 1px;
+}
+
+
+.help-wechat{
+    float: left;
+    width: 140px;
+    height: 170px;
+    margin-right: 32px;
+    /* margin-top: 25px; */
+}
+
+
+.help-wechat li:first-child{
+    width: 122px;
+    font-size: 15px;
+    color: #fff;
+    padding-bottom: 26px;
+    text-align: center;
+}
+
+
+.help-wechat li:last-child{
+    width: 122px;
+    height: 122px;
+}
+
+.help-wechat li:last-child img{
+    width: 122px;
+    height: 122px;
+}
+
+
+.copyright-help-right{
+    float: left;
+    width: 344px;
+    height: 194px;
+    margin-top: 34px;
+    
+}
+
+.right-icon{
+    width: 268px;
+    height: 62px;
+    margin: 11px 45px 27px 52px;
+}
+
+
+.icon-weibo{
+    float: left;
+    width: 57px;
+    height: 57px;
+    background-image: url(../img/icon.png);
+    background-position: -75px -477px;
+    background-repeat: no-repeat;
+}
+
+
+.icon-kongjian{
+    float: left;
+    width: 57px;
+    height: 57px;
+    margin-left: 20px;
+    background-image: url(../img/icon.png);
+    background-position: 1px -382px;
+    background-repeat: no-repeat;
+}
+
+
+.icon-link{
+    float:left;
+    width: 57px;
+    height: 57px;
+    margin-left: 20px;
+    background-image: url(../img/icon.png);
+    background-position: -74px -379px;
+    background-repeat: no-repeat;
+}
+
+
+.right-address{
+    width: 292px;
+    height: 81px;
+    margin-left: 52px;
+}
+
+.right-address ul{
+    width: 292px;
+    height: 81px;
+}
+
+
+.right-address ul li{
+    width: 292px;
+    height: 15px;
+    padding-bottom: 7px;
+    color: #a3aec1;
+    font-size: 12px;
+}
+
+
+/* 底部 */
+.bottom-address{
+    float: left;
+    width: 100%;
+    height: 75px;
+    background-color: #2e3340;
+}
+
+
+.bottom-address span{
+    display: block;
+    font-size: 12px;
+    color: #afbbcf;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+			var num = 2
+			function add(){
+			//获取用户名  密码  和 性别
+			var username = $("input[name='username']").val()
+			var pass = $("input[name='pwd']").val()
+			var sex = $("input[name='sex']:checked").val()
+			if(sex == "man"){
+				sex = "男"
+			}else{
+				sex = "女"
+			}
+			
+			
+			var id = num++
+			//创建  tr  保存记录的值
+			var tr = "<tr><th>"+id+"</th> <th>"+username+"</th> <th>"+pass+"</th> <th>"+sex+"</th></tr>"
+			
+			//追加
+			$("table").append(tr)
+		
+		}
+	</script>
+	<body>
+		点击按钮：将用户名、密码、性别添加到表单中。
+		<form>
+			用户名：<input type="text" name="username" />
+			<br />
+			密码：<input type="password" name="pwd" />
+			<br />
+			性别：<input type="radio" name="sex" value="man" checked="checked"/>男
+				  <input type="radio" name="sex" value="woman" />女
+				  <br />
+			<input type="button" value="添加到表格" onclick="add()"/>
+		</form>
+		<table cellspacing="0" border="1" width="100%">
+			<tr>
+				<th>序号</th>
+				<th>用户名</th>
+				<th>密码</th>
+				<th>性别</th>
+			</tr>
+			<tr>
+				<th>1</th>
+				<th>zhangsan</th>
+				<th>123123123</th>
+				<th>男</th>
+			</tr>
+		</table>
+	</body>
+</html>
+

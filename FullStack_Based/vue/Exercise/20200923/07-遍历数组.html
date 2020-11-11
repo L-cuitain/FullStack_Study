@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+
+        <ul>
+            <!-- <li v-for="元素 in 数组名"></li> -->
+            <!-- 不推荐使用 index 作为 key 的值 -->
+            <!-- 在数组进行删除元素后  index 做为索引 会出现改变 -->
+            <!-- <li v-for="(item,index) in teamArr" :key="index">{{item}}</li> -->
+            <li v-for="(item,index) in teamArr">{{item}}</li>
+        </ul>
+
+        <ol>
+            <!-- key值 使用 数组对象的id  -->
+            <li v-for="(item,index) in personArr" :key="item.id">
+                {{item.name}}  今年  {{item.age}}  岁
+            </li>
+        </ol>
+    </div>
+
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        // Vue遍历数组步骤:
+        // 将所要遍历的数据存放到 data中
+
+
+        //创建vm
+        let vm = Vue.createApp({
+            //创建数据结构
+            data(){
+                return{
+                    teamArr:['123','345','567','789','10112'],
+                    personArr:[
+                        {
+                            id : 1,
+                            name : '张三',
+                            age : 12
+                        },
+                        {
+                            id : 2,
+                            name : '里斯',
+                            age : 15
+                        },
+                        {
+                            id : 3,
+                            name : '完给',
+                            age : 20
+                        }
+                    ]
+                }
+            },
+
+            methods:{
+
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

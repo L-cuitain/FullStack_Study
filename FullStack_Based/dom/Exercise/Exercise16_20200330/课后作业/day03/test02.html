@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        h2 {
+            float: left;
+            margin: 0;
+            padding: 2px 5px 0 0;
+            font-size: 14px;
+            font-weight: initial;
+            font-family: fantasy;
+        }
+
+        input {
+            width: 160px;
+            height: 13px;
+            font-size: 13px;
+            color: #bebebe;
+        }
+
+        span {
+            font-size: 13px;
+            color: #a9b7cf;
+        }
+
+        .color1 {
+            color: red;
+        }
+
+        .color2 {
+            color: green;
+        }
+
+        .color3 {
+            border: 1px solid red;
+        }
+
+        .color4 {
+            border: 1px solid green;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>您的成绩: </h2><input type="text" placeholder="请输入分数"> <img src="" alt=""><span>请输入您的成绩</span>
+</body>
+<script>
+    //获取input标签
+    let ipt = document.querySelector('input');
+    let oSpan = document.querySelector('span');
+
+    //创建鼠标获取焦点事件
+    ipt.onblur = function () {
+        //获取成绩
+        let score = Number(ipt.value);
+
+        //判断成绩
+        if (score >= 0 && score <= 100) {
+            ipt.className = "color4";
+            oSpan.className = "color2";
+            oSpan.innerHTML = "输入成绩正确";
+
+        } else if (score > 100) {
+            ipt.className = "color3";
+            oSpan.className = "color1";
+            oSpan.innerHTML = "成绩不能超出100";
+        } else if (score < 0) {
+            ipt.className = "color3";
+            oSpan.className = "color1";
+            oSpan.innerHTML = "成绩不能小于0";
+        } else {
+            ipt.className = "color3";
+            oSpan.className = "color1";
+            oSpan.innerHTML = "请您输入数字";
+        }
+    }
+</script>
+
+</html>

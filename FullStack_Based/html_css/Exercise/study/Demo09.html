@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var sum = 0
+		$().ready(function(){
+			
+			var font = $("font").html()
+			
+			var span = $("span").html()
+			
+			var div = $("div div").html()
+			
+			sum = parseInt(font)+parseInt(span)+parseInt(div)
+			alert(sum)
+		})
+		
+	</script>
+	<body>
+		<!--弹框显示div区域内元素文本内容的和，也就是要计算1+2+3的和-->
+		<div id="s1">
+			<font>1</font>
+			<span>2</span>
+			<div>3</div>
+		</div>
+	</body>
+</html>
+

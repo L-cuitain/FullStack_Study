@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div></div>
+
+
+    <!-- <script src="./js/ajaxTools3.js"></script> -->
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+    <script>
+        let oBtn = document.querySelector('button');
+        let userInfo = {
+            username: '里斯',
+            password: '12345'
+        }
+
+
+        oBtn.onclick = function () {
+
+            let jsonData = JSON.stringify(userInfo);
+
+            //未封装的 ajax
+            // //实例化XMLHttpRequest对象
+            // let xhr = new XMLHttpRequest();
+
+            // //设置请求方式 和 请求地址
+            // xhr.open('POST','/postParam');
+
+            // //使用POST请求需要添加请求头
+            // xhr.setRequestHeader('Content-Type','application/json');
+
+            // //发送请求数据
+            // xhr.send(JSON.stringify(userInfo));
+
+            // //监听并处理响应
+            // xhr.onreadystatechange = function(){
+            //     if(xhr.readyState == 4 && xhr.status == 200){
+            //         let data = JSON.parse(xhr.responseText);
+
+            //         //显示数据到页面
+            //         document.body.innerHTML = data.username + " " + data.password;
+            //     }
+            // }
+
+            //封装的 ajax 1
+            // ajax('POST', '/postParam', jsonData , function (data) {
+            //     let finalData = JSON.parse(data);
+
+            //     //显示数据到页面
+            //     document.body.innerHTML = finalData.username + " " + finalData.password;
+            // });
+
+            //封装的 ajax 2
+            // ajax({
+            //     type: 'POST',
+            //     url: '/postParam',
+            //     data: jsonData,
+            //     success: function (data) {
+            //         let finalData = JSON.parse(data);
+
+            //         //显示数据到页面
+            //         document.body.innerHTML = finalData.username + " " + finalData.password;
+            //     }
+            // })
+
+            //封装的 ajax 3
+            // $.ajax({
+            //     type: 'GET',
+            //     url: '/simple',
+            //     data: {
+            //         username : '张三',
+            //         password : '123'
+            //     },
+            //     success: function (data) {
+            //         let finalData = JSON.parse(data);
+                    
+            //         //显示数据到页面
+            //         document.body.innerHTML = finalData.username + " " + finalData.password;
+            //     }
+            // })
+
+            //jquery的ajax
+            $.ajax({
+                type: 'GET',
+                url: '/simple',
+                data: {
+                    username : '张三',
+                    password : '123'
+                },
+                success: function (data) {
+                    let finalData = JSON.parse(data);
+                    
+                    //显示数据到页面
+                    document.body.innerHTML = finalData.username + " " + finalData.password;
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

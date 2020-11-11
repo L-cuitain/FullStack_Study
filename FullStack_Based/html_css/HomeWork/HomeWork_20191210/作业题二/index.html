@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    .tour {
+        width: 1450;
+        height: 250px;
+        margin: 5px;
+    }
+
+    .tour-topnav {
+        padding-left: 2px;
+        height: 40px;
+    }
+
+    .tour-topnav h2:first-child {
+        float: left;
+        margin: 0;
+        color: #000;
+        font-size: 18px;
+        font-weight: inherit;
+        padding-right: 30px;
+        line-height: 30px;
+    }
+
+
+    .tour-topnav h2:nth-child(2) {
+        float: left;
+        margin: 0;
+        color: #106ad4;
+        font-size: 18px;
+        font-weight: inherit;
+        line-height: 30px;
+    }
+
+    .tour-topnav h2:nth-child(2):after {
+        content: "";
+        display: block;
+        position: relative;
+        bottom: 4px;
+        left: 30px;
+        width: 0px;
+        height: 0px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-top: 7px solid transparent;
+        border-bottom: 7px solid #3884e5;
+    }
+
+
+    .tour-main {
+        width: 100%;
+        height: 281px;
+        border: 1px solid #e0e4e0;
+        border-top: 3px solid #3884e5;
+    }
+
+    .tour-mainnav {
+        width: 1465px;
+        height: 241px;
+        margin: 20px;
+    }
+
+    .mainnav-top {
+        float: left;
+        width: 100%;
+        height: 40px;
+    }
+
+    .mainnav-left {
+        float: left;
+        width: 50px;
+        height: 25px;
+        color: #f3f7f9;
+        background-color: #3b81e5;
+        border-radius: 3px;
+        text-align: center;
+    }
+
+    .mainnav-right {
+        float: right;
+        width: 100px;
+        height: 25px;
+        color: #6293e8;
+    }
+
+
+    .tour-images {
+        float: left;
+        width: 100%;
+        height: 200px;
+    }
+
+    .tour-images div:nth-child(1),
+    .tour-images div:nth-child(2),
+    .tour-images div:nth-child(3),
+    .tour-images div:nth-child(4){
+        position: relative;
+        float: left;
+        width: 280px;
+        height: 200px;
+        margin-right: 16px;
+        overflow: hidden;
+    }
+
+    .tour-images div:nth-child(5){
+        position: relative;
+        float: left;
+        width: 280px;
+        height: 200px;
+        overflow: hidden;
+    }
+
+    .tour-images img {
+        width: 280px;
+        height: 200px;
+        transition: all 0.3s;
+    }
+
+
+    .tour-img-one:hover img,
+    .tour-img-two:hover img,
+    .tour-img-three:hover img,
+    .tour-img-four:hover img,
+    .tour-img-five:hover img{
+        transform: scale(1.1);
+    }
+    
+
+    .title{
+        position: absolute;
+        bottom: 0px;
+        margin: 0;
+        width: 280px;
+        height: 28px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        font-size: 13px;
+        font-weight: inherit;
+        transition: all 0.3s;
+    }
+
+    .title-text{
+        position: absolute;
+        bottom: -35px;
+        margin: 0;
+        width: 280px;
+        height: 35px;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: #a3aeb6;
+        text-align: center;
+        line-height: 25px;
+        font-size: 13px;
+        font-weight: inherit;
+        transition: all 0.3s;
+    }
+
+
+    .tour-img-one:hover .title,
+    .tour-img-two:hover .title,
+    .tour-img-three:hover .title,
+    .tour-img-four:hover .title,
+    .tour-img-five:hover .title{
+        bottom: 35px;
+    }
+
+    .tour-img-one:hover .title-text,
+    .tour-img-two:hover .title-text,
+    .tour-img-three:hover .title-text,
+    .tour-img-four:hover .title-text,
+    .tour-img-five:hover .title-text{
+        bottom: 0px;
+    }
+
+
+</style>
+
+<body>
+    <div class="tour">
+        <div class="tour-topnav">
+            <h2>目的地攻略</h2>
+            <h2>旅游旗舰店</h2>
+        </div>
+
+        <div class="tour-main">
+            <div class="tour-mainnav">
+                <div class="mainnav-top">
+                    <div class="mainnav-left">
+                        精选
+                    </div>
+                    <div class="mainnav-right">
+                        更多旗舰馆 &gt;
+                    </div>
+                </div>
+
+                <div class="tour-images">
+                    <div class="tour-img-one">
+                        <img src="./img/1.jpg" alt="">
+                        <h2 class="title">韶关旅游体验馆</h2>
+                        <p class="title-text">活力之旅,善美韶关</p>
+                    </div>
+                    <div class="tour-img-two">
+                        <img src="./img/2.jpg" alt="">
+                        <h2 class="title">嘉兴旅游体验馆</h2>
+                        <p class="title-text">红船启梦, 心游嘉兴: 江南水乡、历...</p>
+                    </div>
+                    <div class="tour-img-three">
+                        <img src="./img/3.jpg" alt="">
+                        <h2 class="title">广州南沙邮轮旅游体验馆</h2>
+                        <p class="title-text">广州心城南沙, 开 "驶" 邮轮旅游新...</p>
+                    </div>
+                    <div class="tour-img-four">
+                        <img src="./img/4.jpg" alt="">
+                        <h2 class="title">西班牙旅游体验馆</h2>
+                        <p class="title-text">西班牙不缺阳光, 不缺美食, 不缺文...</p>
+                    </div>
+                    <div class="tour-img-five">
+                        <img src="./img/5.jpg" alt="">
+                        <h2 class="title">以色列国家旅游体验馆</h2>
+                        <p class="title-text">一面蔚蓝, 一面神秘, 应许之地与海...</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

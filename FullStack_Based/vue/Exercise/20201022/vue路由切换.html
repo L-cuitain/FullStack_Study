@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav>
+        <a href="#index">首页</a>
+        <a href="#huaji1">滑稽1</a>
+        <a href="#huaji2">滑稽2</a>
+        <a href="#huaji3">滑稽3</a>
+    </nav>
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //创建子组件
+        const IndexPage = {
+            template: `
+            <div><h1>首页信息</h1></div>
+            `
+        }
+
+        const Funny1 = {
+            template: `
+            <div><h1>滑稽1信息</h1></div>    
+            `
+        }
+
+        const Funny2 = {
+            template: `
+            <div><h1>滑稽2信息</h1></div>    
+            `
+        }
+
+        const Funny3 = {
+            template: `
+            <div><h1>滑稽3信息</h1></div>    
+            `
+        }
+
+        //创建实例
+        let vm = Vue.createApp({
+            data() {
+                return {
+                    cname : 'index'
+                }
+            },
+
+            //组件
+            components: {
+                IndexPage,
+                Funny1,
+                Funny2,
+                Funny3
+            }
+        });
+
+
+        //创建Hash改变事件
+        window.onhashchange = function(){
+            console.log(location.hash);
+            if(location.hash == '#index'){
+                vm.$data.cname = 'index';
+            }
+            if(location.hash == '#huaji1'){
+                vm.$data.cname = 'huaji1';
+            }
+            if(location.hash == '#huaji2'){
+                vm.$data.cname = 'huaji2';
+            }
+            if(location.hash == '#huaji3'){
+                vm.$data.cname = 'huaji2';
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

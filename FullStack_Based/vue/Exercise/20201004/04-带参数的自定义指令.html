@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <input type="text" v-color="msg">
+        <br>
+        <label for="">颜色</label>
+        <input type="text" v-model="msg.color">
+        <button @click='handle'>点我</button>
+    </div>
+
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //创建vm
+        let vm = Vue.createApp({
+            data(){
+                return{
+                    msg : {
+                        color : 'red'
+                    }
+                }
+            },
+            methods : {
+                handle(){
+                    console.log(this.msg.color);
+                }
+            }
+        });
+
+        //创建自定义指令
+        vm.directive("color",{
+            mounted(el,binding){
+                console.log(binding.value.color);
+                // 让input设置一个默认值
+                el.value = '1231231';
+                el.style.backgroundColor = binding.value.color;
+            }
+        })
+
+        vm.mount('#app');
+    </script>
+</body>
+</html>

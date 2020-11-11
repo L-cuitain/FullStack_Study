@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .outer {
+            position: relative;
+            margin: 100px auto;
+            width: 40px;
+            height: 20px;
+            background-color: red;
+            border-radius: 20px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.5s;
+        }
+
+        .inner {
+            position: absolute;
+            top: 0;
+            left: 0;
+            /*20px*/
+            width: 15px;
+            height: 15px;
+            background-color: #fff;
+            border-radius: 50%;
+            margin: 2px 0 0 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner"></div>
+    </div>
+</body>
+<script src="./js/animate.js"></script>
+<script>
+    //获取元素
+    let outer = document.querySelector('.outer');
+    let inner = document.querySelector('inner');
+
+    var flag = true;
+
+    //创建outer点击事件
+    outer.addEventListener('click', function () {
+
+        if (flag) {
+            animate(outer.children[0], {
+                left: 20
+            });
+            outer.style.backgroundColor = 'green';
+            flag = false;
+        } else {
+            animate(outer.children[0], {
+                left: 0
+            });
+            outer.style.backgroundColor = 'red';
+            flag = true;
+        }
+    });
+</script>
+
+</html>

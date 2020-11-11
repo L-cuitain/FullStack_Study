@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 18. 输入三角形的三边，根据输入的三角形的三边判断是否能组成三角形，如果可以进一步 判断三角形的类型
+        // 等边三角形(三边相等) 等腰三角形(两边相等)  直角三角形(a平方+b平方=c平方)  其他三角形（不满足上面的）
+
+        var num1 = prompt("请输入三角形第一条边");
+        var num2 = prompt("请输入三角形第二条边");
+        var num3 = prompt("请输入三角形第三条边");
+
+        var side1 = parseInt(num1);
+        var side2 = parseInt(num2);
+        var side3 = parseInt(num3);
+
+        if(side1 == side2 && side1 == side3 && side2 == side3){
+            alert("等边三角形");
+        }else if(side1 == side2){
+            alert("等腰三角形");
+        }else if(side1 == side3){
+            alert("等腰三角形");
+        }else if(side2 == side3){
+            alert("等腰三角形");
+        }else if(side1*side1+side2+side2 == side3*side3){
+            alert("直角三角形");
+        }else{
+            alert("其他三角形");
+        }
+        
+        </script>
+</body>
+</html>

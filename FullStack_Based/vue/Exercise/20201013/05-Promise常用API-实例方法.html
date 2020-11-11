@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        //处理消息
+        let p = new Promise(function(resolve,reject){
+            
+        });
+
+        //获取的消息
+        // p.then(成功);
+
+        //写法1  then中包含成功的回调  和 失败的回调  finally指成功与否都执行
+        p.then(function(data){
+            console.log(data);
+        },function(err){
+            console.log(err);
+        }).finally(function(){
+            console.log('done');
+        })
+
+        //写法2  then中执行成功的回调  catch执行失败的回调  finally成功与否都执行
+        p.then(function(data){
+            console.log(data);
+        }).catch(function (err){
+            console.log(err);
+        }).finally(function(){
+            console.log('done');
+        })
+    </script>
+</body>
+</html>

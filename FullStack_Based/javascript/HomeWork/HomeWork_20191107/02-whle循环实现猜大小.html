@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //2. 若用户猜的小于50，提示：猜小了；否则提示猜大了；猜中了，提示：中奖了(不能继续猜谜)，(用while实现)
+        
+
+            while (true){
+
+                //提示用户输入数字
+                var i = Number(prompt("请输入数字"));
+
+                //判断数字
+                if(i < 50){
+                    alert("猜小了");
+                    continue;
+                }else if(i > 50){
+                    alert("猜大了");
+                    continue;
+                }else if(i == 50){
+                    alert("猜对了");
+                    break;
+                }
+            }
+    </script>
+</body>
+
+</html>

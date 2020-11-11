@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <father></father>
+    </div>
+
+
+
+    <script src="../lib/vue-3.0.js"></script>
+    <script>
+        //创建实例
+        let vm = Vue.createApp({});
+
+        //创建父组件
+        vm.component('father',{
+            data(){
+                return{
+                    msg : '123',
+                    content : '1421212'
+                }
+            },
+            template : `
+                <div class="father">
+                    <h3>父组件<h3>
+                    <son :co="msg" :po="content"></son>
+                </div>
+            `
+        });
+
+        //创建子组件
+        vm.component('son',{
+            props : ['co','po'],
+            data(){},
+            methods : {},
+            template : `
+                <div class="father">
+                    <h3>子组件<h3>
+                    <div>{{co}} ---- {{po}}</div>
+                </div>
+            `
+        });
+
+        //挂载
+        vm.mount('#app');
+    </script>
+</body>
+
+</html>

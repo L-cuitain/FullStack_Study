@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <div></div>
+
+    <script>
+        let oBtn = document.querySelector('button');
+
+        oBtn.onclick = function(){
+            //实例化XMLHttpRequest对象
+            let xhr = new XMLHttpRequest();
+
+            //设置请求方式 和 请求地址
+            xhr.open('POST','/postParam');
+
+            //使用POST请求需要添加请求头
+            xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+
+            //发送请求数据
+            xhr.send('username=zhangsan&password=123456');
+
+            //监听并处理响应
+            xhr.onreadystatechange = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    //显示数据到页面
+                    console.log(xhr.responseText);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

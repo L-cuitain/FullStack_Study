@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    body {
+      background-color: black;
+    }
+
+    .hero {
+      display: block;
+      margin: 0 auto;
+      padding: 0px;
+      font-size: 16px;
+      width: 400px;
+      height: 36px;
+      border-radius: 18px;
+      outline: none;
+      border: 1px solid #593f08;
+      text-indent: 15px;
+      background-color: rgba(89, 63, 8, 0.4);
+      color: #d0b886;
+    }
+
+    .bg {
+      width: 1144px;
+      height: 635px;
+      margin: 10px auto;
+      background: url('images/yangpi_bg02.png') no-repeat;
+    }
+
+    .bg .left {
+      width: 450px;
+      height: 580px;
+      float: left;
+      margin-left: 56px;
+      position: relative;
+    }
+
+    .left span {
+      color: white;
+    }
+
+    .name_con {
+      margin-top: 305px;
+      font-size: 16px;
+      color: #593f08;
+      font-family: '楷体';
+      font-weight: bold;
+      line-height: 29px;
+    }
+
+    .showname {
+      position: absolute;
+      left: 100px;
+      top: 131px;
+      width: 240px;
+      line-height: 60px;
+      text-align: center;
+      font-size: 30px;
+      color: #593f08;
+      font-weight: bold;
+    }
+
+    .left .name {
+      font-size: 16px;
+      color: #593f08;
+      font-family: '楷体';
+      font-weight: bold;
+      line-height: 29px;
+    }
+
+    .title_con {
+      font-size: 16px;
+      color: #593f08;
+      font-family: '楷体';
+      font-weight: bold;
+      line-height: 29px;
+    }
+
+    .left .title {
+      font-size: 16px;
+      color: #593f08;
+      font-family: '楷体';
+      font-weight: bold;
+      line-height: 29px;
+    }
+
+    .story_con {
+      margin: 0px;
+      font-size: 16px;
+      color: #593f08;
+      font-family: '楷体';
+      font-weight: bold;
+      line-height: 29px;
+      width: 460px;
+      height: 200px;
+      overflow: auto;
+    }
+
+    .left .story {
+      font-size: 16px;
+      color: #593f08;
+      font-family: '楷体';
+      font-weight: bold;
+      line-height: 29px;
+    }
+
+    .right {
+      width: 547px;
+      height: 560px;
+      float: right;
+      margin: 32px 42px 0 0;
+      border: 2px solid #593f08;
+      /* background-image: url(http://img1.dwstatic.com/lol/1512/315320556654/1451366974753.jpg); */
+      background-position: right top;
+      background-repeat: no-repeat;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 
+      <img
+            class="icon"
+            src="http://img.dwstatic.com/lol/1310/246295394773/1382341114833.png"
+            alt=""
+          />
+
+     -->
+
+  <input type="text" class="hero" placeholder="输入英雄按下回车查询" />
+
+  <div class="bg">
+    <div class="left">
+      <!-- 下面的信息是根据服务端响应的数据进行生成的 -->
+
+    </div>
+
+    <div class="right">
+
+    </div>
+
+  </div>
+
+
+  <!-- <script src="./js/ajaxTools.js"></script> -->
+  <script src="./libs/jquery-1.12.4.min.js"></script>
+  <script>
+    // //获取查询文本框
+    // let hero = document.querySelector('.hero');
+    // //获取左边内容
+    // let left = document.querySelector('.left');
+    // //获取右边内容
+    // let right = document.querySelector('.right');
+
+    // //创建键盘弹起事件
+    // document.onkeyup = (e) => {
+    //   //判断是否为回车键
+    //   if (e.keyCode == 13) {
+    //     //获取查询的名字
+    //     let heroName = hero.value;
+
+    //     //调用ajaxTools的ajax函数
+    //     $.ajax({
+    //       type: 'GET',
+    //       url: 'https://autumnfish.cn/api/hero/info',
+    //       data: {
+    //         name: heroName,
+    //       },
+    //       success: (data) => {
+    //         //转换data格式
+    //         let finalData = JSON.parse(data);
+
+    //         left.innerHTML = `
+    //           <div class='showname'>${heroName}</div>
+    //           <div class='name name_con'>名称: ${finalData.name}</div>
+    //           <div class='title title_con'>外号: ${finalData.title}</div>
+    //           <div class='story story_con'>简介: ${finalData.story}</div>
+    //         `;
+    //         //将内容添加到页面中
+    //         right.style.backgroundImage = `url(${finalData.bg})`;            
+    //       }
+    //     })
+    //   }
+    // }
+
+
+    //创建键盘弹起事件
+    $(document).keyup((e) => {
+      //判断是否为回车键
+      if (e.keyCode == 13) {
+        //获取查询的名字
+        let heroName = $('.hero').val();
+
+        //调用jquery的ajax函数
+        $.ajax({
+          type: 'GET',
+          url: 'https://autumnfish.cn/api/hero/info',
+          data: {
+            name: heroName,
+          },
+          success: (data) => {
+            //将内容添加到页面中
+            $('.left').append(`<div class='showname'>${heroName}</div>`);
+            $('.left').append(`<div class='name name_con'>名称: ${data.name}</div>`);
+            $('.left').append(`<div class='title title_con'>外号: ${data.title}</div>`);
+            $('.left').append(`<div class='story story_con'>简介: ${data.story}</div>`);
+            $('.right').css('backgroundImage', `url(${data.bg})`)
+          }
+        })
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        用户名: <input type="text" name="username" placeholder="请输入用户名"><br>
+        密码: <input type="password" name="password" placeholder="请输入密码"><br>
+        头像: <input type="file" name="avator" id="">
+    </form>
+
+    <button>点我</button>
+
+    <script src="./lib/jquery.min.js"></script>
+    <script>
+        $('button').on('click', () => {
+            //使用原生方法序列化
+            let formdata = new FormData(document.querySelector('form'));;
+
+            $.ajax({
+                type : 'post',
+                url : '/formdata',
+                data : formdata,
+                processData : false,
+                contentType : false,
+                success : (data) => {
+                    console.log(data);
+                }
+            })
+        })
+    </script>
+</body>
+</html>

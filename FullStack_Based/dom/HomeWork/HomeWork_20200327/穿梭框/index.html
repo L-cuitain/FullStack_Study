@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+
+</head>
+
+<body>
+  <div style="margin-left: 500px; margin-top: 100px; background-color: #999999">
+    <select multiple="multiple" style="float: left; width: 60px; height: 100px;" id="se1">
+      <option>添加</option>
+      <option>删除</option>
+      <option>修改</option>
+      <option>查询</option>
+      <option>打印</option>
+    </select>
+    <div style="width: 50px; float: left;">
+      <input type="button" name="name" value=">" style="width: 50px;" id="toRight" />
+      <input type="button" name="name" value="<" style="width: 50px;" id="toLeft" />
+      <input type="button" name="name" value=">>" style="width: 50px;" id="toAllRight" />
+      <input type="button" name="name" value="<<" style="width: 50px;" id="toAllLeft" />
+    </div>
+    <select multiple="multiple" style="float: left; width: 60px; height: 100px;" id="se2">
+    </select>
+  </div>
+  <script>
+    //获取input
+    let aIpt = document.querySelectorAll('input');
+
+    //获取左侧框
+    let se1 = document.querySelector('#se1');
+    //获取右侧框
+    let se2 = document.querySelector('#se2');
+
+    //创建input点击事件
+    aIpt[0].onclick = function () {
+      getSelected(se1, se2);
+    }
+
+    //创建input点击事件
+    aIpt[1].onclick = function () {
+      getSelected(se2, se1);
+    }
+
+    //创建input点击事件
+    aIpt[2].onclick = function () {
+      getSelectedAll(se1,se2);
+    }
+
+    //创建input点击事件
+    aIpt[3].onclick = function () {
+      getSelectedAll(se2,se1);
+    }
+
+
+    function getSelected(se1, se2) {
+      //获取框的元素
+      let options = se1.querySelectorAll('option');
+      //循环遍历左侧框元素 判断是否有选中
+      for (let i = 0; i < options.length; i++) {
+        if (options[i].selected) {
+          //选中添加到se2
+          se2.appendChild(options[i]);
+          //将元素设为未选中
+          options[i].selected = false;
+        }
+      }
+    }
+
+    function getSelectedAll(se1, se2) {
+      //获取框的元素
+      let options = se1.querySelectorAll('option');
+      //循环遍历左侧框元素 判断是否有选中
+      for (let i = 0; i < options.length; i++) {
+        //将所有选中添加到se2
+        se2.appendChild(options[i]);
+        //将元素设为未选中
+        options[i].selected = false;
+      }
+    };
+  </script>
+</body>
+
+</html>

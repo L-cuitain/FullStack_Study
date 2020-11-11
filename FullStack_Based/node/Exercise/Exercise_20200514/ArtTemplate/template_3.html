@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮</button>
+    <div></div>
+
+    <script src="./lib/template-web.js"></script>
+    <script type="text/template" id="judge_templ">
+        {{if data.length > 0}}
+            <ul>
+                {{each data}}
+                <li>{{$value}}</li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </script>
+    <script>
+        //如果data中有数据 那么就渲染数据
+        //如果data没有数据  那么渲染一句话
+        //定义数组
+        let data = [];
+        //获取按钮
+        let oBtn = document.querySelector('button');
+        //创建点击事件
+        oBtn.onclick = () => {
+            //获取渲染的数据
+            let htmlStr = template('judge_templ',{
+                flag : true,
+                data: data
+            })
+
+            document.querySelector('div').innerHTML = htmlStr;
+        }
+    </script>
+</body>
+</html>

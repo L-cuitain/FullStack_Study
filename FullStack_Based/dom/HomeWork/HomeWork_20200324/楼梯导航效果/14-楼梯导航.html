@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./css/13.css">
+
+</head>
+
+<body>
+  <div class="top">
+    <img src="img/top1.png" alt="" />
+  </div>
+  <div class="louceng">
+    <!-- 楼层1 -->
+    <div class="jd jia">
+      <img src="img/jia.png" alt="" />
+    </div>
+    <!-- 楼层2 -->
+    <div class="jd dian">
+      <img src="img/dian.png" alt="" />
+    </div>
+    <!-- 楼层3 -->
+    <div class="jd fu">
+      <img src="img/fu.png" alt="" />
+    </div>
+    <!-- 楼层4 -->
+    <div class="jd mei">
+      <img src="img/mei.png" alt="" />
+    </div>
+  </div>
+  <div class="bottom">
+    <img src="img/bottom.png" alt="" />
+  </div>
+  <!-- 侧边栏 -->
+  <div class="subnav">
+    <ul>
+      <li>家电通讯</li>
+      <li>电脑数码</li>
+      <li>服饰精品</li>
+      <li>美容珠宝</li>
+    </ul>
+    <div class="back">返回</div>
+
+  </div>
+  <script>
+    //获取 楼层
+    let aDv = document.querySelectorAll('.jd');
+
+    //获取侧边栏
+    let subnav = document.querySelector('.subnav');
+
+    //获取侧边栏选项
+    let aLi = subnav.querySelectorAll('li');
+
+    //隐藏侧边栏
+    subnav.style.display = 'none';
+
+
+    //创建 页面滚动事件
+    document.addEventListener('scroll', function () {
+
+      //获取 用户滚动的距离
+      let pageScroll = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
+
+      //判断 用户滚动距离  如果大于家电的距离  显示侧边栏
+      if (pageScroll >= aDv[0].offsetTop) {
+        subnav.style.display = 'block';
+      } else {
+        subnav.style.display = 'none';
+      }
+
+      if (pageScroll >= aDv[aDv.length - 1].offsetTop) {
+        
+        aLi[aDv.length - 1].classList.add('current');
+      } else {
+
+        aLi[aDv.length - 1].classList.remove('current');
+      }
+
+
+      for (let i = 0; i < aDv.length; i++) {
+
+        if (i + 1 < aDv.length) {
+
+          if (pageScroll >= aDv[i].offsetTop && pageScroll < aDv[i + 1].offsetTop) {
+
+            aLi[i].classList.add('current');
+          } else {
+
+            aLi[i].classList.remove('current');
+          }
+        }
+      }
+    });
+
+
+    // 获取 ul 
+    let ul = subnav.children[0];
+
+    //创建 侧边栏 点击事件
+    ul.addEventListener('click', function (e) {
+      //循环遍历 侧边栏项
+      for (let i = 0; i < aLi.length; i++) {
+        //判断 获取的元素是否与 项相等
+        if (e.target.innerText == aLi[i].innerText) {
+          //相等 将 页面滚动到 当前项的位置   
+          document.documentElement.scrollTop = aDv[i].offsetTop;
+        }
+      }
+
+    });
+  </script>
+</body>
+
+</html>

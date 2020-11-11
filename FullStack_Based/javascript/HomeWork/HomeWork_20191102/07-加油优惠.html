@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //7.一个加油站为了鼓励车主多加油，所以加的多有优惠。
+    //   92号汽油，每升6元；如果大于20升，那么超出部分每升5.9；
+    //   95号汽油，每升7元；如果大于30升，那么超出部分每升6.95
+    //   编写JS程序，用户输入自己的汽油编号，然后输入自己加多少升，弹出价格。
+
+         //提示用户输入 几号汽油
+         var oil = prompt("请输入要加记号汽油");
+
+         var l = Number(prompt("请输入要加多少升"));
+    
+        
+
+        //判断用户要加几号汽油
+        if(oil == 92){
+
+            if(l > 20){
+                //计算超出的部分
+                var more = l - 20;
+
+                //计算钱数
+                var money = 6*l+more*5.9;
+
+                document.write("价格为:"+money);
+            }else{
+
+                //计算钱数
+                var money = 6*l;
+
+                document.write("价格为:"+money);
+            }
+
+        }else if(oil == 95){
+
+            if(l > 30){
+                //计算超出的部分
+                var more = l - 30;
+
+                //计算钱数
+                var money = 7*l+more*6.95;
+
+                document.write("价格为:"+money);
+            }else{
+
+                //计算钱数
+                var money = 7*l;
+
+                document.write("价格为:"+money);
+            }
+
+        }else{
+            alert("暂时还没有该号汽油");
+        }
+
+        </script>
+</body>
+</html>

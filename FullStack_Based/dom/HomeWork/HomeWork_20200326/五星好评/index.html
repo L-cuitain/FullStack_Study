@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            margin: 100px auto;
+            width: 400px;
+            height: 80px;
+            border: 1px solid #d7dad7;
+        }
+
+        .star-list {
+            float: left;
+            padding-left: 10px;
+            list-style: none;
+            margin: 33px 0;
+        }
+
+        .star-list li {
+            float: left;
+            width: 13px;
+            height: 13px;
+            cursor: pointer;
+            background-image: url(./star2.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .evaluate {
+            display: block;
+            float: left;
+            width: 40px;
+            height: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <ul class="star-list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <span class="evaluate"></span>
+    </div>
+</body>
+<script>
+    //获取所有 li
+    let aLi = document.querySelectorAll('.star-list li');
+
+    //获取ul
+    let oUl = document.querySelector('.star-list');
+
+    //获取span
+    var eva = document.querySelector('.evaluate');
+
+
+    //为所有 li 设置class
+    for (let i = 0; i < aLi.length; i++) {
+        aLi[i].classList.add(i + 1);
+    }
+
+    //创建计数器 count
+    var count = 0;
+
+    //创建鼠标移入事件
+    oUl.addEventListener('mouseover', function (e) {
+        //排他思想  先清除所有点亮的星
+        lostStar(aLi);
+        //获取鼠标移入的  li 类名
+        let overCount = e.target.className;
+        //调用函数
+        getStar(overCount, eva);
+    });
+
+    //创建鼠标移出事件
+    oUl.addEventListener('mouseout', function () {
+        //清除所有点亮的星
+        lostStar(aLi,count);
+        if(count == 0){
+            eva.innerText = '';
+        }
+    });
+
+
+    //创建鼠标点击事件
+    oUl.addEventListener('click', function (e) {
+        //判断如果点击的为li
+        if (e.target.nodeName == 'LI') {
+            //获取鼠标移入的  li 类名
+            count = e.target.className;
+            //调用函数
+            getStar(count, eva);
+        }
+    });
+
+
+
+
+    //创建函数  清除点亮的星星数量
+    function lostStar(aLi,count) {
+        for (let i = aLi.length-1; i >= count ; i--) {
+            aLi[i].style.backgroundImage = 'url(./star2.png)';
+        }
+    }
+
+
+
+    //创建函数  获取点亮的星星数量  并且更改评价内容
+    function getStar(count, eva) {
+        for (let i = 0; i < count; i++) {
+            aLi[i].style.backgroundImage = 'url(./star1.png)';
+        }
+
+        switch (parseInt(count)) {
+            case 1:
+                eva.innerText = "极差";
+                break;
+
+            case 2:
+                eva.innerText = "失望";
+                break;
+
+            case 3:
+                eva.innerText = "一般";
+                break;
+
+            case 4:
+                eva.innerText = "满意";
+                break;
+
+            case 5:
+                eva.innerText = "惊喜";
+                break;
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .static{
+            width: 200px;
+            height : 200px;
+        }
+
+
+        .active{
+            background-color: aqua;
+        }
+
+        .text-danger{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="app">
+        <div class="static"  v-bind:class="{active: isActive , 'text-danger': hasError}"></div>
+    </div>
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //类名绑定
+        //:class="{data变量名 : 类名 , ....}"
+        //:class="[类名,类名,...]"
+
+        let vm = Vue.createApp({
+            data(){
+                return{
+                    isActive : false,
+                    hasError : true
+                }
+            },
+            methods : {
+
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //3.  用户输入一个数字，列出所有它能够整除的数字（while实现）
+        //用户输入数字 赋值给变量 num
+        var num = Number(prompt("请输入一个数字"));
+
+        //定义while循环初始表达式 i  初始值为1
+        var i = 1;
+
+        //创建 while循环  当 i 满足 小于等于 num的时候
+        while(i <= num){
+            
+            //判断 num 余 i 是否等于 0
+            if(num % i == 0){
+                //打印到 页面上
+                document.write(i+"    ");
+            }
+            //步进表达式 i++
+            i++;
+        }
+
+        
+        </script>
+</body>
+</html>

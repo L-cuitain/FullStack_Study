@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+    <style>
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+
+        ul{
+            list-style-type: none;
+            padding-left: 15px;
+            margin: 0;
+        }
+
+        ul:first-child{
+            margin-top: 16px;
+        }
+
+        ul:last-child{
+            height: 20px;
+        }
+
+        .content{
+            width: 1000px;
+            border: 1px solid #f2f5f2;
+            margin: 100px auto;
+        }
+
+        ul li{
+            position: relative;
+            width: 930px;
+            font-size: 12px;
+            color: #575a56;
+        }
+
+        .change{
+            transform: rotate(270deg);
+            position: absolute;
+            right: 0;
+        }
+
+        .rotate{
+            transform: rotate(0deg);
+        }
+
+        li:first-child{
+            text-align: left;
+            padding: 20px 0;
+            border-top: 1px solid #f2f5f2;
+        }
+
+        li:last-child{
+            padding-bottom: 20px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <ul>
+            <li>一致性 Consistency <img class='change' src="./img/select.png" alt=""></li>
+            <li>与现实生活一致：与现实生活的流程、逻辑保持一致，遵循用户习惯的语言和概念；<br>
+                在界面中一致：所有的元素和结构需保持一致，比如：设计样式、图标和文本、元素的位置等。
+            </li>
+        </ul>
+
+        <ul>
+            <li>反馈 Feedback <img class='change' src="./img/select.png" alt=""></li>
+            <li>
+                控制反馈：通过界面样式和交互动效让用户可以清晰的感知自己的操作；<br>
+                页面反馈：操作后，通过页面元素的变化清晰地展现当前状态。
+            </li>
+        </ul>
+
+        <ul>
+            <li>效率 Efficiency <img class='change' src="./img/select.png" alt=""></li>
+            <li>
+                简化流程：设计简洁直观的操作流程； <br>
+                清晰明确：语言表达清晰且表意明确，让用户快速理解进而作出决策；<br>
+                帮助用户识别：界面简单直白，让用户快速识别而非回忆，减少用户记忆负担。
+            </li>
+        </ul>
+
+        <ul>
+            <li>可控 Controllability <img class='change' src="./img/select.png" alt=""></li>
+            <li>
+                用户决策：根据场景可给予用户操作建议或安全提示，但不能代替用户进行决策；<br>
+                结果可控：用户可以自由的进行操作，包括撤销、回退和终止当前操作等。
+            </li>
+        </ul>
+
+        <ul class="last-list">
+            <li></li>
+        </ul>
+    </div>
+</body>
+<script>
+    //创建布尔值
+    let flag = true;
+
+    //创建ul中li的鼠标点击事件
+    $('ul').on('click','li:first-child',function(){
+        //获取当前ul的索引
+        let index = $(this).parent().index();
+        //判断flag
+        if(flag == true){
+            //添加 类
+            $('.change').eq(index).addClass('rotate');
+            flag = false;
+        }else{
+            //删除类
+            $('.change').eq(index).removeClass('rotate');
+            flag = true;
+        }
+        //给列表添加下滑动画
+        $(this).next().slideToggle(1000);
+    })
+</script>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url(./img/bg.jpg);
+    }
+
+    .sun {
+        position: relative;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60px;
+        height: 60px;
+        background-color: #cc9900;
+        border-radius: 50%;
+        box-shadow: 0 0 50px #cc9900;
+    }
+
+    div:nth-child(2) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 6s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+    }
+
+    div:nth-child(3) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 16s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+    }
+
+    div:nth-child(4) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 13s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+    }
+
+    div:nth-child(5) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 17s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+        background-image: url(./img/asteroids_meteorids.png);
+        background-size: 100%, 100%;
+    }
+
+    div:nth-child(6) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 29s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 360px;
+        height: 360px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+    }
+
+    div:nth-child(7) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 20s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+    }
+
+    div:nth-child(8) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 22s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 480px;
+        height: 480px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+    }
+
+    div:nth-child(9) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 25s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 540px;
+        height: 540px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+    }
+
+    div:nth-child(10) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        animation-name: changePathway;
+        animation-duration: 30s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        border: 2px solid #394057;
+    }
+
+
+    span {
+        position: absolute;
+        display: block;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+    }
+
+
+    div:nth-child(2) span {
+        background-color: #ffff00;
+        top: 25px;
+        left: 0;
+    }
+
+    div:nth-child(3) span {
+        background-color: #0000ff;
+        top: 48px;
+        left: 0;
+    }
+
+    div:nth-child(4) span {
+        position: relative;
+        background-color: #008000;
+        top: 73px;
+        left: 0;
+    }
+
+    div:nth-child(4) span i{
+        position: absolute;
+        top: 15px;
+        left: -1px;
+        display: block;
+        width: 6px;
+        height: 6px;
+        background-color: #ffff00;
+        border-radius: 55%;
+        animation-name: changePathway;
+        animation-duration: 2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        transform-origin: 11px -6px;
+    }
+
+    div:nth-child(5) span {
+        background-color: #ff0000;
+        top: 100px;
+        left: 0;
+    }
+
+    div:nth-child(6) span {
+        background-color: #cccccc;
+        top: 126px;
+        left: 0;
+    }
+
+
+    div:nth-child(7) span {
+        background-color: #008000;
+        top: 150px;
+        left: 0;
+    }
+
+    div:nth-child(7) span i{
+        position: absolute;
+        top: -3px;
+        left: -4px;
+        display: block;
+        width: 15px;
+        height: 15px;
+        border: 2px solid #cccccc;
+        transform: skew(0,45deg);
+        border-radius: 50%;
+    }
+
+    div:nth-child(8) span {
+        background-color: #ffc0cb;
+        top: 177px;
+        left: 0;
+    }
+
+
+    div:nth-child(9) span {
+        background-color: #0000ff;
+        top: 202px;
+        left: 0;
+    }
+
+    div:nth-child(10) span {
+        background-color: #ffff00;
+        top: 227px;
+        left: 0;
+    }
+
+
+
+    @keyframes changePathway {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+
+
+</style>
+
+<body>
+    <div class="sun"></div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span>
+            <i></i>
+        </span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span>
+            <i></i>
+        </span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+    <div>
+        <span></span>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style type="text/css">
+        .container .cart {
+            width: 300px;
+            /*background-color: lightgreen;*/
+            margin: auto;
+        }
+
+        .container .title {
+            background-color: lightblue;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            /*color: #fff;*/
+        }
+
+        .container .total {
+            background-color: #FFCE46;
+            height: 50px;
+            line-height: 50px;
+            text-align: right;
+        }
+
+        .container .total button {
+            margin: 0 10px;
+            background-color: #DC4C40;
+            height: 35px;
+            width: 80px;
+            border: 0;
+        }
+
+        .container .total span {
+            color: red;
+            font-weight: bold;
+        }
+
+        .container .item {
+            height: 55px;
+            line-height: 55px;
+            position: relative;
+            border-top: 1px solid #ADD8E6;
+        }
+
+        .container .item img {
+            width: 45px;
+            height: 45px;
+            margin: 5px;
+        }
+
+        .container .item .name {
+            position: absolute;
+            width: 90px;
+            top: 0;
+            left: 55px;
+            font-size: 16px;
+        }
+
+        .container .item .change {
+            width: 100px;
+            position: absolute;
+            top: 0;
+            right: 50px;
+        }
+
+        .container .item .change a {
+            font-size: 20px;
+            width: 30px;
+            text-decoration: none;
+            background-color: lightgray;
+            vertical-align: middle;
+        }
+
+        .container .item .change .num {
+            width: 40px;
+            height: 25px;
+        }
+
+        .container .item .del {
+            position: absolute;
+            top: 0;
+            right: 0px;
+            width: 40px;
+            text-align: center;
+            font-size: 40px;
+            cursor: pointer;
+            color: red;
+        }
+
+        .container .item .del:hover {
+            background-color: orange;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <Cart></Cart>
+        </div>
+    </div>
+
+</body>
+
+<script src="./lib/vue-3.0.js"></script>
+<script>
+    //创建实例
+    let vm = Vue.createApp({});
+
+    //创建购物车 标题组件
+    let cartTitle = {
+        props : ['uname'],
+        template: `
+            <!-- title -->
+            <div class="title">{{uname}}的商品</div>
+        `
+    }
+
+    //创建购物车  列表组件
+    let cartList = {
+        props : ['list'],
+        methods : {
+            change(id,event){
+                this.$emit('change-num',{
+                    id : id,
+                    num : event.target.value,
+                    type : 'change'
+                })
+            },
+            add(id){
+                this.$emit('change-num',{
+                    id : id,
+                    type : 'add'
+                })
+            },
+            sub(id){
+                this.$emit('change-num',{
+                    id : id,
+                    type : 'sub'
+                })
+            },
+            del(id){
+                this.$emit('del',id)
+            }
+        },
+        template: `
+        <div>
+        <div class="item" v-for="(ele , index) in list" :key="ele.id">
+                        <img :src="ele.img" />
+                        <div class="name">{{ele.name}}</div>
+                        <div class="change">
+                            <a href="" @click.prevent="sub(ele.id)">－</a>
+                            <input type="text" class="num" :value="ele.num" @blur="change(ele.id,$event)"/>
+                            <a href="" @click.prevent="add(ele.id)">＋</a>
+                        </div>
+                        <div class="del" @click="del(ele.id)">×</div>
+                    </div>
+                </div>
+        `
+    }
+
+    //创建购物车  结算组件
+    let cartPay = {
+        props : ['list'],
+        //计算函数
+        computed : {
+            price(){
+                let sum = 0;
+                //遍历数组  计算总和
+                this.list.forEach(item => {
+                    sum += item.num * item.price;
+                });
+
+                return sum;
+            }
+        },
+        template : `
+        <!-- 总价 -->
+            <div class="total">
+                <span>总价：{{price}}</span>
+                <button>结算</button>
+            </div>
+        `
+    }
+
+    //创建购物车组件
+    vm.component('Cart',{
+        data(){return{
+          uname: '张三',
+          list: [{
+            id: 1,
+            name: 'TCL彩电',
+            price: 1000,
+            num: 1,
+            img: 'img/a.jpg'
+          }, {
+            id: 2,
+            name: '机顶盒',
+            price: 1000,
+            num: 1,
+            img: 'img/b.jpg'
+          }, {
+            id: 3,
+            name: '海尔冰箱',
+            price: 1000,
+            num: 1,
+            img: 'img/c.jpg'
+          }, {
+            id: 4,
+            name: '小米手机',
+            price: 1000,
+            num: 1,
+            img: 'img/d.jpg'
+          }, {
+            id: 5,
+            name: 'PPTV电视',
+            price: 1000,
+            num: 2,
+            img: 'img/e.jpg'
+          }]
+        }},
+        methods : {
+            //改变 数量
+            /** 
+              id  元素id
+              val  状态对象
+            */
+            changeNum(val){
+                //判断 状态是否为 change
+                if(val.type == 'change'){
+                    //如果为change状态  则遍历数组 找到此元素 将 值改变
+                    this.list.some(item => {
+                        if(item.id == val.id){
+                            item.num = val.num;
+                            return true;
+                        }
+                    });
+                    console.log(this.list);
+                }else if(val.type == 'add'){
+                    this.list.some(item => {
+                        if(item.id == val.id){
+                            item.num++;
+                            item.num = item.num <= 0 ? 0 : item.num;
+                            return true;
+                        }
+                    })
+                }else if(val.type == 'sub'){
+                    this.list.some(item => {
+                        if(item.id == val.id){
+                            item.num--;
+                            item.num = item.num <= 0 ? 0 : item.num;
+                            return true;
+                        }
+                    })
+                }
+            },
+
+            //点击删除方法
+            handleClick(id){
+
+                //遍历数组  找到索引
+                let index = this.list.findIndex(item => item.id == id);
+                //将索引对应的元素删除
+                this.list.splice(index,1);
+            }
+        },
+        //拼接字符串
+        template : `
+        <div class="cart">
+            <CartTitle :uname=uname></CartTitle>
+            <CartList :list=list @del="handleClick" @change-num="changeNum"></CartList>
+            <CartPay :list=list></CartPay>
+        </div>
+        `,
+        //创建局部组件
+        components : {
+            "CartTitle" : cartTitle,
+            "CartList" : cartList,
+            "CartPay" : cartPay
+        }
+    })
+
+    //挂载
+    vm.mount('#app');
+</script>
+
+</html>

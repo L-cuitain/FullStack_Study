@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="app">
+        <bro1></bro1>
+        <bro2>
+    </div>
+
+    <!-- 引入mitt -->
+    <script src="https://unpkg.com/mitt/dist/mitt.umd.js"></script>
+    <script src="../lib/vue-3.0.js"></script>
+    <script>
+        //创建实例
+        let vm = Vue.createApp({});
+
+        //创建mitter
+        let emitter = mitt();
+        
+        //创建兄弟元素1
+        vm.component('bro1',{
+            data(){return{}},
+            methods : {
+                handleClick(){
+                    emitter.emit('data',{
+                        user : '张三'
+                    })
+                }
+            },
+            template : `
+                <div class="bro1">
+                    <h3 @click="handleClick"></h3>
+                </div>
+            `
+        });
+
+        //创建兄弟元素2
+        vm.component('bro2',{
+            data(){return{
+                msg : ''
+            }},
+            methods : {
+                handleCheck(){
+                    emitter.on('data',(val) => {
+                        this.msg = val.user
+                    })
+                }
+            },
+
+            template : `
+                <div class="bro2">
+                    <h3 @click="handleCheck">{{msg}}</h3>
+                </div>
+            `
+        });
+        //挂载
+        vm.mount('#app');
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+          margin: 0;
+          padding: 0;
+        }
+    
+        div {
+          width: 200px;
+          height: 200px;
+          background-color: aqua;
+          position: absolute;
+          top: 140px;
+          z-index: 4;
+        }
+      </style>
+</head>
+
+<body>
+    <button>按钮</button>
+    <div></div>
+</body>
+<script>
+    //匀减速动画函数封装任意多个属性和回调函数以及层级
+    //步骤
+    //获取元素 button div
+    let oBtn = document.querySelector('button');
+    let oDv = document.querySelector('div');
+
+    //给button添加点击事件
+    oBtn.onclick = function(){
+        animate(oDv,{width: 400 , height: 500 , zIndex: 8});
+    }
+</script>
+</html>

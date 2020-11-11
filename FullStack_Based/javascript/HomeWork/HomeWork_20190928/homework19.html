@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //19. 录入一个三位数，按逆序打印出各位数字。例如原数字为321，应输出123。
+        var number = prompt("请输入一个三位数");
+        
+        var num = "";
+        for (var index = number.length-1; index >= 0; index--) {
+            num += number[index];
+     }
+     alert(num);
+
+        </script>
+</body>
+</html>

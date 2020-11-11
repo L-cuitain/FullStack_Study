@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>漠丶叹尘的空间</title>
+  <link rel="icon" sizes="any" mask href="http://qzonestyle.gtimg.cn/qzone/v8/img/Qzone.svg">
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+  <div class="header">
+    This is the head nav
+  </div>
+  <div class="topInfo">
+    <span class="edit">编辑</span>
+    <div class="zoneName">
+      <h2>漠丶叹尘 的空间</h2>
+      <p>知我者，谓我心忧。不知我者，谓我何求。</p>
+    </div>
+    <div class="support">
+      <img src="image/support_1.png" alt="赞">
+      <span class="num">7</span>
+    </div>
+    <div class="tips">7人赞过</div>
+    <!-- bottom nav -->
+    <div class="top_bottom">
+      <div class="photo">
+        <img src="http://qlogo3.store.qq.com/qzone/1262283870/1262283870/100?1481718124">
+      </div>
+      <div class="uploadphoto">修改头像</div>
+      <div class="container">
+        <ul class="section">
+          <li>主页</li>
+          <li>日志</li>
+          <li>相册</li>
+          <li>留言板</li>
+          <li>说说</li>
+          <li>个人档</li>
+          <li>音乐</li>
+          <li>更多</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 下面实现留言板功能 -->
+  <div class="mainframe">
+    <div class="title">留言板</div>
+    <div class="message">主人寄语</div>
+    <div class="info">
+      这是主人留下的寄语~
+    </div>
+    <div class="content" contenteditable="true"></div>
+    <input type="button" name="submit" value="发表" class="subbtn">
+    <div class="numofmessage">留言(0)</div>
+    <!-- 下面是留言区 -->
+    <div class="msgFrame">
+      <!-- <div class="content_1">
+    	         <img class="name" src="http://qlogo3.store.qq.com/qzone/1262283870/1262283870/100?1481718124" alt="photo">
+    	         <div class="mainInfo">
+    		         <div class="userId"><a href="#">zipple</a></div>
+    		         <div class="conInfo">
+    				       这是一条留言。
+    		            </div>
+    		         <div class="time">2016-12-19  23:46:11</div>
+    		    </div> -->
+    </div>
+  </div>
+ 
+</body>
+<script>
+
+    //创建计数器
+    let count = 0;
+
+    //创建发表按钮点击事件
+    $('.subbtn').click(function(){
+      //获取文本框的内容
+      let content = $('.content').text();
+      
+      //判断文本框内容
+      if(content.trim() == '' || content == null){
+        alert('您还没有输入任何内容');
+      }else{
+        //创建节点
+        let oDv = $(`<div class="content_1">
+              <img class="name" src="http://qlogo3.store.qq.com/qzone/1262283870/1262283870/100?1481718124" alt="photo">
+    	         <div class="mainInfo">
+    		         <div class="userId"><a href="#">zipple</a></div>
+    		         <div class="conInfo">
+    				       ${content}
+    		            </div>
+    		         <div class="time">${getDate()}</div>
+    		    </div>`);
+
+        //添加到元素中
+        $('.msgFrame').prepend(oDv);  
+        
+        //计数器自增
+        count++;
+
+        //更改留言数
+        $('.numofmessage').text(`留言(${count})`);
+      }
+
+      //清空内容
+      $('.content').text('');
+    })
+
+
+
+    //创建日期
+	 function getDate(){
+		 
+		 //创建日期对象
+		 let date = new Date();
+
+		 //返回日期格式
+		 return date.getFullYear()+"-"+(date.getMonth()+1)+"-"+date.getDay()+"  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
+	 }
+</script>
+</html>

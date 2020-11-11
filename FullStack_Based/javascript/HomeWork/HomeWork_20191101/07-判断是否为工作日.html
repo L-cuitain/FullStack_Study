@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //7. 根据输入的数字，判断如果是1-5打印工作日，如果是6，7打印休息日。
+
+        //提示用户输入
+        var day = Number(prompt("用户输入数字"));
+
+        //判断是否为工作日
+        if(day >= 1 && day <= 5){
+            alert("工作日");
+        }else if(day >= 6 && day <= 7){
+            alert("休息日");
+        }else{
+            alert("请输入范围内数值");
+        }
+        
+        </script>
+</body>
+</html>

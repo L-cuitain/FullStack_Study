@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //输入年月日，获取这个日期是这一年的第几天
+        var y = Number(prompt("请输入年份"));
+        var m = Number(prompt("请输入月份"));
+        var d = Number(prompt("请输入某天"));
+
+        //创建 数组  添加 12 个月中的 天数
+        var arr = [31,28,31,30,31,30,31,31,30,31,30];
+        //定义变量sum 保存 和
+        var sum = 0;
+        //创建for循环  遍历 月份
+        for(var i = 0 ; i < m-1 ; i++){
+            sum += arr[i];
+        }
+
+        //判断年是否为闰年，是且大于2月份加一
+        if((y % 400 == 0 || (y % 4 == 0&& y%100 !=0)) && m > 2){
+            summ = sum + d + 1;
+            document.write("这个日期是这一年的第"+summ+"天");
+        }else{
+            summ = sum + d;
+            document.write("这个日期是这一年的第"+summ+"天");
+        }
+        
+        </script>
+</body>
+</html>
+

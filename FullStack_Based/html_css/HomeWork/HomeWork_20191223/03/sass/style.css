@@ -1,0 +1,280 @@
+@charset "UTF-8";
+@media screen and (width: 320px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+@media screen and (width: 375px) {
+  html {
+    font-size: 18.75px;
+  }
+}
+
+@media screen and (width: 414px) {
+  html {
+    font-size: 20.7px;
+  }
+}
+
+@media screen and (width: 768px) {
+  html {
+    font-size: 38.4px;
+  }
+}
+
+@media screen and (width: 1024px) {
+  html {
+    font-size: 51.2px;
+  }
+}
+
+@media screen and (width: 1536px) {
+  html {
+    font-size: 76.8px;
+  }
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f7f4f1;
+}
+
+/* 头部 */
+header {
+  position: relative;
+  width: 100%;
+  height: 2.75rem;
+  background-color: #ff9b25;
+  margin-bottom: 1.09375rem;
+}
+
+header i {
+  position: absolute;
+  top: 0.875rem;
+  left: 0.625rem;
+  width: 0.625rem;
+  height: 1rem;
+  background-image: url(../img/back_icon.png);
+  background-size: 0.625rem 1rem;
+}
+
+.header-left {
+  font-size: 1rem;
+  line-height: 2.75rem;
+  margin-left: 1.75rem;
+  color: #fff;
+}
+
+.header-right {
+  float: right;
+  margin-right: 0.78125rem;
+  font-size: 1rem;
+  line-height: 2.75rem;
+  color: #fff;
+}
+
+/* 主体 */
+main {
+  height: 16.5rem;
+  background-color: #fff;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  margin-bottom: 1.4375rem;
+}
+
+main .main-active-name {
+  height: 3.34375rem;
+  font-size: 1rem;
+  color: #717171;
+  border-bottom: 1px solid #ebebeb;
+  line-height: 3.34375rem;
+  padding-left: 0.78125rem;
+}
+
+main .main-wreak {
+  position: relative;
+  float: left;
+  width: 60%;
+  height: 3.28125rem;
+  border-right: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+}
+
+main .main-wreak h1 {
+  float: left;
+  color: #717171;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: initial;
+  line-height: 2.71875rem;
+  padding-left: 0.78125rem;
+}
+
+main .main-wreak .note {
+  position: absolute;
+  top: 1.09375rem;
+  left: 0.90625rem;
+  width: 3.53125rem;
+  height: 0.65625rem;
+  font-size: 0.65625rem;
+  color: #cccccc;
+}
+
+main .main-wreak .money {
+  float: right;
+  color: #d3d3d3;
+  font-size: 1rem;
+  line-height: 2.71875rem;
+  margin-right: 0.6875rem;
+}
+
+main .punish {
+  float: left;
+  width: 39%;
+  height: 3.28125rem;
+  font-size: 1rem;
+  line-height: 2.1875rem;
+  border-bottom: 1px solid #ebebeb;
+}
+
+main .punish h1 {
+  float: left;
+  color: #717171;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: initial;
+  line-height: 2.71875rem;
+  padding-left: 0.78125rem;
+}
+
+main .punish .money {
+  float: right;
+  color: #d3d3d3;
+  font-size: 1rem;
+  line-height: 2.71875rem;
+  margin-right: 0.6875rem;
+}
+
+main .main-active-day {
+  float: left;
+  width: 100%;
+  height: 3.28125rem;
+  font-size: 1rem;
+  line-height: 2.1875rem;
+  border-bottom: 1px solid #ebebeb;
+}
+
+main .main-active-day h1 {
+  float: left;
+  color: #717171;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: initial;
+  line-height: 3.28125rem;
+  padding-left: 0.78125rem;
+}
+
+main .main-active-day .day {
+  float: right;
+  color: #bfbfbf;
+  font-size: 0.78125rem;
+  line-height: 3.28125rem;
+  margin-right: 0.6875rem;
+}
+
+main .main-preferential-time {
+  position: relative;
+  float: left;
+  width: 100%;
+  height: 3.28125rem;
+  font-size: 1rem;
+  line-height: 2.1875rem;
+  border-bottom: 1px solid #ebebeb;
+}
+
+main .main-preferential-time h1 {
+  float: left;
+  color: #717171;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: initial;
+  line-height: 2.8125rem;
+  padding-left: 0.78125rem;
+}
+
+main .main-preferential-time .note {
+  position: absolute;
+  top: 1.09375rem;
+  left: 0.90625rem;
+  width: 5.40625rem;
+  height: 0.65625rem;
+  font-size: 0.65625rem;
+  color: #cccccc;
+}
+
+main .main-preferential-time .time {
+  float: right;
+  color: #bfbfbf;
+  font-size: 0.78125rem;
+  line-height: 3.28125rem;
+  margin-right: 0.6875rem;
+}
+
+main .main-first-time {
+  float: left;
+  width: 100%;
+  height: 3.28125rem;
+  font-size: 1rem;
+  line-height: 2.1875rem;
+}
+
+main .main-first-time h1 {
+  float: left;
+  color: #717171;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: initial;
+  line-height: 3.34375rem;
+  padding-left: 0.78125rem;
+}
+
+main .main-first-time .button {
+  float: right;
+  width: 4rem;
+  height: 1.875rem;
+  margin-top: 0.625rem;
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  color: #d0d0d0;
+}
+
+main .main-first-time .button div {
+  float: right;
+  width: 1.875rem;
+  height: 1.875rem;
+  background-color: #3baca7;
+  border-radius: 3px;
+}
+
+/* 尾部 */
+footer {
+  padding: 0 0.625rem;
+}
+
+footer .button-save {
+  width: 100%;
+  height: 2.5rem;
+  background-color: #ff9b25;
+  border-radius: 5px;
+  text-align: center;
+  color: #ffeddb;
+  font-size: 1.25rem;
+  line-height: 2.5rem;
+}
+/*# sourceMappingURL=style.css.map */

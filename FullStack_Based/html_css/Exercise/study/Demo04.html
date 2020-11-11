@@ -1,0 +1,57 @@
+ <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			select{
+				width:100px;
+			}
+		</style>
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+				var  collCities = [['选择城市']
+									,['海淀区','朝阳区','东城区','西城区']
+									,['济南','青岛','烟台','威海']
+									,['沈阳','大连','鞍山','抚顺']
+									,['石家庄','保定','邯郸','廊坊']];
+			//页面准备就绪之后    执行
+			$().ready(function(){
+				//获取省份下拉菜单    监听    域改变事件
+				$("#selid").change(function(){
+					//获取  省份对应的value值
+					//根据省份的value值   获取对应城市名字的数组
+					var arr = collCities[$(this).val()]
+					
+					//清除历史城市信息
+					$("#subselid").html("<option>选择城市</option>")
+					
+					//遍历arr
+					$(arr).each(function(index,ele){
+						$("#subselid").append("<option>"+ele+"</option>")
+								
+						})
+					})	
+				})
+		</script>	
+	
+	</head>
+	<body>
+		
+		<select id="selid">
+			<option>选择省市</option>
+			<option value="1">北京</option>
+			<option value="2">山东</option>
+			<option value="3">辽宁</option>
+			<option value="4">河北</option>
+		</select>
+		
+		<select id="subselid">
+			<option>选择城市</option>
+		</select>
+		
+	</body>
+</html>
+

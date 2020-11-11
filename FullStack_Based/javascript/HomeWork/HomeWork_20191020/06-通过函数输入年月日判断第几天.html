@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //4. 写一个函数，输入某年某月某日，判断这一天是一年中的第几天   1998  3   1
+
+        //用户 输入 年月日
+        var year = Number(prompt("请输入年份"));
+        var month = Number(prompt("请输入月份"));
+        var day = Number(prompt("请输入日期"));
+        
+
+        //调用方法
+        var sum = getDay(year,month,day);
+        document.write(year+"年"+month+"月"+day+"日是一年中的第"+sum+"天");
+        
+
+
+        //创建方法
+        function getDay(y , m , d){
+
+            //创建数组 记录各月有多少天
+            var getMonth = [31,28,31,30,31,30,31,31,30,31,30];
+
+            //定义 sum  记录和值
+            var sum = 0;
+            
+            //遍历循环  范围在 输入月份的前一个月份
+            for(var i = 0 ; i < m-1 ; i++){ 
+
+                //将 各月份的和 赋值给 sum
+                sum += getMonth[i];
+            }
+
+
+            //判断年份是否为闰年   是且大于2月份 加一
+            if(y % 400 == 0 || y % 4 == 0 && y % 100 != 0 && m > 2){
+                //求出天数
+                summ = sum + d + 1;
+                //返回
+                return summ;
+            }else{
+                //求出天数
+                summ = sum + d;
+                //返回
+                return summ;
+            }
+        }
+
+
+        </script>
+</body>
+</html>

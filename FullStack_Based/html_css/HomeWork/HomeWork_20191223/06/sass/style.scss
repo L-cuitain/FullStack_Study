@@ -1,0 +1,311 @@
+//份数
+$copies : 30;
+
+//一份所占像素
+$each: 24;
+
+@media screen and (width: 320px) {
+    html {
+        font-size: (320px / $copies);
+    }
+}
+
+@media screen and (width: 360px) {
+    html {
+        font-size: (360px / $copies);
+    }
+}
+
+
+@media screen and (width: 375px) {
+    html {
+        font-size: (375px / $copies);
+    }
+}
+
+@media screen and (width: 411px) {
+    html {
+        font-size: (411px / $copies);
+    }
+}
+
+@media screen and (width: 768px) {
+    html {
+        font-size: (768px / $copies);
+    }
+}
+
+@media screen and (width: 1024px) {
+    html {
+        font-size: (1024px / $copies);
+    }
+}
+
+@media screen and (width: 1536px) {
+    html {
+        font-size: (1536px / $copies);
+    }
+}
+
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f4f1;
+}
+
+header {
+    width: 100%;
+    height: (88rem / $each);
+    background-color: #1a1a1f;
+
+    .bar-left {
+        position: relative;
+        float: left;
+        width: 40%;
+        height: (60rem / $each);
+        padding-left: (20rem / $each);
+        color: #f2f2f2;
+        padding-top: (25rem / $each);
+
+        img {
+            position: absolute;
+            top: (25rem / $each);
+            width: (25rem / $each);
+            height: (40rem / $each);
+        }
+
+        .return {
+            font-size: (32rem / $each);
+            padding-left: (35rem / $each);
+        }
+
+        .close {
+            font-size: (32rem / $each);
+            padding-left: (10rem / $each);
+        }
+    }
+
+
+    .bar-center {
+        float: left;
+        width: 40%;
+        height: (60rem / $each);
+        color: #f2f2f2;
+        padding-top: (25rem / $each);
+
+        span {
+            font-size: (32rem / $each);
+        }
+    }
+
+    .bar-right {
+        float: left;
+        width: 16%;
+        height: (60rem / $each);
+        text-align: center;
+        padding-top: (25rem / $each);
+        color: #ffffff;
+
+        i{
+            line-height: (45rem / $each);
+            font-size: (22rem / $each);
+        }
+    }
+}
+
+
+
+
+main {
+    width: 100%;
+    height: (1213rem / $each);
+
+    .main-carousel {
+        width: 100%;
+        height: (263rem / $each);
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+   
+
+
+    .main-nav {
+        width: 100%;
+        height: (67rem / $each);
+        border-bottom: 1px solid #e0e0e0;
+
+        h2 {
+            float: left;
+            width: 33.3%;
+            margin: 0;
+            font-size: (28rem / $each);
+            line-height: (67rem / $each);
+            font-weight: initial;
+            text-align: center;
+        }
+
+        h2:nth-child(2) {
+            position: relative;
+            color: #ff8a3f;
+        }
+
+        h2:nth-child(2)::after {
+            position: absolute;
+            content: "";
+            left: (75rem / $each);
+            top: (62rem / $each);
+            display: block;
+            width: (90rem / $each);
+            height: (5rem / $each);
+            background-color: #ff6901;
+        }
+    }
+
+
+
+    .main-search {
+        float: left;
+        width: 100%;
+        height: (110rem / $each);
+        background-color: #dfe0e1;
+
+        .search {
+            position: relative;
+            width: (680rem / $each);
+            height: (55rem / $each);
+            margin: (25rem / $each) (20rem / $each);
+
+            input {
+                width: (680rem / $each);
+                height: 100%;
+                border: 1px solid #757575;
+                border-radius: 35px;
+                background-color: #dfe0e1;
+                text-align: center;
+            }
+
+            i {
+                width: (40rem / $each);
+                height: (40rem / $each);
+
+                img {
+                    position: absolute;
+                    top: (12rem / $each);
+                    left: (630rem / $each);
+                    width: (40rem / $each);
+                    height: (40rem / $each);
+                }
+            }
+        }
+    }
+
+
+    .main-user{
+        float: left;
+        width: 100%;
+        height: (180rem / $each);
+        border-bottom: 2px solid #f8f8f8;
+        background-color: #ffffff;
+    
+    }
+
+
+    .main-user-container{
+        float: left;
+        margin: (28rem / $each) (40rem / $each) (20rem / $each);
+        
+        .headprotrait{
+            float: left;
+            width: (112rem / $each);
+            height: (112rem / $each);
+            padding-right: (35rem / $each);
+
+
+            img{
+                width: (112rem / $each);
+                height: (112rem / $each); 
+            }
+        }
+    }
+
+
+    .main-user-identity{
+        overflow: hidden;
+        float: left;
+        width: (400rem / $each);
+        height: (132rem / $each);
+
+
+        .name{
+            float: left;
+            margin: 0;
+            height: (36rem / $each);
+            font-size: (30rem / $each);
+            color: #ff7926;
+            margin-bottom: (15rem / $each);
+        }
+
+        .work{
+            margin: 0;
+            float: left;
+            display: block;
+            width: 100%;
+            color: #515151;
+            font-size: (23rem / $each);
+            margin-bottom: (15rem / $each);
+        }
+
+        .remark{
+            margin: 0;
+            float: left;
+            display: block;
+            color: #515151;
+            font-size: (23rem / $each);
+        }
+    }
+
+
+}
+
+
+
+
+    footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        height: (100rem / $each);
+        background-color: #ffffff;
+    
+        div{
+            float: left;
+            width: 25%;
+            height: 100%;
+            text-align: center;
+    
+            i{
+                display: block;
+                width: (40rem / $each);
+                height: (40rem / $each);
+                margin: (17rem / $each) (70rem / $each) (10rem / $each);
+    
+                img{
+                    width: (40rem / $each);
+                    height: (40rem / $each);
+                }
+            }
+    
+            span{
+                display: block;
+                font-size: (24rem / $each);
+            }
+        }
+    }

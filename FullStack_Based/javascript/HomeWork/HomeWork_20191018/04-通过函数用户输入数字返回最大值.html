@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //4. 写一个函数，用户输入任意两个不同数字,返回最后的最大值
+        
+        //步骤:
+        //创建用户输入
+        //创建方法  将用户输入的值传入方法中
+        //运用三元运算符  求出最大值
+        //返回最大值
+        //调用方法 获取最大值  弹窗显示
+
+
+        //步骤:
+        //创建用户输入
+        var num1 = prompt("请输入第一个数字");
+        var num2 = prompt("请输入第二个数字");
+
+
+        //调用方法
+        var max = getMaxNum(num1,num2);
+
+        //弹窗显示max
+        alert("最大值为: "+max);
+
+        
+        //创建方法 传递两个参数  num1  num2
+        function getMaxNum(num1,num2){
+
+            var max = num1 > num2 ? num1 : num2;
+
+            return max;
+        }
+        
+        
+        
+        
+        
+        </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 构造器  constructor
+        //创建 对象 (构造函数)
+        function Person(name,age){
+            this.name = name;
+            this.age = age;
+        }
+
+        //prototype.constructor 原型对象的构造器
+        //prototype是对象
+        Person.prototype.add = function(){
+            console.log('123');
+        }
+
+        Person.prototype.minus = function(){
+            console.log('123');
+        }
+
+        Person.prototype.asdf = function(){
+            console.log('123');
+        }
+
+        Person.prototype = {
+            //需要手动指定该原型对象的原型
+            constructor : Person,
+            add:function(){
+                console.log('123');
+            },
+            minus:function(){
+                console.log('123');
+            },
+            asdf:function(){
+                console.log('123');
+            }
+        }
+
+    </script>
+</body>
+</html>

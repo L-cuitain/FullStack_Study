@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div {
+			width: 100px;
+			height: 100px;
+			border-radius: 50px;
+			position: absolute;
+		}
+	</style>
+</head>
+<body>
+	<!-- <div></div> -->
+</body>
+</html>
+<script>
+	var bodyObj = document.body;
+	// 0-7
+	var colorArr = ["red","#0f0","yellow","pink","skyblue","purple","gray","orange"];
+	//1、for循环，产生10个盒子（圆）
+	for(var i=0;i<100;i++){
+	//2、每次循环，随机产生3个数
+	//    x  用来设置 盒子的left 
+	//       范围：0 ~ (window.innerWidth-100)
+	//       产生随机数
+	//       	Math.floor(Math.random()*(window.innerWidth-100+1));
+		var x = Math.floor(Math.random()*(window.innerWidth-100+1));       	
+	//    y  用来设置 盒子的top
+	//    	 范围：0 ~ (window.innerHeight-100+1)
+	//    	 	Math.floor(Math.random()*(window.innerHeight-100+1));
+		var y = Math.floor(Math.random()*(window.innerHeight-100+1));    	 	
+	//    r  用来设置 盒子的背景颜色
+	//          Math.floor(Math.random()*colorArr.length);
+		var r = Math.floor(Math.random()*colorArr.length);
+	//    x : 0-1180
+	//    y : 0-660
+		console.log(x,y);       
+
+	//3、创建div元素对象
+		var divObj = document.createElement("div");
+	//4、设置div元素对象的属性
+	//   设置 top
+		divObj.style.top = y+"px";
+	//   设置 left
+	    divObj.style.left = x+"px";  
+	//   设置 背景颜色
+		divObj.style.backgroundColor = colorArr[r];
+	//5、把div放到body中
+		bodyObj.appendChild(divObj);
+	}
+</script>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="app">
+        <input type="number" v-model="num1">
+        <input type="number" v-model="num2">
+        <button @click="handleAdd">=</button>
+        <input type="text" readonly v-model="sum">
+    </div>
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //创建vm
+        let vm = Vue.createApp({
+            //数据层结构
+            data(){
+                return{
+                    num1: null,
+                    num2: null,
+                    sum : null
+                }
+            },
+
+            methods:{
+                handleAdd(){
+                    this.sum = parseFloat(this.num1) + parseFloat(this.num2);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

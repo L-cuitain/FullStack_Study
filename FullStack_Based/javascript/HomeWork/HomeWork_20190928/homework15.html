@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //15. 键盘录入学生考试成绩，使用if语句判断成绩等级，并打印出来。
+        var test = prompt("请输入学生考试成绩");
+
+        if(parseInt(test) > 60 && parseInt(test) < 90){
+            alert("及格了");
+        }else if(parseInt(test) >= 90 && parseInt(test) < 100){
+            alert("优秀");
+        }else if(parseInt(test) < 60){
+            alert("不及格");
+        }else{
+            alert("请输入正确分数");
+        }
+        
+        </script>
+</body>
+</html>

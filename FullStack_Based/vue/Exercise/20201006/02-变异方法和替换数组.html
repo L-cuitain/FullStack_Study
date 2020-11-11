@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <div>
+          <span>
+            <input type="text" v-model='ipt'>
+            <button @click="add">添加</button>
+            <button @click="remove">删除</button>
+            <button @click="replace">替换</button>
+          </span>
+        </div>
+        <ul>
+          <li v-for="(item,index) in arr" :key="index">{{item}}</li>
+        </ul>
+      </div>
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        let vm = Vue.createApp({
+            data(){
+                return{
+                    //文本输入框的值
+                    ipt : '',
+                    //数组对象
+                    arr : ['lemon','zermetre','ads','asdf']
+                }
+            },
+
+            methods : {
+                add(){
+                    this.arr.push(this.ipt);
+                    this.ipt = '';
+                },
+                remove(){
+                    this.arr.pop();
+                },
+                replace(){
+                    this.arr.splice(2);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

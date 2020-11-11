@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 1600px;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%);
+      height: 643px;
+      background: url(./images.jpg) no-repeat;
+    }
+
+    .content {
+      width: 700px;
+      height: 350px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .content p {
+      color: #138eee;
+      font-size: 66px;
+    }
+
+    .content span {
+      color: #fff;
+      font-size: 25px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      <p>亲，准备好点名了吗？</p>
+      <span>开始点名</span>
+    </div>
+  </div>
+  <script>
+    // 定义数据
+    var names = ["王亚亚", "康春龙", "谢仲龙", "袁旭东", "范志伟", "杜鑫博", "官呈达", "谌雯雯", "杨文林", "周子轩", "苏傲"]
+
+    //获取 div
+    let oSpan = document.querySelector('span');
+
+    //获取 p
+    let oP = document.querySelector('p');
+
+    let flag = false;
+
+    //创建变量
+    let letsmove;
+
+    //设置点击事件
+    oSpan.addEventListener('click', function () {
+      //判断flag
+      if (flag == false) {
+        //创建周期计数器
+        letsMove = setInterval(getName, 50);
+        flag = true;
+        oSpan.innerText = '停止';
+
+      }else{
+        //清除定时器
+        letsMove = clearInterval(letsMove);
+        flag = false;
+        oSpan.innerText = '开始点名';
+      }
+
+    });
+
+    function getName() {
+
+      //设置计数器
+      let index = Math.ceil(Math.random() * names.length - 1);
+
+      //获取数据
+      oP.innerText = names[index];
+    }
+  </script>
+</body>
+
+</html>

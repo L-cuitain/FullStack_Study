@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //8.录入两个整数a和b,若a+b大于100,则输出a+b大于100的部分,否则输出两数之和(用三元运算符)
+
+        //用户录入两个数 a , b
+        var a = Number(prompt("请输入整数a"));
+        var b = Number(prompt("请输入整数b"));
+
+        
+        //三元获取 最后结果
+        var num = a+b > 100 ? (a + b) - 100 : a+b ;
+        
+        //弹窗显示num
+        alert(num);
+        </script>
+</body>
+</html>

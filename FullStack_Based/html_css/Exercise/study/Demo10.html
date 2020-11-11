@@ -1,0 +1,41 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Untitled Document</title>
+		<style type="text/css">
+			select{
+				width:100px;
+			}
+		</style>
+	</head>
+	<body>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			function selectCity(){
+				
+				var  collCities = [['选择城市']
+									,['海淀区','朝阳区','东城区','西城区']
+									,['济南','青岛','烟台','威海']
+									,['沈阳','大连','鞍山','抚顺']
+									,['石家庄','保定','邯郸','廊坊']];
+				
+				//获取数组元素  
+				$("option")
+		</script>
+		
+		<select id="selid" onchange="selectCity()">
+			<option>选择省市</option>
+			<option value="beijing">北京</option>
+			<option>山东</option>
+			<option>辽宁</option>
+			<option>河北</option>
+		</select>
+		
+		<select id="subselid">
+			<option>选择城市</option>
+		</select>
+		
+	</body>
+</html>
+

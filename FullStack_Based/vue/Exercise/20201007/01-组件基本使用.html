@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <!-- 根组件 -->
+    <div id="app">
+        {{msg}}
+
+        <vm-div></vm-div>
+    </div>
+
+    <script src="./lib/vue-3.0.js"></script>
+    <script>
+        //创建实例
+        let vm = Vue.createApp({
+            data(){
+                return{
+                    msg : '根组件'
+                }
+            },
+
+        })
+
+        //vm.directive 全局
+        //vm.directives 局部
+        //注册组件
+        vm.component('vm-div',{
+            //组件数据域
+            data(){
+                return {
+                    info : '全局组件'
+                }
+            },
+            //组件方法
+            methods : {
+                handle(){
+                    this.info = '犬瘟热嘎嘎'
+                }
+            },
+            //组件模板
+            template : `<input type="text" :value="info" @click="handle">`
+        });
+        
+        //挂载
+        vm.mount("#app");
+    </script>
+</body>
+</html>

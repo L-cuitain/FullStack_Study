@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    ul {
+      width: 800px;
+      margin: 100px auto;
+    }
+
+    li {
+      border: 1px solid #f00;
+      width: 80px;
+      float: left;
+      text-align: center;
+      height: 30px;
+      line-height: 30px;
+    }
+
+    .active {
+      background-color: #0F0
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="box">
+
+  </ul>
+  <script>
+    var allKey = ["1", '2', '3', '4', '5', '6', '7', '8', '9', '0', 'Q', 'W', 'E', 'R', 'T', 'Y', 'u',
+      'I', 'O', 'P', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', 'Z', 'X', 'C', 'V', 'B', 'N', 'M'
+    ];
+    
+    //获取 ul
+    let oUl = document.querySelector('.box');
+
+    //遍历allkey
+    for (let i = 0; i < allKey.length; i++) {
+
+      //创建 li
+      let li = document.createElement('li');
+
+      li.innerText = allKey[i];
+
+      //添加到ul中
+      oUl.appendChild(li);
+    }
+
+    //运用键盘事件 判断用户输入键 与 页面中的 键是否对应 
+    document.addEventListener('keydown', function (e) {
+
+      //获取触发事件的 元素
+      let aLi = e.target.children[0].children;
+
+      //判断 ASCII 值是否相等
+      for (let i = 0; i < aLi.length; i++) {
+        if (aLi[i].innerText.charCodeAt() == e.keyCode) {
+          aLi[i].className = 'active';
+        }
+      }
+    });
+
+    //运用键盘事件 判断用户输入键 与 页面中的 键是否对应 
+    document.addEventListener('keyup', function (e) {
+
+      //获取触发事件的 元素
+      let aLi = e.target.children[0].children;
+
+      //判断 ASCII 值是否相等
+      for (let i = 0; i < aLi.length; i++) {
+        if (aLi[i].innerText.charCodeAt() == e.keyCode) {
+          aLi[i].className = '';
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		img {
+			vertical-align: middle;
+		}
+	</style>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		//创建prompt  提示用户输入数字0-2
+		var player = prompt("请输入 : 石头-0   剪刀-1   布-2")*1
+		document.write("玩家出拳:<img src = 'img/num0"+player+".png'>")
+		
+		//电脑随机出拳
+		var computer = Math.round(Math.random()*2)
+		document.write("电脑出拳:<img src = 'img/num0"+computer+".png'>")
+		//玩家赢的话
+		if((player == 0 && computer == 1)||(player == 1 && computer == 2)||(player == 2 && computer == 0)){
+			alert("玩家赢")
+		}else if((player == 0 && computer == 2)||(player == 1 && computer == 0)||(player == 2 && computer == 1)){
+			alert("电脑赢")
+		}else{
+			alert("平局")
+		}
+	</script>
+</head>
+<body>
+		
+</body>
+</html>
+

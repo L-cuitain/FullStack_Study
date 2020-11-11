@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button class="btn">点我</button>
+    <div></div>
+
+
+    <script src="./lib/template-web.js"></script>
+    <script type='text/template' id='list_templ'>
+        {{each target}}
+        <li>{{$index}}-{{$value}}</li>
+        {{/each}}
+    </script>
+    <script>
+        let data = ['暗黑佟大为'];
+
+        //获取按钮
+        let oBtn = document.querySelector('.btn');
+
+        //创建点击事件
+        oBtn.onclick = function(){
+            //创建模板字符串
+            let htmlStr = template('list_templ',{
+                target : data
+            });
+
+            document.querySelector('div').innerHTML = htmlStr;
+        }
+
+    </script>
+</body>
+</html>

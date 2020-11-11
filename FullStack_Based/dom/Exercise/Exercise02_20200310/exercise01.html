@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点我</button>
+    <div class="box"></div>
+    <div class="outer"></div>
+    <a href=""></a>
+    <img src="" alt="">
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li class="aa bb cc dd">3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+</body>
+<script>
+    // 操作元素的内容  innerHTML  innerText
+    //格式: 元素.innerHTML = '内容';
+    //格式: 元素.innerText = '内容';
+
+    //获取元素
+    let oBtn = document.querySelector('button');
+    let oBox = document.querySelector('.box');
+    let oOuter = document.querySelector('.outer');
+
+    //给元素添加事件    
+    oBtn.onclick = function(){
+        oBox.innerHTML = '滑稽';
+        oOuter.innerHTML = "1234123";
+    }
+
+
+    // 操作元素的常见属性
+    // title
+    let oImg = document.querySelector('img');
+    oImg.title = '123';
+    // id
+    oImg.id = 'images';
+    // src
+    oImg.src = './123.gif';
+    // alt
+    oImg.alt = '滑稽';
+    // href
+    let oA = document.querySelector('a');
+    oA.href = 'http://czxy.com/';
+    // style样式
+    oBox.style.width = '200px';
+
+    let oLi = document.querySelector('li');
+    let sLi = document.querySelector('.cc');
+    //添加类名
+    //元素.className = "值1 值2 值3";
+    //元素.classList.add('类的名字')
+    //返回值: 无
+    //参数: 类名
+    //兼容性: 无法在低版本浏览器使用
+    oBtn.onclick = function(){
+        //第一种
+        oLi.classList.add('ro');
+        oLi.classList.add('en');
+        oLi.classList.add('dr');
+        
+        //第二种
+        oLi.className = "ro en dr";
+    }
+
+    //移出类名
+    //元素.className = "值1 值2";
+    //元素.classList.remove('需要删除的类名')
+    //返回值: 无
+    //参数: 需要删除的类名
+    //兼容性: 无法在低版本浏览器使用
+    oBtn.onclick = function(){
+        sLi.classList.remove('cc');
+    }
+
+    //切换类名
+    //元素.classList.toggle('需要切换的类名')
+    //返回值: 无
+    //参数: 需要切换的类名
+    //兼容性: 无法在低版本浏览器使用
+    oBtn.onclick = function(){
+        sLi.classList.toggle('abcd');
+    }
+
+    //判断是否存在某类名
+    //元素.classList.contains('需要判断的类名')
+    //返回值: 布尔值 true  false
+    //参数: 判断的类名
+    oBtn.onclick = function(){
+        let flag = sLi.classList.contains('abcd');
+        console.log(flag);
+    }
+    
+</script>
+</html>

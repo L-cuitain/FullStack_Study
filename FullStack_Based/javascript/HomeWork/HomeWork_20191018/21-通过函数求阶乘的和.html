@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //21.写一个函数，实现n的阶层的和求1+2!+3!+...+n!的和
+
+        //分析:
+        //创建方法  将用户输入的值存入方法中
+        //方法中  定义变量 sum 作为和值
+        //再定义变量 作为每一阶的阶乘
+        //循环 1 到 用户所输入的数的范围内
+        //计算每一层的阶乘
+        //将每一层的阶乘赋值给 和值
+        //返回这个和值
+        //调用方法  打印和值
+
+
+
+        //步骤:
+
+        //创建用户输入
+        var num = Number(prompt("请输入一个数"));
+
+        //调用方法
+        alert("阶乘和为: "+getFactorial(num));
+
+
+        //创建方法
+        function getFactorial(num){
+
+            //定义 变量 sum
+            var sum = 0;
+
+            //创建 变量  作为阶乘
+            var jie = 1;
+
+            //创建循环 从 1 循环 到 num
+            for(var i = 1 ; i <= num ; i++){
+
+                jie *= i;
+                sum += jie;
+            }
+
+            //返回sum
+            return sum;
+        }
+        
+        
+        
+        
+        </script>
+</body>
+</html>

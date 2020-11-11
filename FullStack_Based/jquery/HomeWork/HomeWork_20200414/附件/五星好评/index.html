@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .content {
+            margin: 100px auto;
+            width: 400px;
+            height: 80px;
+            border: 1px solid #d7dad7;
+        }
+
+        .star-list {
+            float: left;
+            padding-left: 10px;
+            list-style: none;
+            margin: 33px 0;
+        }
+
+        .star-list li {
+            float: left;
+            width: 13px;
+            height: 13px;
+            cursor: pointer;
+            background-image: url(./star2.png);
+            background-repeat: no-repeat;
+            background-size: 100%;
+        }
+
+        .evaluate {
+            display: block;
+            float: left;
+            width: 40px;
+            height: 20px;
+            margin: 30px 0;
+            text-align: center;
+            font-size: 13px;
+        }
+    </style>
+    <script src="./lib/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <div class="content">
+        <ul class="star-list">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <span class="evaluate"></span>
+    </div>
+</body>
+<script>
+    //创建变量 记录点亮的星星个数
+    var count = 0;
+
+    //创建ul的鼠标移入事件
+    $('.star-list').on({
+        'mouseenter': function () {
+            //获取列表项索引
+            let index = $(this).index() + 1;
+
+            //清空星星样式
+            $('.star-list>li').siblings().css('background-image', 'url(./star2.png)');
+
+            //遍历索引数
+            for (let i = 0; i < index; i++) {
+                //指定数量的li添加样式
+                $('.star-list>li').eq(i).css('background-image', 'url(./star1.png)');
+            }
+
+            //调用函数
+            getSpan(index);
+        },
+        'mouseleave': function () {
+
+            //清空星星样式
+            $('.star-list>li').siblings().css('background-image', 'url(./star2.png)');
+
+            //遍历索引数
+            for (let i = 0; i < count; i++) {
+                //指定数量的li添加样式
+                $('.star-list>li').eq(i).css('background-image', 'url(./star1.png)');
+            }
+
+            //判断count是否为0
+            if(count == 0){
+                $('.evaluate').text('');
+            }
+
+            getSpan(count);
+        },
+        'click': function () {
+            //获取列表项索引
+            count = $(this).index() + 1;
+        }
+    }, 'li')
+
+
+    //获取评价
+    function getSpan(count) {
+        switch (parseInt(count)) {
+            case 1:
+                $('.evaluate').text('极差');
+                break;
+
+            case 2:
+                $('.evaluate').text('失望');
+                break;
+
+            case 3:
+                $('.evaluate').text('一般');
+                break;
+
+            case 4:
+                $('.evaluate').text('满意');
+                break;
+
+            case 5:
+                $('.evaluate').text('惊喜');
+                break;
+        }
+    }
+</script>
+</html>

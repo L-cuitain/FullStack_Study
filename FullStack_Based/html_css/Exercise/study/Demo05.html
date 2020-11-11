@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//当网页准备就绪时
+			$().ready(function(){
+				
+					//获取input文本框   
+				var user = $("input[name=username]").val()
+				var pass = $("input[name=pwd]").val()
+					//如果文本框没有内容  就在文本框后面加文字
+				if(user != ""){
+					$("input[type=username]").next("label").html("")
+				}
+				if(pass != ""){
+					$("input[type=pwd]").next("label").html("")
+				}
+			})
+	</script>
+	<body>
+		<div >
+			<label>用户名</label>：<input type="text" name="username"></input> <label>请输入用户名</label>
+			<br />
+			<label>密　码</label>：<input type="password" name="pwd"></input> <label>请输入密码</label>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    select {
+      width: 100px;
+    }
+  </style>
+</head>
+
+<body>
+  <select id="selid">
+    <option>选择省市</option>
+    <option>北京</option>
+    <option>山东</option>
+    <option>辽宁</option>
+    <option>河北</option>
+  </select>
+  <select id="subselid">
+    <option>选择城市</option>
+  </select>
+  <script src="./lib/jquery-3.4.1.min.js"></script>
+  <script>
+    var collCities = [
+      ['选择城市'],
+      ['海淀区', '朝阳区', '东城区', '西城区'],
+      ['济南', '青岛', '烟台', '威海'],
+      ['沈阳', '大连', '鞍山', '抚顺'],
+      ['石家庄', '保定', '邯郸', '廊坊']
+    ];
+
+    //创建下拉列表的改变事件
+    $('#selid').on('click',function(){
+      //获取列表选中项索引
+      let index = $(this).find('option:selected').index();
+
+      $('#subselid').empty();
+
+      //通过索引获取数组中的元素
+      $.each(collCities[index],function(i,item){
+        //将元素添加到下拉列表中
+        $('#subselid').append(`<option>${item}</option>`);
+      })
+    })
+  </script>
+</body>
+</html>

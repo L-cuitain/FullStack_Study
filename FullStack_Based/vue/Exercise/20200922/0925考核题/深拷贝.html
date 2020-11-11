@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //深拷贝  拷贝多层  每一级别数据都会拷贝
+        var oldObj = {
+            name : 'zs',
+            age : 18,
+            say : {
+                code : 'hello world'
+            },
+            msg : {
+                age : 10
+            }
+        }
+
+        //创建新对象
+        var newObj = {};
+
+        //创建函数  将对象 拷贝 到新对象中
+        function deepCopy(newObj,oldObj){
+            //遍历原对象
+            for(let i in oldObj){
+                //获取当前对象中的属性值
+                let item = oldObj[i];
+
+                //判断当前属性值是否为数组
+                if(Array.isArray(item)){
+                    //如果为数组 则将新对象中对应索引的值创建为空数组
+                    newObj[i] = [];
+                    //重新调用此方法  直到属性中没有数组或对象
+                    deepCopy(newObj[i],item);
+                }else if(item instanceof Object){
+                    //如果为对象  则将新对象中对应索引的值创建为空对象
+                    newObj[i] = {};
+                    //重新调用此方法  直到属性值中没有数组或对象
+                    deepCopy(newObj[i],item);
+                }else{
+                    //将 属性值  赋值给 新对象
+                    newObj[i] = item;
+                }
+            }
+        }
+
+        //调用此方法
+        deepCopy(newObj,oldObj);
+        newObj.msg.age = 20;
+        console.log(newObj);
+        console.log(oldObj);
+    </script>
+</body>
+</html>

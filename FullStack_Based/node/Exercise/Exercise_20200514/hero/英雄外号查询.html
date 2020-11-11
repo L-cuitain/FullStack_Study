@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <style>
+    .name {
+      color: #8a2602;
+    }
+
+    .title {
+      color: #8a2602;
+    }
+
+    .search_title {
+      display: block;
+      margin: 80px auto 0;
+    }
+
+    .search_wrap {
+      width: 600px;
+      height: 40px;
+      margin: 30px auto 0;
+      background-color: #ff0;
+    }
+
+    .hero {
+      width: 498px;
+      height: 38px;
+      border: 1px solid #6e4242;
+      padding: 0px;
+      text-indent: 10px;
+      outline: none;
+      float: left;
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+
+    .search {
+      width: 100px;
+      height: 40px;
+      border: 0px;
+      float: left;
+      font-size: 18px;
+      background-color: #8a2602;
+      color: #fff;
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .yangpi {
+      width: 411px;
+      height: 197px;
+      margin: 47px auto 0;
+      background: url('images/yangpi_bg.png') no-repeat;
+      position: relative;
+
+    }
+
+    .wrap {
+      width: 240px;
+      height: 100px;
+      position: absolute;
+      left: 100px;
+      top: 60px;
+      font-size: 18px;
+      color: #8a2602;
+      line-height: 36px;
+    }
+  </style>
+</head>
+
+<body>
+  <img src="images/search_title.png" alt="" class="search_title">
+
+  <div class="search_wrap">
+    <input type="text" placeholder="请输入查询的名字" class="hero" />
+    <input type="button" value="英雄查询" class="search" />
+  </div>
+  <h2 class="yangpi">
+    <div class="wrap">
+      英雄名称：<span class="name"></span><br>
+      英雄外号：<span class="title"></span>
+    </div>
+  </h2>
+
+
+  <!-- <script src="./js/ajaxTools.js"></script> -->
+  <script src="./libs/jquery-1.12.4.min.js"></script>
+  <script src="./libs/template-web.js"></script>
+  <script type='text/template' id='str_name'>
+    {{name}}
+  </script>
+  <script type='text/template' id='str_title'>
+    {{title}}
+ </script>
+  <script>
+    // //获取查询的文本框
+    // let nameIpt = document.querySelector('.hero');
+    // //获取英雄名称的文本框
+    // let wrapName = document.querySelector('.name');
+    // //获取英雄外号的文本框
+    // let wrapTitle = document.querySelector('.title');
+
+    // //获取英雄查询按钮
+    // let oBtn = document.querySelector('.search');
+    // //创建鼠标点击事件
+    // oBtn.onclick = () => {
+    //   //获取查询的名字
+    //   let heroName = nameIpt.value;
+
+    //   //调用ajaxTools的ajax函数
+    //   $.ajax({
+    //     type : 'GET',
+    //     url : 'https://autumnfish.cn/api/hero/simple',
+    //     data : {
+    //       name : heroName,
+    //     },
+    //     success : (data) => {
+    //       //将内容添加到页面中
+    //       wrapName.innerHTML = heroName;
+    //       wrapTitle.innerHTML = data;
+    //     }
+    //   })
+    // }
+
+
+    //创建查询点击事件
+    $('.search').click(() => {
+      //获取查询的名字
+      let heroName = $('.hero').val();
+
+
+      //调用jquery的ajax函数
+      $.ajax({
+        type: 'GET',
+        url: 'https://autumnfish.cn/api/hero/simple',
+        data: {
+          name: heroName,
+        },
+        success: (data) => {
+          
+          //将内容添加到页面中
+          let htmlStr1 = template('str_name', {
+            name : heroName
+          });
+
+          let htmlStr2 = template('str_title', {
+            title : data
+          });
+
+          $('.name').html(htmlStr1);
+          $('.title').html(htmlStr2);
+        }
+      })
+    })
+  </script>
+</body>
+
+</html>

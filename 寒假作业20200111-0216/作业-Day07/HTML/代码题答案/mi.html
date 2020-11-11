@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            background-color: #cccccc;
+        }
+
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* 手机长图 */
+        .phone-center-img {
+            float: left;
+            height: 120px;
+            margin: 22px 0;
+        }
+
+
+        .phone-center-img img {
+            height: 120px;
+        }
+
+
+
+        /* 手机 */
+
+        /* 手机标题 */
+        .phone-center-nav {
+            float: left;
+            width: 1226px;
+            height: 686px;
+        }
+
+
+        .title {
+            height: 58px;
+        }
+
+
+        .title h2 {
+            float: left;
+            width: 100px;
+            font-size: 22px;
+            font-weight: normal;
+            line-height: 58px;
+        }
+
+        .title a {
+            float: right;
+            width: 92px;
+            height: 58px;
+            line-height: 58px;
+        }
+
+        .title a:hover h3 {
+            transition: all 0.5s;
+            color: #ff6700;
+        }
+
+        .title a:hover i {
+            transition: all 0.5s;
+            background-color: #ff6700;
+        }
+
+
+        .title a h3 {
+            float: left;
+            font-size: 16px;
+            font-weight: inherit;
+        }
+
+        .title a i {
+            float: left;
+            width: 12px;
+            height: 12px;
+            padding: 4px;
+            margin-top: 19px;
+            margin-left: 8px;
+            border-radius: 16px;
+            color: #fff;
+            line-height: 12px;
+            background-color: #b0b0b0;
+        }
+
+        /* 手机 列表 */
+        .phone-list {
+            height: 628px;
+        }
+
+
+        /* 手机 列表左 长图 */
+        .phone-left-bigimg {
+            float: left;
+            position: relative;
+            width: 234px;
+            height: 628px;
+            transition: all 0.3s;
+        }
+
+
+        .phone-left-bigimg:hover {
+
+            bottom: 2px;
+            box-shadow: 0 0 20px #d4cdcd;
+        }
+
+
+        .phone-left-bigimg img {
+            width: 234px;
+            height: 614px;
+        }
+
+
+        /* 手机 列表右 手机展示 */
+        .phone-right-list {
+            float: left;
+            width: 978px;
+            height: 628px;
+        }
+
+
+        .phone-right-list ul {
+            width: 992px;
+            height: 614px;
+            margin: 0;
+            padding-left: 0px;
+        }
+
+        .phone-right-list ul li {
+            float: left;
+            position: relative;
+            width: 234px;
+            height: 260px;
+            padding: 20px 0;
+            margin-left: 14px;
+            margin-bottom: 14px;
+            background-color: #fff;
+        }
+
+        .phone-right-list ul li:hover {
+            transition: all 0.5s;
+            bottom: 2px;
+            box-shadow: 0 0 20px #d4cdcd;
+        }
+
+
+        .phone-img {
+            width: 160px;
+            height: 160px;
+            margin: 0 37px 18px;
+        }
+
+
+        .phone-img img {
+            width: 160px;
+            height: 160px;
+        }
+
+        .phone-title {
+            width: 214px;
+            height: 21px;
+            margin: 0 10px 2px;
+            text-align: center;
+            color: black;
+            font-size: 14px;
+            font-weight: inherit;
+        }
+
+        .phone-desc {
+            width: 214px;
+            height: 18px;
+            margin: 0 10px 10px;
+            text-align: center;
+            color: #b0b7cb;
+            font-size: 12px;
+        }
+
+        .phone-price {
+            width: 214px;
+            height: 21px;
+            margin: 0 10px 14px;
+            text-align: center;
+            color: #ff6700;
+            font-size: 14px;
+        }
+
+
+        .phone-before-price {
+            margin-left: 7px;
+            color: #b0b0b0;
+            font-size: 14px;
+            text-decoration: line-through;
+        }
+
+
+        .flag {
+            position: absolute;
+            top: 0;
+            left: 83px;
+            width: 64px;
+            height: 20px;
+            font-size: 12px;
+            color: #fff;
+            background-color: #e13834;
+            line-height: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!--手机 列表 -->
+    <div class="phone-list">
+        <!--手机 列表左 长图 -->
+        <a class="phone-left-bigimg">
+            <img src="../代码题/img/bigpic.jpg" alt="">
+        </a>
+        <!--手机 列表右 手机展示 -->
+        <div class="phone-right-list">
+            <ul class="phone-showlist">
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="../代码题/img/spic.jpg" alt="">
+                        </div>
+                        <h3 class="phone-title">小米6 4GB+64GB</h3>
+                        <p class="phone-desc">变焦双摄, 4轴防抖, 晓龙835 处理器</p>
+                        <p class="phone-price">2099元<del class="phone-before-price">2299元</del></p>
+                    </a>
+                    <div class="flag">减200元</div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="../代码题/img/spic.jpg" alt="">
+                        </div>
+                        <h3 class="phone-title">小米6 4GB+64GB</h3>
+                        <p class="phone-desc">变焦双摄, 4轴防抖, 晓龙835 处理器</p>
+                        <p class="phone-price">2099元<del class="phone-before-price">2299元</del></p>
+                    </a>
+                    <div class="flag">减200元</div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="../代码题/img/spic.jpg" alt="">
+                        </div>
+                        <h3 class="phone-title">小米6 4GB+64GB</h3>
+                        <p class="phone-desc">变焦双摄, 4轴防抖, 晓龙835 处理器</p>
+                        <p class="phone-price">2099元<del class="phone-before-price">2299元</del></p>
+                    </a>
+                    <div class="flag">减200元</div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="../代码题/img/spic.jpg" alt="">
+                        </div>
+                        <h3 class="phone-title">小米6 4GB+64GB</h3>
+                        <p class="phone-desc">变焦双摄, 4轴防抖, 晓龙835 处理器</p>
+                        <p class="phone-price">2099元<del class="phone-before-price">2299元</del></p>
+                    </a>
+                    <div class="flag">减200元</div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="../代码题/img/spic.jpg" alt="">
+                        </div>
+                        <h3 class="phone-title">小米6 4GB+64GB</h3>
+                        <p class="phone-desc">变焦双摄, 4轴防抖, 晓龙835 处理器</p>
+                        <p class="phone-price">2099元<del class="phone-before-price">2299元</del></p>
+                    </a>
+                    <div class="flag">减200元</div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="../代码题/img/spic.jpg" alt="">
+                        </div>
+                        <h3 class="phone-title">小米6 4GB+64GB</h3>
+                        <p class="phone-desc">变焦双摄, 4轴防抖, 晓龙835 处理器</p>
+                        <p class="phone-price">2099元<del class="phone-before-price">2299元</del></p>
+                    </a>
+                    <div class="flag">减200元</div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="../代码题/img/spic.jpg" alt="">
+                        </div>
+                        <h3 class="phone-title">小米6 4GB+64GB</h3>
+                        <p class="phone-desc">变焦双摄, 4轴防抖, 晓龙835 处理器</p>
+                        <p class="phone-price">2099元<del class="phone-before-price">2299元</del></p>
+                    </a>
+                    <div class="flag">减200元</div>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="phone-img">
+                            <img src="../代码题/img/spic.jpg" alt="">
+                        </div>
+                        <h3 class="phone-title">小米6 4GB+64GB</h3>
+                        <p class="phone-desc">变焦双摄, 4轴防抖, 晓龙835 处理器</p>
+                        <p class="phone-price">2099元<del class="phone-before-price">2299元</del></p>
+                    </a>
+                    <div class="flag">减200元</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

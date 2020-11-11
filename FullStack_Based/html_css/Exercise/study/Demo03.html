@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			.bgc01{
+				background-color:red;
+			}
+			.bgc02{
+				background-color: green;
+			}
+		</style>
+		
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+				$().ready(function(){
+					$("input[type=text]").focus(function(){
+					$(this).removeClass("bgc02")
+					$(this).addClass("bgc01")
+				}).blur(function(){
+					$(this).addClass("bgc02")
+					})
+				})
+
+			
+		</script>
+
+	</head>
+
+	<body >
+		<input type="text" /><input type="text" /><input type="text" />
+	</body>
+
+</html>
+

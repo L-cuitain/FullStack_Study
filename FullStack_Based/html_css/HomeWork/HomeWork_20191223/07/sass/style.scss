@@ -1,0 +1,375 @@
+//份数
+$copies : 30;
+
+//一份所占像素
+$each: 24;
+
+@media screen and (width: 320px) {
+    html {
+        font-size: (320px / $copies);
+    }
+}
+
+@media screen and (width: 360px) {
+    html {
+        font-size: (360px / $copies);
+    }
+}
+
+
+@media screen and (width: 375px) {
+    html {
+        font-size: (375px / $copies);
+    }
+}
+
+@media screen and (width: 411px) {
+    html {
+        font-size: (411px / $copies);
+    }
+}
+
+@media screen and (width: 768px) {
+    html {
+        font-size: (768px / $copies);
+    }
+}
+
+@media screen and (width: 1024px) {
+    html {
+        font-size: (1024px / $copies);
+    }
+}
+
+@media screen and (width: 1536px) {
+    html {
+        font-size: (1536px / $copies);
+    }
+}
+
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f4f1;
+}
+
+header {
+    width: 100%;
+    height: (88rem / $each);
+    background-color: #1a1a1f;
+    margin-bottom: (20rem / $each);
+
+    .bar-left {
+        position: relative;
+        float: left;
+        width: 40%;
+        height: (60rem / $each);
+        padding-left: (20rem / $each);
+        color: #f2f2f2;
+        padding-top: (25rem / $each);
+
+        img {
+            position: absolute;
+            top: (25rem / $each);
+            width: (25rem / $each);
+            height: (40rem / $each);
+        }
+
+        .return {
+            font-size: (32rem / $each);
+            padding-left: (35rem / $each);
+        }
+
+        .close {
+            font-size: (32rem / $each);
+            padding-left: (10rem / $each);
+        }
+    }
+
+
+    .bar-center {
+        float: left;
+        width: 40%;
+        height: (60rem / $each);
+        color: #f2f2f2;
+        padding-top: (25rem / $each);
+
+        span {
+            font-size: (32rem / $each);
+        }
+    }
+
+    .bar-right {
+        float: left;
+        width: 16%;
+        height: (60rem / $each);
+        text-align: center;
+        padding-top: (25rem / $each);
+        color: #ffffff;
+
+        i {
+            line-height: (45rem / $each);
+            font-size: (22rem / $each);
+        }
+    }
+}
+
+
+main {
+    float: left;
+    width: 100%;
+    height: (760rem / $each);
+    background-color: #f5f5f5;
+
+    .main-container {
+        height: 100%;
+        margin: 0 (35rem / $each);
+
+
+        .headprotrait {
+            width: 100%;
+            height: (244rem / $each);
+            margin-bottom: (20rem / $each);
+            background-image: url(../img/background.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+.headprotrait-container {
+    position: relative;
+    height: 100%;
+    margin-right: (20rem / $each);
+    margin-left: (35rem / $each);
+
+    .protrait {
+        float: left;
+        width: (110rem / $each);
+        height: (110rem / $each);
+        border: 10px solid #8d8d96;
+        border-radius: 50%;
+        margin-top: (35rem / $each);
+        margin-right: (25rem / $each);
+
+        img {
+            width: (111rem / $each);
+            height: (111rem / $each);
+        }
+    }
+}
+
+.main-user-identity{
+    overflow: hidden;
+    float: left;
+    width: (400rem / $each);
+    height: (132rem / $each);
+    margin-top: (35rem / $each); 
+    margin-bottom: (20rem / $each);
+
+
+    .name{
+        float: left;
+        margin: 0;
+        height: (36rem / $each);
+        font-size: (30rem / $each);
+        color: #e0e0e1;
+        margin-bottom: (15rem / $each);
+    }
+
+    .work{
+        margin: 0;
+        float: left;
+        width: 100%;
+        color: #e0e0e1;
+        font-size: (23rem / $each);
+        margin-bottom: (15rem / $each);
+    }
+
+    .listen{
+        margin: 0;
+        float: left;
+        display: block;
+        color: #e0e0e1;
+        font-size: (23rem / $each);
+    }
+}
+
+.link{
+    position: absolute;
+    top: (15rem / $each);
+    left: (435rem / $each);
+    float: left;
+    width: (166rem / $each);
+    height: (80rem / $each);
+    margin-top: (25rem / $each);
+
+    .code{
+        float: left;
+        width: 50%;
+        height: 100%;
+        text-align: center;
+
+        img{
+            width: (40rem / $each);
+            height: (40rem / $each);
+        }
+
+        span{
+            display: block;
+            color: #e0e0e1;
+        }
+    }
+
+    .write{
+        float: left;
+        width: 50%;
+        height: 100%;
+        text-align: center;
+
+        img{
+            width: (40rem / $each);
+            height: (40rem / $each);
+        }
+
+        span{
+            display: block;
+            color: #e0e0e1;
+        }
+    }
+}
+
+.remark{
+    float: left;
+    color: #e0e0e1;
+    margin: 0;
+}
+
+
+.main-content-one{
+    height: (142rem / $each);
+    background-color: #ffffff;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    margin-bottom: (20rem / $each);
+
+
+    p:nth-child(1){
+        float: left;
+        margin-top: (35rem / $each);
+        margin-left: (35rem / $each);
+        margin-bottom: 0;
+    }
+
+    p:nth-child(2){
+        float: left;
+        margin-top: (15rem / $each);
+        margin-left: (35rem / $each);
+    }
+}
+
+
+.main-content-two{
+    height: (164rem / $each);
+    background-color: #ffffff;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+    margin-bottom: (20rem / $each);
+
+    .title{
+        float: left;
+        width: 25%;
+        height: (90rem / $each);
+        margin: (30rem / $each) 0 (35rem / $each);
+        text-align: center;
+
+        img{
+            width: (45rem / $each);
+            height: (40rem / $each);
+        }
+
+        span{
+            display: block;
+            padding-top: (20rem / $each);
+            font-size: (30rem / $each);    
+            color: #474747;
+        }
+    }
+}
+
+
+.main-content-three{
+    height: (110rem / $each);
+    background-color: #ffffff;
+    border: 1px solid #cacaca;
+    border-radius: 5px;
+
+    .content-three-title{
+        float: left;
+        width: (30rem / $each);
+        height: (40rem / $each);
+        margin: (35rem / $each) (25rem / $each) 0 (35rem / $each);
+    }
+
+    p{
+        float: left;
+        margin: 0;
+        font-size: (35rem / $each);
+        margin-top: (30rem / $each);
+        color: #777777;
+    }
+
+    i{
+        float: right;
+        width: (20rem / $each);
+        height: (40rem / $each);
+        margin-top: (35rem / $each);
+        padding-right: (20rem / $each);
+
+        img{
+            width: (20rem / $each);
+            height: (40rem / $each); 
+        }
+    }
+}
+
+
+footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: (100rem / $each);
+    background-color: #ffffff;
+
+    div{
+        float: left;
+        width: 25%;
+        height: 100%;
+        text-align: center;
+
+        i{
+            display: block;
+            width: (40rem / $each);
+            height: (40rem / $each);
+            margin: (17rem / $each) (70rem / $each) (10rem / $each);
+
+            img{
+                width: (40rem / $each);
+                height: (40rem / $each);
+            }
+        }
+
+        span{
+            display: block;
+            font-size: (24rem / $each);
+        }
+    }
+}
+
+
+
+

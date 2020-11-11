@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //25.写一个函数，将一个正整数分解质因数。例如：输入90,打印出90=2*3*3*5
+
+
+        //步骤:
+
+        //创建用户录入
+        var num = Number(prompt("请输入一个正整数"));
+
+        //调用方法
+        document.write(num+"=");
+        document.write(getSum(num));
+        
+
+        //创建方法
+        function getSum(num){
+            //定义变量 i  初始值为2
+            var i = 2;
+
+            //如果num 等于 1
+            if (num == 1) {
+                //打印 1
+                document.write("1");
+                
+                //返回
+                return "";
+            } else {
+                //创建while循环  当num 大于 1 时
+                while(num > 1){
+
+
+                    //创建变量 a 将 num 与 i 的余数 赋值给 a
+                    var a = num % i;
+
+                    //如果 a 等于 0
+                    if(a == 0){
+
+                        //num 除等于 i
+                        num /= i;
+                        //打印格式
+                        document.write(i + "*");
+                        //重新调用方法
+                        getSum(num);
+                        //终止循环
+                        break;
+                    
+                    }else{
+                        //如果 a 不为0  i自增 
+                        i++;
+                    }
+                }
+                //返回
+                return "";
+            }
+    }
+        
+        
+        
+        
+        </script>
+</body>
+</html>

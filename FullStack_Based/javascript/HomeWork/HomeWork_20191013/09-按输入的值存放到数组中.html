@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         19.有一个从大到小排好序的数组[99，85，82，63，60]，现从页面输入一个数，要求按原来的规律将它插入数组中，
+//         要求，假设你输入的80，则应该插入到82和63之间
+        
+        //分析:
+        //先将用户输入的值存入数组中
+        //再调用sort()方法排序数组
+        
+
+
+        //步骤:
+        //用户输入数子
+        var num = Number(prompt("请输入一个数子"));
+
+        //定义数组
+        var arr = [99,85,82,63,60];
+
+        //将值存入数组元素中
+        arr[arr.length] = num;
+
+        //调用sort方法  排序数组
+        arr.sort((a,b) => {
+            return b - a;
+        });
+
+        //打印在页面中
+        document.write(arr);
+        
+        </script>
+</body>
+</html>

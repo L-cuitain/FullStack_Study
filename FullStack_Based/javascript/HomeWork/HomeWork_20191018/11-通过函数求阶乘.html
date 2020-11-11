@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //11.写一个函数，求任意一个数的阶乘
+
+        //分析:
+        //创建用户输入的数  传入方法中
+        //循环 1到这个数
+        //定义个变量  计算阶乘  储存到这个变量中
+        //将变量 返回
+        //调用方法 打印该变量
+
+
+
+        
+        //步骤:
+        //创建用户录入
+        var num = Number(prompt("请输入一个数"));
+        
+
+        //调用方法
+        document.write("阶乘为: "+factorial(num));
+
+
+        //创建方法 将 num 传入方法中
+        function factorial(num){
+
+            //定义sum
+            var sum = 1;
+
+            //创建for循环  从 1 到 num
+            for(var i = 1 ; i <= num ; i++){
+                //计算阶乘
+                sum *= i;
+            }
+            //将值返回
+            return sum;
+        }
+
+
+        
+        </script>
+</body>
+</html>

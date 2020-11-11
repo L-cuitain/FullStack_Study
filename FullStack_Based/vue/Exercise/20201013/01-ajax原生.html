@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点我</button>
+    <script>
+        //获取按钮
+        let btn = document.querySelector('button');
+        // 创建按钮点击事件
+        btn.onclick = function(){
+            //实例化XMLHttpRequest对象
+            let xhr = new XMLHttpRequest();
+
+            //设置请求方式 和 请求地址
+            xhr.open('GET','http://localhost:3000/data');
+            //发送请求头(POST请求)
+            //发送请求数据
+            xhr.send(null);
+            //监听并处理响应
+            xhr.onreadystatechange = function(){
+                //判断是否成功接受到请求
+                if(xhr.readyState == 4 && xhr.status == 200){
+                    console.log(xhr.reponseText);
+                }
+            }
+        }
+    </script>
+</body>
+</html>

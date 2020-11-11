@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<meta charset="UTF-8">
+	<body>
+		<script src="js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+			//设置变量num 给num设2个值0和1
+			var num = 0
+			//创建方法
+			function changeImage(){
+				if(num == 0){
+					$("#myimage").prop("src","img/1.png")
+					num = 1
+				}else if(num == 1){
+						$("#myimage").prop("src","img/2.png")
+						num = 0
+				}
+			}
+			
+			
+		</script>
+
+		<img id="myimage" onclick="changeImage()" src="img/2.png">
+
+		<p>点击灯泡来点亮或熄灭这盏灯</p>
+
+	</body>
+
+</html>
+

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0
+    }
+
+    ul {
+      list-style: none
+    }
+
+    body {
+      background-color: #333;
+    }
+
+    .nav {
+      width: 800px;
+      height: 42px;
+      margin: 100px auto;
+      background: url(images/rss.png) right center no-repeat;
+      background-color: #fff;
+      border-radius: 10px;
+      position: relative;
+    }
+
+    .nav li {
+      width: 83px;
+      height: 42px;
+      text-align: center;
+      line-height: 42px;
+      float: left;
+      cursor: pointer;
+    }
+
+    .nav span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 83px;
+      height: 42px;
+      background: url(images/cloud.gif) no-repeat;
+    }
+
+    ul {
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <span id="cloud"></span>
+    <ul id="navBar">
+      <li>北京校区</li>
+      <li>上海校区</li>
+      <li>广州校区</li>
+      <li>深圳校区</li>
+      <li>武汉校区</li>
+      <li>关于我们</li>
+      <li>联系我们</li>
+      <li>招贤纳士</li>
+    </ul>
+  </div>
+  <script>
+    //获取元素
+    let cloud = document.querySelector('#cloud');
+    let oUl = document.querySelector('#navBar');
+
+    //获取所有的li
+    let aLi = document.querySelectorAll('#navBar li');
+    //遍历aLi  给每个 li 加 id
+    for (let i = 0; i < aLi.length; i++) {
+      aLi[i].id = i;
+    }
+
+    //定义 计数器
+    let countBack = 0;
+
+    //创建鼠标移入事件
+    oUl.addEventListener('mouseover', function (e) {
+      //获取 id 找到是第几个 li
+      let count = e.target.id;
+
+      //调用动画函数
+      //cloud  span元素
+      //left   span元素的left属性
+      //(83*count)  距离
+      animate(cloud, 'left', (83 * count));
+    });
+
+    //创建鼠标移出事件
+    oUl.addEventListener('mouseout', function (e) {
+
+      //鼠标移出返回到点击的 li
+      animate(cloud, 'left',(83 * countBack));
+
+    });
+
+
+    //创建鼠标点击事件
+    oUl.addEventListener('click', function (e) {
+
+      //获取 id 找到是第几个 li
+      countBack = e.target.id;
+      //将left值改变
+      cloud.style.left = (83 * countBack) + 'px';
+
+    });
+
+    //封装函数  获取方法中属性的属性值
+    function getStyle(element, attr) {
+      //判断浏览器是否支持方法
+      if (window.getComputedStyle) {
+        return window.getComputedStyle(element, null)[attr];
+      } else {
+        return element.currentStyle[attr];
+      }
+    }
+
+    //封装动画函数
+    //element  获取的当前元素
+    //attr  获取当前元素的属性
+    //target  目标值
+    function animate(element, attr, target) {
+
+      //清除定时器
+      clearInterval(element.timer);
+
+      //创建定时器
+      element.timer = setInterval(function () {
+        //获取元素当前属性值
+        let current = parseInt(getStyle(element, attr));
+
+        //计算步长 
+        let step = (target - current) / 10;
+
+        //判断 步长是否为小数
+        step = step > 0 ? Math.ceil(step) : Math.floor(step);
+
+        //在当前位置 与 步长进行叠加
+        current += step;
+
+        //计算后的值 赋值给元素
+        element.style[attr] = current + 'px';
+
+        //判断 是否到达目标值
+        if (current == target) {
+          //清除定时器
+          clearInterval(element.timer);
+        }
+      }, 20);
+    }
+  </script>
+</body>
+
+</html>

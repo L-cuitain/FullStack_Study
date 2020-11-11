@@ -1,0 +1,298 @@
+//份数
+$copies : 20;
+
+//一份所占像素
+$each: 32;
+
+@media screen and (width: 320px) {
+    html {
+        font-size: (320px / $copies);
+    }
+}
+
+
+@media screen and (width: 375px) {
+    html {
+        font-size: (375px / $copies);
+    }
+}
+
+@media screen and (width: 414px) {
+    html {
+        font-size: (414px / $copies);
+    }
+}
+
+@media screen and (width: 768px) {
+    html {
+        font-size: (768px / $copies);
+    }
+}
+
+@media screen and (width: 1024px) {
+    html {
+        font-size: (1024px / $copies);
+    }
+}
+
+@media screen and (width: 1536px) {
+    html {
+        font-size: (1536px / $copies);
+    }
+}
+
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f7f4f1;
+}
+
+/* 头部 */
+header {
+    position: relative;
+    width: 100%;
+    height: (88rem / $each);
+    background-color: #ff9b25;
+    margin-bottom: (35rem / $each);
+}
+
+header i {
+    position: absolute;
+    top: (28rem / $each);
+    left: (20rem / $each);
+    width: (20rem / $each);
+    height: (32rem / $each);
+    background-image: url(../img/back_icon.png);
+    background-size: (20rem / $each) (32rem / $each);
+
+}
+
+.header-left {
+    font-size: (32rem / $each);
+    line-height: (88rem / $each);
+    margin-left: (56rem / $each);
+    color: #fff;
+}
+
+.header-right{
+    float: right;
+    margin-right: (25rem / $each);
+    font-size: (32rem / $each);
+    line-height: (88rem / $each);
+    color: #fff;
+}
+
+
+/* 主体 */
+main{
+    height: (528rem / $each);
+    background-color: #fff;
+    border-top: 1px solid #ebebeb;
+    border-bottom: 1px solid #ebebeb;
+    margin-bottom: (46rem / $each);
+
+    .main-active-name{
+        height: (107rem / $each);
+        font-size: (32rem / $each);
+        color: #717171;
+        border-bottom: 1px solid #ebebeb;
+        line-height: (107rem / $each);
+        padding-left: (25rem / $each);
+    }
+
+    .main-wreak{
+        position: relative;
+        float: left;
+        width: 60%;
+        height: (105rem / $each);
+        border-right: 1px solid #ebebeb;
+        border-bottom: 1px solid #ebebeb;
+        
+        h1{
+            float: left;
+            color: #717171;
+            margin: 0;
+            font-size: (32rem / $each);
+            font-weight: initial;
+            line-height: (87rem / $each);
+            padding-left: (25rem / $each);
+        }
+
+        .note{
+            position: absolute;
+            top: (35rem / $each);
+            left: (29rem / $each);
+            width: (113rem / $each);
+            height: (21rem / $each);
+            font-size: (21rem / $each);
+            color: #cccccc;
+        }
+
+        .money{
+            float: right;
+            color: #d3d3d3;
+            font-size: (32rem / $each);
+            line-height: (87rem / $each);
+            margin-right: (22rem / $each);
+        }
+    }
+
+    .punish{
+        float: left;
+        width: 39%;
+        height: (105rem / $each);
+        font-size: (32rem / $each);
+        line-height: (70rem / $each);
+        border-bottom: 1px solid #ebebeb;
+        
+
+        h1{
+            float: left;
+            color: #717171;
+            margin: 0;
+            font-size: (32rem / $each);
+            font-weight: initial;
+            line-height: (87rem / $each);
+            padding-left: (25rem / $each);
+        }
+
+        .money{
+            float: right;
+            color: #d3d3d3;
+            font-size: (32rem / $each);
+            line-height: (87rem / $each);
+            margin-right: (22rem / $each);
+        }
+    }
+
+
+    .main-active-day{
+        float: left;
+        width: 100%;
+        height: (105rem / $each);
+        font-size: (32rem / $each);
+        line-height: (70rem / $each);
+        border-bottom: 1px solid #ebebeb;
+    
+        h1{
+            float: left;
+            color: #717171;
+            margin: 0;
+            font-size: (32rem / $each);
+            font-weight: initial;
+            line-height: (105rem / $each);
+            padding-left: (25rem / $each);
+        }
+
+        .day{
+            float: right;
+            color: #bfbfbf;
+            font-size: (25rem / $each);
+            line-height: (105rem / $each);
+            margin-right: (22rem / $each);
+        }
+    }
+
+
+    .main-preferential-time{
+        position: relative;
+        float: left;
+        width: 100%;
+        height: (105rem / $each);
+        font-size: (32rem / $each);
+        line-height: (70rem / $each);
+        border-bottom: 1px solid #ebebeb;
+        
+        h1{
+            float: left;
+            color: #717171;
+            margin: 0;
+            font-size: (32rem / $each);
+            font-weight: initial;
+            line-height: (90rem / $each);
+            padding-left: (25rem / $each);
+        }
+
+        .note{
+            position: absolute;
+            top: (35rem / $each);
+            left: (29rem / $each);
+            width: (173rem / $each);
+            height: (21rem / $each);
+            font-size: (21rem / $each);
+            color: #cccccc;
+        }
+
+        .time{
+            float: right;
+            color: #bfbfbf;
+            font-size: (25rem / $each);
+            line-height: (105rem / $each);
+            margin-right: (22rem / $each);
+        }
+    }
+
+
+    .main-first-time{
+        float: left;
+        width: 100%;
+        height: (105rem / $each);
+        font-size: (32rem / $each);
+        line-height: (70rem / $each);
+
+        h1{
+            float: left;
+            color: #717171;
+            margin: 0;
+            font-size: (32rem / $each);
+            font-weight: initial;
+            line-height: (107rem / $each);
+            padding-left: (25rem / $each);
+        }
+
+        .button{
+            float: right;
+            width: (128rem / $each);
+            height: (60rem / $each);
+            margin-top: (20rem / $each);
+            border: 1px solid #e7e7e7;
+            border-radius: 5px;
+            font-size: (24rem / $each);
+            color: #d0d0d0;
+
+            div{
+                float: right;
+                width: (60rem / $each);
+                height: (60rem / $each);
+                background-color: #3baca7;
+                border-radius: 3px;
+            }
+        }
+    }
+}
+
+
+/* 尾部 */
+footer{    
+    padding: 0 (20rem / $each);
+    
+    .button-save{
+        width: 100%;
+        height: (80rem / $each);
+        background-color: #ff9b25;
+        border-radius: 5px;
+        text-align: center;
+        color: #ffeddb;
+        font-size: (40rem / $each);
+        line-height: (80rem / $each);
+    }
+}
+
+
+
+
+
