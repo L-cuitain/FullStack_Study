@@ -6,8 +6,8 @@
 // let value;
 // value = 109;  //不能类型推断
 
-let value = '1212';
-let aaa = 12323;  //能类型推断
+// let value = '1212';
+// let aaa = 12323;  //能类型推断
 
 //3.根据上下文类型自动推断
 // let fn = (numA: number , numB: number) => {
