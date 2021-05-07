@@ -11,7 +11,6 @@ export default defineComponent({
     name: 'CartTitle',
     setup(){
         const title = ref<string>('苏傲的setu库');
-
         return{
             title
         }
