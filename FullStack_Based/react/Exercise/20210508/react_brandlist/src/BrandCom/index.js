@@ -58,9 +58,9 @@ class BrandCom extends React.Component{
 
     //添加方法
     handleAdd = () => {
-        //判断id是否大于字段长度
-        if(this.state.id <= this.state.brandList.length){
-            alert("编号重复");
+        //判断id是否大于字段长度 或 是否为数字类型
+        if(this.state.id <= this.state.brandList.length || typeof(this.state.id) != Number){
+            alert("非法编号");
             return;
         }
         //判断字段是否为空
