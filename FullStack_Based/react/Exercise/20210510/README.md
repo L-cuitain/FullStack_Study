@@ -68,6 +68,7 @@
 
 ### Context
 ```js
+// 跨组件传值
 // 通过引入Context获取到Provider Consumer两个对象
 // const { Provider , Consumer } = React.createContext();
 

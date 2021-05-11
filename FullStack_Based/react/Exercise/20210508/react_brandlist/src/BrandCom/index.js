@@ -19,28 +19,33 @@ class BrandCom extends React.Component{
     //获取编号
     handleChange = (e) => {
         //判断event获取的自定义属性值
-        switch (e.target.dataset.ipt) {
-            case 'id':
-                //修改id值
-                this.setState({
-                    id: e.target.value
-                })
-                break;
+        // switch (e.target.dataset.ipt) {
+        //     case 'id':
+        //         //修改id值
+        //         this.setState({
+        //             id: e.target.value
+        //         })
+        //         break;
         
-            case 'name':
-                //修改name值
-                this.setState({
-                    name: e.target.value
-                })
-                break;
+        //     case 'name':
+        //         //修改name值
+        //         this.setState({
+        //             name: e.target.value
+        //         })
+        //         break;
 
-            case 'keywords':
-                //修改keywords值
-                this.setState({
-                    keywords: e.target.value
-                })
-                break;
-        }
+        //     case 'keywords':
+        //         //修改keywords值
+        //         this.setState({
+        //             keywords: e.target.value
+        //         })
+        //         break;
+        // }
+
+        //根据name获取到 event值 并更改state中的状态
+        this.setState({
+            [e.target.name] : e.target.value
+        })
     }
 
 
@@ -50,7 +55,7 @@ class BrandCom extends React.Component{
         // console.log(this.state.keywords);
 
         //判断搜索内容
-        let newBrandList = [...this.state.brandList];
+        let newBrandList = this.state.brandList;
 
         return newBrandList.filter(item => {return item.name.includes(this.state.keywords)});
         
@@ -58,11 +63,13 @@ class BrandCom extends React.Component{
 
     //添加方法
     handleAdd = () => {
-        //判断id是否大于字段长度 或 是否为数字类型
-        if(this.state.id <= this.state.brandList.length || typeof(this.state.id) != Number){
-            alert("非法编号");
-            return;
+        //判断id和name是否重复
+        const flag = this.state.brandList.find(item => {return item.id === Number(this.state.id) || item.name === this.state.name});
+
+        if(flag){
+            return alert("重复字段");
         }
+
         //判断字段是否为空
         if(this.state.id.trim() === "" || this.state.name.trim() === ""){
             alert("编号和姓名不能为空");
@@ -85,12 +92,12 @@ class BrandCom extends React.Component{
     }
 
     //删除
-    handleDelete = (id) => {
+    handleDelete = (index) => {
         //获取原数据
         let newBrandList = [...this.state.brandList];
 
         //删除元素
-        newBrandList.splice(id,1);
+        newBrandList.splice(index,1);
         
         //设置值
         this.setState({
@@ -112,18 +119,18 @@ class BrandCom extends React.Component{
                         <div className="form-group form-inline">
                             <div className="input-group">
                                 <div className="input-group-addon">编号</div>
-                                <input type="text" data-ipt='id' className="form-control" value={this.state.id} onChange={this.handleChange}/>
+                                <input type="text" name='id' className="form-control" value={this.state.id} onChange={this.handleChange}/>
                             </div>
                             <div className="input-group">
                                 <div className="input-group-addon">品牌名称</div>
-                                <input type="text" data-ipt='name' className="form-control" value={this.state.name} onChange={this.handleChange}/>
-                            </div>
+                                <input type="text" name='name' className="form-control" value={this.state.name} onChange={this.handleChange}/>
+                            </div>  
                             <div className="input-group">
                                 <button className="btn btn-primary" onClick={this.handleAdd}>添加</button>
                             </div>
                             <div className="input-group pull-right">
                                 <div className="input-group-addon">按名称搜索</div>
-                                <input type="text" data-ipt='keywords' className="form-control" value={this.state.keywords} onChange={this.handleChange} onBlur={this.handleSearch}/>
+                                <input type="text" name='keywords' className="form-control" value={this.state.keywords} onChange={this.handleChange}/>
                             </div>
                         </div>
 
@@ -140,7 +147,7 @@ class BrandCom extends React.Component{
                             <tbody>
                                 {
                                     this.handleSearch().map((item,index) => (
-                                        <tr>
+                                        <tr key={item.id}>
                                             <td>{item.id}</td>
                                             <td>{item.name}</td>
                                             <td>{item.ctime}</td>

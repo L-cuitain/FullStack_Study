@@ -42,6 +42,36 @@ class App extends React.Component {
     }]
   }
 
+  //创建点击事件
+  changeNum = (id,target,num) => {
+    // console.log(id,target,num);
+    //获取原数组
+    let newList = this.state.list;
+    newList.find((item) => {
+      if(item.id == id){
+        if(target === 'blur'){
+          item.num = num;
+          return true;
+        }
+        if(target === 'add'){
+          item.num++;
+          return true;
+        }
+        if(target === 'min'){
+          item.num--;
+          if(item.num <= 0){
+            item.num = 0;
+          }
+          return true;
+        }
+      }
+    })
+
+    this.setState({
+      list : newList
+    })
+  }
+
   // 删除商品
   delete = (id) =>{
     const arr = this.state.list.filter(item=>item.id !== id);
@@ -56,7 +86,7 @@ class App extends React.Component {
       <div className="App">
         <div className="container">
           <CartTitle name={this.state.name} ></CartTitle>
-          <CartList  list={this.state.list} deleteItem={this.delete}></CartList>
+          <CartList  list={this.state.list} deleteItem={this.delete} changeNum={this.changeNum}></CartList>
           <CartTotal list={this.state.list}></CartTotal>
         </div>
       </div>

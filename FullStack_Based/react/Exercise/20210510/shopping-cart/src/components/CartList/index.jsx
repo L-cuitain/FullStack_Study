@@ -7,7 +7,24 @@ class CartList extends React.Component {
     this.props.deleteItem(id);
   }
 
-
+  //改变数量事件
+  handleChangeNum = (id,e) => {
+    // console.log(e.target.dataset.num);
+    //判断用户点击元素
+    switch (e.target.dataset.num) {
+      case 'add':
+        this.props.changeNum(id,'add');
+        break;
+    
+      case 'min':
+        this.props.changeNum(id,'min');
+        break;
+      
+      case 'blur':
+        this.props.changeNum(id,'blur',e.target.value);
+        break;
+    }
+  }
 
   render() {
     return (
@@ -19,12 +36,12 @@ class CartList extends React.Component {
             <div className="name">{item.name}</div>
             <div className="change">
               {/* eslint-disable-next-line */}
-              <a href="javascript:;">－</a>
-              <input type="text" className="num" />
+              <a href="#" data-num='min' onClick={this.handleChangeNum.bind(this,item.id)}>－</a>
+              <input type="text" className="num" data-num='blur' value={item.num} onChange={this.handleChangeNum.bind(this,item.id)}/>
               {/* eslint-disable-next-line */}
-              <a href="javascript:;">＋</a>
+              <a href="#" data-num='add' onClick={this.handleChangeNum.bind(this,item.id)}>＋</a>
             </div>
-            <div class="del" onClick={this.handlerDelete.bind(this,item.id)}>×</div>
+            <div className="del" onClick={this.handlerDelete.bind(this,item.id)}>×</div>
           </div>
           ))
         }
