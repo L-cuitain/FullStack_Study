@@ -50,7 +50,11 @@ class App extends React.Component {
     newList.find((item) => {
       if(item.id == id){
         if(target === 'blur'){
-          item.num = num;
+          item.num = num < 0 ? 0 : num;
+
+          if(String(num)[0] === '0'){
+            item.num = 0;
+          } 
           return true;
         }
         if(target === 'add'){
