@@ -4,6 +4,11 @@
 ```js
 // 对于某一个表单元素 借助于ref 使用原生DOM方式来获取表单元素值这样的元素叫做非受控组件
 //ref作用: 获取DOM或组件
+
+//书写格式:
+//1.在constructor中 创建变量存储 const A = React.createRef();
+//2.在需要获取元素的标签添加属性 ref={this.A}
+//3.在方法中通过 this.A.current获取值
 ```
 
 ## 组件通讯
