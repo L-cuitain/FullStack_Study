@@ -1,8 +1,9 @@
 import ReactDOM from 'react-dom';
-import App from './App';
+// import App from './App';
+import ACom from './Components/ACom';
 
 
 ReactDOM.render(
-    <App />,
+    <ACom />,
     document.querySelector('#root')
 )

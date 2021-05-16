@@ -71,14 +71,14 @@
 // 需要一个中间类组件来传递参数
 ```
 
-### Context
+### Context(跨组件传值)
 ```js
 // 跨组件传值
 // 通过引入Context获取到Provider Consumer两个对象
 // const { Provider , Consumer } = React.createContext();
 
 // 在父组件中 通过 Provider 创建值
-// <Provider>子组件</Provider>
+// <Provider value="值">子组件</Provider>
 
 // 在子组件中 通过 Consumer 获取到值
 // <Consumer>{(data) => {函数体}}</Consumer>

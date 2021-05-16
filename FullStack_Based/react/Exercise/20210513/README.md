@@ -109,15 +109,51 @@
 ```
 
 
-## JSX语法转换过程
+# JSX语法转换过程
 ```js
 //JSX为createElement()方法的语法糖
 //JSX语法被 @babel/present-react插件编译为createElement()方法
 //React元素: 是一个对象 用来描述内容
 ```
 
-## 组件更新机制
+# 组件更新机制
 ```js
 //setState() 的两个作用: 1.修改state 2.更新组件(UI)
 //过程: 父组件重新渲染后 也会重新渲染子组件 只会渲染当前组件子树(当前组件以及所有子组件)
+```
+
+# 组件性能优化
+## 减轻state
+```js
+//只储存跟组件渲染相关的数据
+//不用做渲染的数据不放在state中
+//对于需要在多个方法中用到的数据 应该放在this中
+```
+
+## 避免不必要的重新渲染
+```js
+//组件更新机制: 父组件更新会引起子组件也会更新
+//解决子组件没有任何变化也会重新渲染: 使用钩子函数 shouldComponentUpdate(nextProps,nextState) 
+//作用: 通过返回值决定该组件是否重新渲染 返回true重新渲染 false不渲染
+//触发时机: 更新阶段的钩子函数 组件重新渲染前执行
+//接收参数: nextProps 获取最新的props  nextState 获取最新的state
+//函数中获取父组件中的值为原始值 this.props.属性
+
+
+//实例:
+// class A extends Component {
+//      shouldComponentUpdate(nextProps , nextState){ return true/false }   
+// }
+```
+
+## 纯组件
+```js
+
+//纯组件(React.PureComponent): 与React.Component功能相似
+//区别: PureComponent内部自动实现shouldComponentUpdate钩子 , 不需要手动比较
+//原理: 纯组件内部通过分别 对比 前后两次 props 和 state的值 , 来决定是否重新渲染组件
+
+
+//实例:
+//class A extends React.PureComponent{}
 ```
