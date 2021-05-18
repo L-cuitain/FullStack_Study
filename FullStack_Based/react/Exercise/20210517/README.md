@@ -138,6 +138,8 @@ const Home = React.memo(() => {
 // 1.<Fragment></Fragment>
 // 2.<React.Fragment></React.Fragment>
 // 3.<></>
+
+// Fragment 与 React.Fragment 只支持 key 和 children 属性 , <></> 不支持任何属性 
 ```
 
 # StrictMode
@@ -195,5 +197,3 @@ const Home = React.memo(() => {
 //CSS module缺点
 // 不可以动态获取当前state中的状态
 ```
-
-## CSS in JS
