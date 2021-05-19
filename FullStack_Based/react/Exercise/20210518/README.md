@@ -146,6 +146,11 @@ import { CSSTransition } from 'react-transition-group';
 // SwitchTransition可以完成组件切换动画
 ```
 
+## TransitionGroup
+```js
+// TransitionGroup完成列表改变动画
+```
+
 
 
 
