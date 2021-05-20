@@ -11,8 +11,8 @@ const Home = React.memo(() => {
     return ()
 })
 
-//如果组件存在相同props的情况下渲染相同的结果 可以通过将其包装在React.memo中调用
-
+//好处:
+//React会在相同props的情况下 不做重新渲染而是复用之前的渲染结果
 //React.memo 仅检查props变更
 
 ```
@@ -126,7 +126,7 @@ const Home = React.memo(() => {
 ```js
 // Portals 将子节点渲染到存在于父组件以外的DOM节点
 
-// child: 任何可渲染的 React 子元素
+// child: 任何可渲染的 React 子元素 this.props.children
 // container: DOM元素
 // ReactDOM.createPortal(child,container)
 ```

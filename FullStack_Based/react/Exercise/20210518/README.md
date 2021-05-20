@@ -144,6 +144,13 @@ import { CSSTransition } from 'react-transition-group';
 ## SwitchTransition
 ```js
 // SwitchTransition可以完成组件切换动画
+
+// SwitchTransition 主要有一个属性: mode 有两个值
+// in-out: 表示新组件先进入 旧组件再移除
+// out-in: 表示旧组件先移除 新组件再进入
+
+// SwitchTransition 里面要有 CSSTransition或Transition组件
+// SwitchTransition 里面的CSSTransition或Transition不再接收in属性 取而代之的是key属性
 ```
 
 ## TransitionGroup
