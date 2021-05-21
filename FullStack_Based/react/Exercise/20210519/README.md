@@ -19,6 +19,8 @@ import { BrowserRouter , HashRouter , Link , NavLink , Route } from 'react-route
 // </Link>
 
 // NavLink: 和Link一样 编译完为 a标签
+// activeStyle 设置选中后的样式
+// activeClassName 设置类名
 
 // Route组件: 占位符 , 用来展示组件
 // path属性: 配置路由规则
