@@ -45,7 +45,7 @@ function* gen(){
 
 # redux-saga
 
-## 文档
+## 相关参考
 ```
 https://redux-saga-in-chinese.js.org/
 ```

@@ -1,6 +1,6 @@
 # Redux-Thunk
 
-## 文档参考
+## 相关参考
 ```
 https://segmentfault.com/a/1190000037437347
 https://www.redux.org.cn/docs/advanced/AsyncActions.html

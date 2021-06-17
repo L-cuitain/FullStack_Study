@@ -1,6 +1,6 @@
 # React-Redux
 
-## 资料摘录
+## 相关参考
 ```
 https://www.redux.org.cn/docs/react-redux/api.html
 ```

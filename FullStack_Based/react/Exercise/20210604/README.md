@@ -1,6 +1,6 @@
 # React Redux
 
-## 中文文档
+## 相关参考
 ```
 https://www.redux.org.cn/
 ```
