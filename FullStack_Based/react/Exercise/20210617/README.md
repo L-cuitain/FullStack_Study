@@ -132,3 +132,58 @@ const refContainer = useRef(initalValue);
 //通过 .current 获取DOM元素的事件
 refContainer.current.focus();
 ```
+
+### useImperativeHandle
+```js
+//useImperativeHandle 可以在使用 ref 时自定义暴露给父组件的实例值
+//应当与 forwardRef 一起使用
+useImperativeHandle(ref , createHandle,[deps]);
+
+//父组件
+//引入 forwardRef 将 ref属性传递给子组件
+import { forwardRef , useRef } from 'react';
+//创建 ref
+const exampleRef = useRef();
+//参数为引入的组件
+const ForwardRef = forwardRef(ChildCom);
+
+//通过函数 控制子组件暴露的ref
+
+//挂载组件
+return (
+  <ForwardRef ref={exampleRef} />
+);
+
+
+//子组件
+//引入 useImperativeHandle
+import { useRef , useImperativeHandle } from 'react';
+//创建新的ref
+const newRef = useRef();
+
+//通过 useImperativeHandle 将 ref 进行绑定 通过父组件中的方法可以执行myfocus方法
+useImperativeHandle(ref , () => ({
+  myfocus: () => {
+    newRef.current.focus();
+  }
+}))
+
+```
+
+
+### useLayoutEffect
+```js
+//在DOM元素发生变化后 同步 调用Effect 而useEffect则为 异步 调用
+//执行时机:
+//挂载或更新组件 useLayoutEffect会比useEffect先执行
+//卸载组件 useEffect会比useLayoutEffect先执行
+
+
+//useLayoutEffect优点:
+//通过 同步 执行状态更新可解决一些特定场景下的页面闪烁问题 (例如 异步执行 大量计算)
+
+//useLayoutEffect缺点:
+//同步执行可能会阻塞渲染
+
+useLayoutEffect(() => {},[])
+```
