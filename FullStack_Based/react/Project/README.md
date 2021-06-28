@@ -10,9 +10,9 @@ UI组件库: antd-mobile
 百度地图API
 ```
 
+## 全局 axios封装
 
 ## 全局 tabbar
-
 
 ## 首页 Home
 ```
@@ -20,5 +20,6 @@ UI组件库: antd-mobile
 
 nav导航
 
-
+group板块
 ```
+

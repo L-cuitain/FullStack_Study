@@ -5,7 +5,8 @@ import News from '../pages/News/News';
 import FindHouse from '../pages/FindHouse/FindHouse';
 import Profile from '../pages/Profile/Profile';
 import CityList from '../pages/CityList/CityList';
-
+import Map from '../pages/Map/Map';
+import Search from '../pages/Search/Search';
 
 //引入路由重定向
 import { Redirect } from 'react-router-dom';
@@ -30,6 +31,15 @@ const routes = [{
     },{
         path: '/profile',
         component: Profile
+    },{
+        path: '/citylist',
+        component: CityList
+    },{
+        path: '/search',
+        component: Search
+    },{
+        path: '/map',
+        component: Map
     }]
 }]
 

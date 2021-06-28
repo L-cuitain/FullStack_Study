@@ -1,14 +1,14 @@
 //引入react
-import React from 'react';
+import React , {useState , useEffect} from 'react';
 
 //引入走马灯
-import { Carousel, Flex } from 'antd-mobile';
+import { Carousel, Flex, WingBlank, Grid } from 'antd-mobile';
 
 //引入axios
 import axios from 'axios';
 
 //引入style
-import Style from './Home.module.css';
+import './Home.css';
 
 // 导入导航菜单图片
 import Nav1 from '../../assets/images/nav-1.png'
@@ -16,10 +16,14 @@ import Nav2 from '../../assets/images/nav-2.png'
 import Nav3 from '../../assets/images/nav-3.png'
 import Nav4 from '../../assets/images/nav-4.png'
 
+//导入搜索组件
+import SearchHeader from '../../components/SearchHeader/searchheader';
+
+
 function Home() {
 
   //轮播图设置参数
-  const [swiperData, setSwiperData] = React.useState({
+  const [swiperData, setSwiperData] = useState({
     // 是否自动切换
     autoplay: true,
     // 是否显示面板指示点
@@ -31,20 +35,40 @@ function Home() {
   })
 
   //是否显示轮播图
-  const [isFinished , setIsFinished] = React.useState(false);
+  const [isFinished, setIsFinished] = useState(false);
 
   //轮播图图片
-  const [swiperImg, setSwiperImg] = React.useState([]);
+  const [swiperImg, setSwiperImg] = useState([]);
+
+  //搜索显示地区
+  const [cityName, setCityName] = useState("上海");
+  const [areaId , setAreaId] = useState("");
+
+  //租房小组
+  const [groups, setGroups] = useState([]);
+
+  //最新资讯
+  const [news, setNews] = useState([]);
+
 
   //在生命周期中使用方法
-  React.useEffect(() => {
+  useEffect(() => {
     //调用请求轮播图图片方法
     getSwiperImg();
+
+    //调用请求租房小组方法
+    getGroups();
+
+    //调用请求最新资讯方法
+    getNews()
+
+    //调用获取搜索城市方法
+    getCityName();
   }, [])
 
 
   //nav数据
-  const [navData, setNavData] = React.useState([
+  const [navData, setNavData] = useState([
     {
       id: 1,
       navImg: Nav1,
@@ -71,9 +95,42 @@ function Home() {
   //获取轮播图 图片列表
   const getSwiperImg = async () => {
     //发起请求 获取轮播图图片
-    const result = await axios.get("http://localhost:8080/home/swiper");
-    setSwiperImg(result.data.body);
+    const { data } = await axios.get("http://localhost:8080/home/swiper");
+    setSwiperImg(data.body);
     setIsFinished(true);
+  }
+
+
+  //获取搜索城市名称
+  const getCityName = () => {
+    let city = new window.BMap.LocalCity();
+
+    // console.log(city);
+    city.get(async (result) => {
+      //根据市发起请求查询该市的信息
+      const { data } = await axios.get("http://localhost:8080/area/info",{name:result.name});
+      //将请求获取的数据存入状态
+      if(data.status === 200){
+        setCityName(data.body.label);
+        setAreaId(data.body.value);
+      }
+    })
+  }
+
+
+  //获取租房小组数据
+  const getGroups = async () => {
+    //发起请求 获取租房小组数据
+    const { data } = await axios.get("http://localhost:8080/home/groups", { area: "AREA|88cff55c-aaa4-e2e0" });
+    setGroups(data.body);
+  }
+
+
+  //获取最新资讯数据
+  const getNews = async () => {
+    //发起请求 获取最新资讯数据
+    const { data } = await axios.get("http://localhost:8080/home/news", { area: "AREA|88cff55c-aaa4-e2e0" });
+    setNews(data.body);
   }
 
 
@@ -108,28 +165,95 @@ function Home() {
     ))
   }
 
+
+  //渲染租房小组
+  const applyNews = () => {
+    return news.map(item => (
+      <div className="news-item" key={item.id}>
+        {/* news img */}
+        <div className="imgwrap">
+          <img className="img" src={`http://localhost:8080${item.imgSrc}`} alt="" />
+        </div>
+        {/* news title */}
+        <Flex className="content" direction="column" justify="between">
+          <h3 className="title">{item.title}</h3>
+          <Flex className="info" justify="between">
+            <span>{item.from}</span>
+            <span>{item.date}</span>
+          </Flex>
+        </Flex>
+      </div>
+    ))
+  }
+
+
   return (
     <div>
-      {/* 轮播图 */}
-      {
-        isFinished ? <Carousel
-          // 是否自动切换
-          autoplay={swiperData.autoplay}
-          // 是否显示面板指示点
-          dots={swiperData.dots}
-          // 是否循环播放
-          infinite={swiperData.infinite}
-        >
-        { applySwiper() }
-      </Carousel> : ('')
-      }
+      {/* swiper */}
+      <div className="swiper">
+        {/* search */}
+        <SearchHeader cityName={cityName}/>
 
+        {/* swiper */}
+        {
+          isFinished ? <Carousel
+            // 是否自动切换
+            autoplay={swiperData.autoplay}
+            // 是否显示面板指示点
+            dots={swiperData.dots}
+            // 是否循环播放
+            infinite={swiperData.infinite}
+          >
+            {applySwiper()}
+          </Carousel> : ('')
+        }
+      </div>
 
 
       {/* nav */}
-      <Flex className={Style.nav}>
-        { applyNav() }
+      <Flex className="nav">
+        {applyNav()}
       </Flex>
+
+
+      {/* groups */}
+      <div className="group">
+        {/* groups title */}
+        <Flex justify="between">
+          <h4 className="group-title">租房小组</h4>
+          <span>更多</span>
+        </Flex>
+
+
+        {/* groups grid  */}
+        <Grid
+          hasLine="false"
+          data={groups}
+          columnNum={2}
+          hasLine={false}
+          itemStyle={{ height: '75px' }}
+          renderItem={item => (
+            <Flex className="group-item" justify="around" key={item.id}>
+              <div className="desc">
+                <h3 className="title">{item.title}</h3>
+                <span className="info">{item.desc}</span>
+              </div>
+              <img src={`http://localhost:8080${item.imgSrc}`} alt="" />
+            </Flex>
+          )} />
+      </div>
+
+
+      {/* news */}
+      <div className="news">
+        {/* news title */}
+        <h4 className="group-title">最新资讯</h4>
+
+        {/* news content */}
+        <WingBlank size="md">
+          {applyNews()}
+        </WingBlank>
+      </div>
 
     </div>
   )
