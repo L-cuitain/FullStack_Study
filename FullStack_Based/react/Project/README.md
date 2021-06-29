@@ -18,8 +18,12 @@ UI组件库: antd-mobile
 ```
 轮播图
 
+轮播图搜索导航条
+
 nav导航
 
 group板块
+
+news板块
 ```
 

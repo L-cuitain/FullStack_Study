@@ -19,6 +19,8 @@ import Nav4 from '../../assets/images/nav-4.png'
 //导入搜索组件
 import SearchHeader from '../../components/SearchHeader/searchheader';
 
+//导入CurrentCity方法
+import CurrentCity from '../../utils/CurrentCity/CurrentCity';
 
 function Home() {
 
@@ -102,19 +104,11 @@ function Home() {
 
 
   //获取搜索城市名称
-  const getCityName = () => {
-    let city = new window.BMap.LocalCity();
-
-    // console.log(city);
-    city.get(async (result) => {
-      //根据市发起请求查询该市的信息
-      const { data } = await axios.get("http://localhost:8080/area/info",{name:result.name});
-      //将请求获取的数据存入状态
-      if(data.status === 200){
-        setCityName(data.body.label);
-        setAreaId(data.body.value);
-      }
-    })
+  const getCityName = async () => {
+    //调用方法
+    const {label , value} = await CurrentCity();
+    setCityName(label);
+    setAreaId(value);
   }
 
 
