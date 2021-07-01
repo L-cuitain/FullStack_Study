@@ -1,6 +1,3 @@
-//引入axios
-import axios from 'axios';
-
 //引入Local
 import { getLocal } from "../Local/Local";
 
@@ -29,9 +26,9 @@ const cityFormat = (citylist , hotcity) => {
     cityList["热"] = hotcity;
 
     //获取localStorage中的当前地区
-    const {label} = JSON.parse(getLocal());
+    const loclaCity = JSON.parse(getLocal());
     cityIndex.unshift("#");
-    cityList["#"] = [label];
+    cityList["#"] = [loclaCity];
 
     return {cityList,cityIndex};
 }

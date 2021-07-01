@@ -5,6 +5,8 @@ import './index.css';
 import 'antd-mobile/dist/antd-mobile.css';
 //引入图标
 import './assets/fonts/iconfont.css'
+//引入react-virtualized
+import 'react-virtualized/styles.css';
 
 //引入hash模式路由
 import { HashRouter } from 'react-router-dom';
