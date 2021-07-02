@@ -16,9 +16,7 @@ import routes from './routes/routes';
 
 ReactDOM.render(
   <HashRouter>
-    <React.StrictMode>
       {renderRoutes(routes)}
-    </React.StrictMode>
   </HashRouter>,
   document.getElementById('root')
 );

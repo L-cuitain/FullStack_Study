@@ -1,12 +1,16 @@
 import React, { useState, useEffect , useRef } from 'react';
 
-import { useHistory } from 'react-router-dom';
-
 //引入antd样式
-import { NavBar , Toast } from 'antd-mobile';
+import { Toast } from 'antd-mobile';
 
 //引入css样式
 import './CityList.css';
+
+//路由跳转
+import { useHistory } from 'react-router-dom';
+
+//引入navHeader组件
+import NavHeader from '../../components/NavHeader/navheader';
 
 //引入封装城市列表数据方法
 import cityFormat from '../../utils/CityFormat/CityFormat';
@@ -20,13 +24,13 @@ import axios from 'axios';
 //引入本地缓存
 import { setLocal } from '../../utils/Local/Local';
 
+
 function CityList() {
+
     const history = useHistory();
 
-    useEffect(() => {
-        //调用获取城市列表
-        getCityList();
-    }, [])
+    //nav标题
+    const [navTitle , setNavTitle] = useState("城市选择");
 
     //城市列表
     const [cityList, setCityList] = useState({});
@@ -42,6 +46,12 @@ function CityList() {
 
     //创建Ref 获取document的scrollTop方法
     const topRef = useRef(null);
+
+
+    useEffect(() => {
+        //调用获取城市列表
+        getCityList();
+    }, [])
 
 
     //格式化城市列表索引
@@ -128,7 +138,7 @@ function CityList() {
 
     //长列表行高设置
     const getRowHeight = ({ index }) => {
-        return 32 + (50 * cityList[cityIndex[index]].length);
+        return 35 + (50 * cityList[cityIndex[index]].length);
     }
 
     //获取滚动的位置指向的索引
@@ -183,13 +193,7 @@ function CityList() {
     return (
         <div className="citylist">
             {/* navbar */}
-            <div className="citylist_nav">
-                <NavBar
-                    mode="light"
-                    icon={<i className="iconfont icon-back"></i>}
-                    onLeftClick={() => history.goBack()}
-                >城市选择</NavBar>
-            </div>
+            <NavHeader navTitle={navTitle}/>
 
             {/* city list data */}
             {applyCityList()}
